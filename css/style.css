@@ -2113,7 +2113,7 @@ a.slide-btn:after {
 }
 .thmk-woocommerce-search-wrap .thmk-woocommerce-search-result {
   position: absolute;
-  width: 90%;
+  width: 100%;
   max-height: 332px;
   overflow: auto;
   border: 1px solid #c5c5c5;
@@ -10271,7 +10271,7 @@ header .mobile-nav-bar.sider.right {
     width: 15%;
   }
   .thmk-woocommerce-search-wrap .thmk-woocommerce-search-result {
-width: 85%;
+width: 100%;
   }
 }
 
