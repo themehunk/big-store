@@ -213,11 +213,13 @@
             ".thmk-woocommerce-search-wrap"
           );
           const resultWrap = mainWrap.find(".thmk-woocommerce-search-result");
+          const getLiresult = resultWrap.find("li");
           let searchVal = searchBoxTxt.val();
           if (
             !mainWrap.hasClass("loading") &&
             searchVal &&
-            searchVal.length >= 2
+            searchVal.length >= 2 &&
+            getLiresult.length > 0
           ) {
             resultWrap.show();
           } else {
@@ -267,7 +269,7 @@
               url: bigstore.ajaxUrl,
               data: dataToAjx,
               success: function (response) {
-                console.log("response -> ", response);
+                // console.log("response -> ", response);
                 resultWrap.show();
                 if (response.data.length > 0) {
                   let productLists = "";
@@ -428,7 +430,6 @@
     //       $(this).autocomplete("search");
     //     });
     // },
-
     cartopen: function () {
       $(document).on("click", "a.cart-contents", function (e) {
         e.preventDefault();

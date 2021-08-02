@@ -11,6 +11,7 @@ include_once 'product-search.php';
 /**************************************/
 //Top Header function
 /**************************************/
+
 if (!function_exists('big_store_top_header_markup')) {
   function big_store_top_header_markup()
   {
@@ -60,6 +61,9 @@ if (!function_exists('big_store_top_header_markup')) {
   }
 }
 add_action('big_store_top_header', 'big_store_top_header_markup');
+
+
+
 //************************************/
 // Top header col1 function
 //************************************/
@@ -278,7 +282,7 @@ if (!function_exists('big_store_below_header_markup')) {
                 </nav>
               <?php } else {
                 if (class_exists('WooCommerce')) {
-                  echo big_store_product_search_box();
+                  echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
                 }
               } ?>
             </div>
@@ -336,6 +340,9 @@ if (!function_exists('big_store_main_header_markup')) {
     $big_store_menu_alignment = get_theme_mod('big_store_menu_alignment', 'center');
     $big_store_menu_open = get_theme_mod('big_store_mobile_menu_open', 'left');
     $offcanvas = get_theme_mod('big_store_canvas_alignment', 'cnv-none');
+
+    // select category hide show 
+
     ?>
     <div class="main-header <?php echo esc_attr($main_header_layout); ?> <?php echo esc_attr($main_header_opt); ?> <?php echo esc_attr($big_store_menu_alignment); ?>  <?php echo esc_attr($offcanvas); ?>">
       <div class="container">
@@ -384,7 +391,7 @@ if (!function_exists('big_store_main_header_markup')) {
                 </nav>
               <?php } else {
                 if (class_exists('WooCommerce')) {
-                  echo big_store_product_search_box();
+                  echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
                 }
               } ?>
             </div>
@@ -406,7 +413,7 @@ if (!function_exists('big_store_main_header_markup')) {
 
             <div class="main-header-col2">
               <?php if (class_exists('WooCommerce')) {
-                echo big_store_product_search_box();
+                echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
               } ?>
             </div>
 
@@ -473,7 +480,7 @@ if (!function_exists('big_store_main_header_markup')) {
       <div class="container">
         <div class="search-close"><a class="search-close-btn"></a></div>
         <?php if (class_exists('WooCommerce')) {
-          echo big_store_product_search_box();
+          echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
         } ?>
       </div>
     </div>
@@ -628,6 +635,9 @@ add_action('big_store_site_preloader', 'big_store_preloader');
 if (!function_exists('big_store_sticky_header_markup')) {
   function big_store_sticky_header_markup()
   {
+
+    // select category hide show 
+
     $big_store_menu_open = get_theme_mod('big_store_mobile_menu_open', 'left'); ?>
     <div class="sticky-header">
       <div class="container">
@@ -706,7 +716,7 @@ if (!function_exists('big_store_sticky_header_markup')) {
       <div class="container">
         <div class="search-close"><a class="search-close-btn"></a></div>
         <?php if (class_exists('WooCommerce')) {
-          echo big_store_product_search_box();
+          echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
         } ?>
       </div>
     </div>

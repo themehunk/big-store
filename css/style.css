@@ -2033,7 +2033,7 @@ a.slide-btn:after {
   text-align: left;
 }
 
-/*----themehunk Search box----*/
+/*----themehunk Search box start-----------------------------*********************************----*/
 .thmk-woocommerce-search-wrap {
   box-sizing: border-box;
 }
@@ -2197,7 +2197,7 @@ a.slide-btn:after {
   align-items: center;
   justify-content: center;
 }
-/*----themehunk Search box----*/
+/*----themehunk Search box end-----------------------------*********************************----*/
 
 /*----main header product search bar----*/
 

@@ -8,7 +8,6 @@ function big_store_product_search_box($cate = true)
     $html .= '<div class="thmk-woocommerce-search-wrap-input">'; //input
     $html .= '<input type="text" name="product-search-text" placeholder="' . esc_attr(get_theme_mod("search_box_text", "Search for Product"), "big-store") . '">';
     $html .= '</div>'; //input
-    // if (get_theme_mod('big_store_cat_search_disable') !== true) {
     if ($cate) {
         $args = array(
             'taxonomy' => 'product_cat',
@@ -32,8 +31,6 @@ function big_store_product_search_box($cate = true)
     $html .= '</div>';
 
     $html .= "</div>"; //wrap
-    // echo $html;
     return $html;
 }
-// get_theme_mod('big_store_cat_search_disable')
 // -----------------------------------------------------------------------------------
