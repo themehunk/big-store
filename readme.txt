@@ -4,7 +4,7 @@ Tags: e-commerce, blog, grid-layout, one-column, two-columns, three-columns, fou
 Requires at least: WordPress 5.3
 Requires PHP: 5.3
 Tested up to: 5.8
-Stable tag: 1.6.1
+Stable tag: 1.6.2
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -24,9 +24,11 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 == Changelog ==
 
+= 1.6.2=
+* Product search improved.
 
 = 1.6.1=
-*Th Variation Swatches Plugin added.
+* Th Variation Swatches Plugin added.
 
 = 1.6.0=
 *Shop page sorting background issue fixed.
