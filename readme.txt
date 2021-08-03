@@ -26,6 +26,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 = 1.6.2=
 * Product search improved.
+* Customizer draft issue fixed.
+* Woocommerce croping issue fixed.
 
 = 1.6.1=
 * Th Variation Swatches Plugin added.
