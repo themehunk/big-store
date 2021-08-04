@@ -24,6 +24,10 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 == Changelog ==
 
+= 1.6.3=
+* sidebar widget title font size fixed.
+* footer widget title font size fixed.
+
 = 1.6.2=
 * Product search improved.
 * Customizer draft issue fixed.
