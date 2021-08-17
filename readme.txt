@@ -27,7 +27,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 = 1.6.4=
 * Woocommerce Image cropping issue fixed.
 * Default yith and wpc plugin issue fixed.
-* Th variation swatches plugin compatible.
+* Th variation swatches plugin pro compatible.
 * Draft post publish issue fixed.
 
 
@@ -124,7 +124,7 @@ Initial release
 = 1.6.4=
 * Woocommerce Image cropping issue fixed.
 * Default yith and wpc plugin issue fixed.
-* Th variation swatheces plugin compatible.
+* Th variation swatheces plugin pro compatible.
 * Draft post publish issue fixed.
 
 == Resources ==
