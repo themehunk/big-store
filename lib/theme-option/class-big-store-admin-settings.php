@@ -569,10 +569,10 @@ if ( ! class_exists( 'Big_Store_Admin_Settings' ) ){
                 	echo'<img src="'.esc_url(BIG_STORE_THEME_URI. 'lib/theme-option/assets/images/compare.png' ).'" />'; 
                 $detail='';
                 }elseif($plugin_slug=='yith-woocommerce-wishlist'){
-                	echo'<img src="'.esc_url(BIG_STORE_THEME_URI. 'lib/theme-option/assets/images/whislist.png' ).'" />'; 
+                	echo'<img src="'.esc_url(BIG_STORE_THEME_URI. 'lib/theme-option/assets/images/yith-woocommerce-wishlist.png' ).'" />'; 
                 $detail='';
                 }elseif($plugin_slug=='yith-woocommerce-compare'){
-                	echo'<img src="'.esc_url(BIG_STORE_THEME_URI. 'lib/theme-option/assets/images/compare.png' ).'" />'; 
+                	echo'<img src="'.esc_url(BIG_STORE_THEME_URI. 'lib/theme-option/assets/images/yith-woocommerce-compare.png' ).'" />'; 
                 $detail='';
                 }elseif($plugin_slug=='one-click-demo-import'){
                 	echo'<img src="'.esc_url(  BIG_STORE_THEME_URI . 'lib/theme-option/assets/images/one-click-demo-import.png' ).'" />'; 
