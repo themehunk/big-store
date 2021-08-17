@@ -4,7 +4,7 @@ Tags: e-commerce, blog, grid-layout, one-column, two-columns, three-columns, fou
 Requires at least: WordPress 5.3
 Requires PHP: 5.3
 Tested up to: 5.8
-Stable tag: 1.6.2
+Stable tag: 1.6.4
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -23,6 +23,13 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
+
+= 1.6.4=
+* Woocommerce Image cropping issue fixed.
+* Default yith and wpc plugin issue fixed.
+* Th variation swatheces plugin compatible.
+* Draft post publish issue fixed.
+
 
 = 1.6.3=
 * sidebar widget title font size fixed.
@@ -114,14 +121,11 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= 1.5.8=
-* Product image cropping added.
-* Shop page list view style improved.
-* category heading slider layout 3 issue resolved.
-* Z-index issue with product image zoom at single page.
-* Selected wishlist icon color issue resolved.
-* Improved category page list view.
-* Sidebar issue in tag pages.
+= 1.6.4=
+* Woocommerce Image cropping issue fixed.
+* Default yith and wpc plugin issue fixed.
+* Th variation swatheces plugin compatible.
+* Draft post publish issue fixed.
 
 == Resources ==
  

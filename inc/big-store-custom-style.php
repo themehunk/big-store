@@ -178,17 +178,25 @@ if($big_store_color_scheme==false){
     max-height: inherit;}";
 }
 //Hide yith if WPC SMART Icon 
-if( (class_exists( 'WPCleverWoosw' ))){
-$big_store_style.=" .yith-wcwl-add-to-wishlist{
+
+if( (class_exists( 'YITH_WCWL' )) ){
+$big_store_style.=" .woocommerce .entry-summary .woosw-btn{
   display:none;
+}";
+}elseif((class_exists( 'WPCleverWoosw' ))){
+$big_store_style.=" .woocommerce .entry-summary .yith-wcwl-add-to-wishlist{
+  display:none;
+}";
 }
-";
-}
-if( (class_exists( 'WPCleverWooscp' ))){
+
+if( (class_exists( 'YITH_Woocompare' )) ){
+$big_store_style.=" .woocommerce .entry-summary .woosc-btn, .woocommerce-shop .woosc-btn{
+  display:none;
+}";
+}elseif((class_exists( 'WPCleverWoosc' ))){
 $big_store_style.=" .woocommerce .entry-summary a.compare.button{
   display:none;
-}
-";
+}";
 }
 
   return $big_store_style;

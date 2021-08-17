@@ -1,6 +1,7 @@
 /********************************/
 // BigStoreWooLib Custom Function
 /********************************/
+
 (function ($) {
   var BigStoreWooLib = {
     init: function () {

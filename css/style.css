@@ -6,10 +6,6 @@
   display: none;
 }
 
-/* #sidebar-primary{
-    font-size: 16px !important;
-}
- */
 /***********************/
 /*structure style*/
 /***********************/
@@ -3283,6 +3279,24 @@ header #open-cart {
 }
 .woocommerce ul.products li.product a img {
   margin: 0;
+}
+.thunk-product .woosc-btn:before, .woosc-btn:before {
+    content: "" !important;
+    font-family: 'fontawesome';
+    color: #616161;
+    width: 35px;
+    height: 35px;
+}
+.thunk-single-product-summary-wrap .summary.entry-summary .woosc-btn{
+  margin-left: 15px;
+   border: 1px solid;
+    border-radius: 0;
+    color: #616161;
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    width: 60px;
+    letter-spacing: normal;
 }
 
 /*navigation*/

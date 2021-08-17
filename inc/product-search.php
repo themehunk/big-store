@@ -23,7 +23,7 @@ function big_store_product_search_box($cate = true)
         $html .= '</div>'; //select
     }
     $html .= '<div class="thmk-woocommerce-search-wrap-submit">'; //submit
-    $html .= '<button data-url="' . esc_url(home_url('/')) . '"><i class="fa fa-search" aria-hidden="true"></i></button>';
+    $html .= '<button id="search-button" data-url="' . esc_url(home_url('/')) . '"><i class="fa fa-search" aria-hidden="true"></i></button>';
     $html .= '</div>'; //submit
     $html .= "</div>"; //container
     $html .= '<div class="thmk-woocommerce-search-result">';
