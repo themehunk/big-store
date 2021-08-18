@@ -29,7 +29,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Default yith and wpc plugin issue fixed.
 * Th variation swatches plugin pro compatible.
 * Draft post publish issue fixed.
-
+* out of stock serach issue fixed.
 
 = 1.6.3=
 * sidebar widget title font size fixed.
