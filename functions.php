@@ -114,13 +114,13 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
                 'name' => esc_html__( 'TH Variation Swatches', 'big-store' ),
                 'active_filename' => 'th-variation-swatches/th-variation-swatches.php',
             ),
-            'woo-smart-wishlist' => array(
-                 'name' => esc_html__( 'WPC Smart Wishlist for WooCommerce', 'big-store' ),
-                 'active_filename' => 'woo-smart-wishlist/wpc-smart-wishlist.php',
+            'yith-woocommerce-wishlist' => array(
+                 'name' => esc_html__( 'YITH WooCommerce Wishlist', 'big-store' ),
+                 'active_filename' => 'yith-woocommerce-wishlist/yith-woocommerce-wishlist.php',
              ),
-            'woo-smart-compare' => array(
-                 'name' => esc_html__( 'WPC Smart Compare for WooCommerce', 'big-store' ),
-                 'active_filename' => 'woo-smart-compare/wpc-smart-compare.php',
+            'yith-woocommerce-compare' => array(
+                 'name' => esc_html__( 'YITH WooCommerce Compare', 'big-store' ),
+                 'active_filename' => 'yith-woocommerce-compare/yith-woocommerce-compare.php',
              ),
             'lead-form-builder' => array(
                 'name' => esc_html__( 'Lead Form Builder', 'big-store' ),

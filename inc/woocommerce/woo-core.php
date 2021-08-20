@@ -207,7 +207,7 @@ if ( ! class_exists( 'Big_Store_Pro_Woocommerce_Ext' ) ) :
 					$classes[] = 'open-shadow-hover-' . esc_attr($shadow_hvr_style);
 				}	
 			}
-			if ( 'swap' === $hover_style && (!is_admin()) && !big_store_is_blog()){
+			if ( 'swap' === $hover_style && !is_page_template('frontpage.php') && (!is_admin()) && !big_store_is_blog()){
             global $product;
 			$attachment_ids = $product->get_gallery_image_ids();
 			if(count($attachment_ids) > '0'){
@@ -215,13 +215,14 @@ if ( ! class_exists( 'Big_Store_Pro_Woocommerce_Ext' ) ) :
 			  }
 			
 		    }
-		     if('slide' === $hover_style && (!is_admin()) && !big_store_is_blog()){
+		     if ( 'slide' === $hover_style && !is_page_template('frontpage.php') && (!is_admin()) && !big_store_is_blog()){
             global $product;
+
 			$attachment_ids = $product->get_gallery_image_ids();
 			if(count($attachment_ids) > '0'){
                 $classes[] ='big-store-slide-item-hover';
 			  }
-		
+		  
 		   }
 			return $classes;
 		}
