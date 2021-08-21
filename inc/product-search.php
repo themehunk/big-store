@@ -6,7 +6,7 @@ function big_store_product_search_box($cate = true)
     $html .= '<div class="thmk-woocommerce-search-wrap ' . $has_category . '">'; //wrap 
     $html .= '<div class="search-container">'; //container 
     $html .= '<div class="thmk-woocommerce-search-wrap-input">'; //input
-    $html .= '<input type="text" name="product-search-text" placeholder="' . esc_attr(get_theme_mod("search_box_text", "Search for Product"), "big-store") . '">';
+    $html .= '<input type="text" name="product-search-text" placeholder="' . esc_attr__('Search for Product', 'big-store') . '">';
     $html .= '</div>'; //input
     if ($cate) {
         $args = array(

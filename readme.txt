@@ -26,6 +26,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 = 1.6.5=
 * Gallery image issue fixed.
+* Update langauge file.
 
 = 1.6.4=
 * Woocommerce Image cropping issue fixed.
