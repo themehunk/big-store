@@ -8264,6 +8264,11 @@ header .mobile-nav-bar.sider.right {
   font-size: 16px;
 }
 
+/* Big Feature product image variation swatches */
+#thunk-feature-product-tab .thunk-product-col2 .thunk-woo-product-list .thunk-product-wrap .thunk-product .thunk-product-content .thvs_loop-available-attributes{
+  text-align: center;
+}
+
 
 /* Landscape*/
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
