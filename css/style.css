@@ -8268,8 +8268,18 @@ header .mobile-nav-bar.sider.right {
 #thunk-feature-product-tab .thunk-product-col2 .thunk-woo-product-list .thunk-product-wrap .thunk-product .thunk-product-content .thvs_loop-available-attributes{
   text-align: center;
 }
-
-
+.woocommerce .widget_big_store_tabbed_product_widget .thunk-product-hover a.th-button, 
+.woocommerce .widget_big_store_tabbed_product_widget .thunk-product-hover .thunk-wishlist a.add_to_wishlist, 
+.widget_big_store_tabbed_product_widget .thunk-quickview a, .widget_big_store_tabbed_product_widget .thunk-compare .compare-button a.compare.button,
+.woocommerce .widget_big_store_tabbed_product_widget .thunk-product-hover a.th-button:hover, 
+.woocommerce .widget_big_store_tabbed_product_widget .thunk-product-hover .thunk-wishlist a.add_to_wishlist:hover, 
+.widget_big_store_tabbed_product_widget .thunk-quickview a, .widget_big_store_tabbed_product_widget .thunk-compare .compare-button a.compare.button:hover{
+  color: #FFF;
+} 
+.thvs-swatches-catlog-left-style .thunk-product-col2-wrap .thvs_loop-available-attributes,
+.thvs-swatches-catlog-right-style .thunk-product-col2-wrap .thvs_loop-available-attributes{
+  text-align: center;
+}
 /* Landscape*/
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .thunk-slide .owl-stage-outer {
