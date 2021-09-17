@@ -25,8 +25,6 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 == Changelog ==
 = 1.6.7=
 * Add to cart button issue resolved
-
-= 1.6.7=
 * Checkout page search button issue fixed.
 
 = 1.6.6=
