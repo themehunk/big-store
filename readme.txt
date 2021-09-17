@@ -23,6 +23,8 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
+= 1.6.7=
+* Add to cart button issue resolved
 
 = 1.6.7=
 * Checkout page search button issue fixed.
@@ -131,12 +133,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= 1.6.6=
-* Big feature product big image variation swatches align center style added.
-* Woocommerce Image cropping issue fixed.
-* Default yith and wpc plugin issue fixed.
-* Th variation swatheces plugin pro compatible.
-* Draft post publish issue fixed.
+= 1.6.7=
+* Add to cart button issue resolved
 
 == Resources ==
  
