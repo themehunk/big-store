@@ -5601,7 +5601,7 @@ input[type="search"] {
   padding: 20px;
 }
 .woocommerce-checkout #search-button {
-  top: 15px;
+  top: 0;
 }
 .woocommerce-checkout .thunk-content-wrap {
   display: -webkit-flex;
