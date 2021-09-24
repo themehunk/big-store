@@ -280,9 +280,9 @@ if (!function_exists('big_store_below_header_markup')) {
 
                 </nav>
               <?php } else {
-                if ( class_exists( 'WooCommerce' ) && class_exists('TH_Advance_Product_Search')){
+                if ( class_exists('TH_Advance_Product_Search')){
                echo do_shortcode('[th-aps]');
-               }else {
+               }elseif ( !class_exists('TH_Advance_Product_Search') && is_user_logged_in()) {
                 $url = admin_url('themes.php?page=big-store');
                       echo '<a href="'.$url.'" target="_blank" class="plugin-active-msg">'.__('Please install th advance product search plugin','big-store').'</a>';
                }
@@ -392,9 +392,9 @@ if (!function_exists('big_store_main_header_markup')) {
                   </div>
                 </nav>
               <?php } else {
-                if ( class_exists( 'WooCommerce' ) && class_exists('TH_Advance_Product_Search')){
+                if ( class_exists('TH_Advance_Product_Search')){
                echo do_shortcode('[th-aps]');
-               }else {
+               }elseif ( !class_exists('TH_Advance_Product_Search') && is_user_logged_in()) {
                 $url = admin_url('themes.php?page=big-store');
                       echo '<a href="'.$url.'" target="_blank" class="plugin-active-msg">'.__('Please install th advance product search plugin','big-store').'</a>';
                }
@@ -418,9 +418,9 @@ if (!function_exists('big_store_main_header_markup')) {
 
             <div class="main-header-col2">
               <?php
-                if ( class_exists( 'WooCommerce' ) && class_exists('TH_Advance_Product_Search')){
+                if ( class_exists('TH_Advance_Product_Search')){
                echo do_shortcode('[th-aps]');
-               }else {
+               }elseif ( !class_exists('TH_Advance_Product_Search') && is_user_logged_in()) {
                 $url = admin_url('themes.php?page=big-store');
                       echo '<a href="'.$url.'" target="_blank" class="plugin-active-msg">'.__('Please install th advance product search plugin','big-store').'</a>';
                }
@@ -490,9 +490,9 @@ if (!function_exists('big_store_main_header_markup')) {
       <div class="container">
         <div class="search-close"><a class="search-close-btn"></a></div>
         <?php 
-        if ( class_exists( 'WooCommerce' ) && class_exists('TH_Advance_Product_Search')){
+        if ( class_exists('TH_Advance_Product_Search')){
                echo do_shortcode('[th-aps]');
-               }else {
+               }elseif ( !class_exists('TH_Advance_Product_Search') && is_user_logged_in()) {
                 $url = admin_url('themes.php?page=big-store');
                       echo '<a href="'.$url.'" target="_blank" class="plugin-active-msg">'.__('Please install th advance product search plugin','big-store').'</a>';
                }
@@ -731,9 +731,9 @@ if (!function_exists('big_store_sticky_header_markup')) {
       <div class="container">
         <div class="search-close"><a class="search-close-btn"></a></div>
         <?php 
-        if ( class_exists( 'WooCommerce' ) && class_exists('TH_Advance_Product_Search')){
+        if ( class_exists('TH_Advance_Product_Search')){
                echo do_shortcode('[th-aps]');
-               }else {
+               }elseif ( !class_exists('TH_Advance_Product_Search') && is_user_logged_in()) {
                 $url = admin_url('themes.php?page=big-store');
                       echo '<a href="'.$url.'" target="_blank" class="plugin-active-msg">'.__('Please install th advance product search plugin','big-store').'</a>';
                }

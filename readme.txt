@@ -135,8 +135,9 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= 1.6.7=
-* Add to cart button issue resolved
+= 1.6.8=
+* Th advance product search plugin added.
+* Checkout page search button issue fixed.
 
 == Resources ==
  

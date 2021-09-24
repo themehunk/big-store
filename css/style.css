@@ -8099,6 +8099,12 @@ header .mobile-nav-bar.sider.right {
 .thvs-swatches-catlog-right-style .thunk-product-col2-wrap .thvs_loop-available-attributes{
   text-align: center;
 }
+
+/*Th advance product search */
+a.plugin-active-msg{
+  color: #fff;
+}
+
 /* Landscape*/
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .thunk-slide .owl-stage-outer {
