@@ -110,6 +110,10 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
                 'name' => esc_html__( 'Woocommerce', 'big-store' ),
                 'active_filename' => 'woocommerce/woocommerce.php',
             ),
+            'th-advance-product-search' => array(
+                'name' => esc_html__( 'TH Advance Product Search', 'big-store' ),
+                'active_filename' => 'th-advance-product-search/th-advance-product-search.php',
+            ),
             'th-variation-swatches' => array(
                 'name' => esc_html__( 'TH Variation Swatches', 'big-store' ),
                 'active_filename' => 'th-variation-swatches/th-variation-swatches.php',

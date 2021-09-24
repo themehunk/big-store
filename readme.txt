@@ -4,7 +4,7 @@ Tags: e-commerce, blog, grid-layout, one-column, two-columns, three-columns, fou
 Requires at least: WordPress 5.3
 Requires PHP: 5.3
 Tested up to: 5.8.1
-Stable tag: 1.6.7
+Stable tag: 1.6.8
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -23,9 +23,13 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
+
+= 1.6.8=
+* Th advance product search plugin added.
+* Checkout page search button issue fixed.
+
 = 1.6.7=
 * Add to cart button issue resolved
-* Checkout page search button issue fixed.
 
 = 1.6.6=
 * Big feature product big image variation swatches align center style added.
