@@ -1,5 +1,4 @@
 <?php
-include_once 'product-search.php';
 /**
  * Header Function for big store theme.
  * 
@@ -281,9 +280,9 @@ if (!function_exists('big_store_below_header_markup')) {
 
                 </nav>
               <?php } else {
-                if (class_exists('WooCommerce')) {
-                  echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
-                }
+
+                echo big_store_th_advance_product_search();
+                
               } ?>
             </div>
             <?php if ($main_header_layout == 'mhdrdefault' || $main_header_layout == 'mhdrone') { ?>
@@ -390,9 +389,7 @@ if (!function_exists('big_store_main_header_markup')) {
                   </div>
                 </nav>
               <?php } else {
-                if (class_exists('WooCommerce')) {
-                  echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
-                }
+                echo big_store_th_advance_product_search();
               } ?>
             </div>
             <div class="main-header-col3">
@@ -412,9 +409,9 @@ if (!function_exists('big_store_main_header_markup')) {
             </div>
 
             <div class="main-header-col2">
-              <?php if (class_exists('WooCommerce')) {
-                echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
-              } ?>
+              <?php
+                echo big_store_th_advance_product_search();
+                ?>
             </div>
 
             <div class="main-header-col3">
@@ -479,9 +476,9 @@ if (!function_exists('big_store_main_header_markup')) {
     <div class="search-wrapper">
       <div class="container">
         <div class="search-close"><a class="search-close-btn"></a></div>
-        <?php if (class_exists('WooCommerce')) {
-          echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
-        } ?>
+        <?php 
+        echo big_store_th_advance_product_search();
+        ?>
       </div>
     </div>
   <?php  }
@@ -715,9 +712,9 @@ if (!function_exists('big_store_sticky_header_markup')) {
     <div class="search-wrapper">
       <div class="container">
         <div class="search-close"><a class="search-close-btn"></a></div>
-        <?php if (class_exists('WooCommerce')) {
-          echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
-        } ?>
+        <?php 
+        echo big_store_th_advance_product_search();
+        ?>
       </div>
     </div>
   <?php }
@@ -836,3 +833,14 @@ function big_store_cart_mobile_panel()
 <?php
 }
 add_action('big_store_below_header', 'big_store_cart_mobile_panel');
+
+//th advance product search
+function big_store_th_advance_product_search(){
+  if ( class_exists('TH_Advance_Product_Search')){
+               echo do_shortcode('[th-aps]');
+               }elseif ( !class_exists('TH_Advance_Product_Search') && is_user_logged_in()) {
+                $url = admin_url('themes.php?page=big-store');
+                      echo '<a href="'.$url.'" target="_blank" class="plugin-active-msg">'.__('Please install th advance product search plugin','big-store').'</a>';
+               }
+
+}
