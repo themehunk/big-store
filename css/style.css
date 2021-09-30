@@ -8100,10 +8100,40 @@ header .mobile-nav-bar.sider.right {
   text-align: center;
 }
 
-/*Th advance product search */
-a.plugin-active-msg{
-  color: #fff;
+
+/* Th advance product search plugin msg*/
+a.plugin-active-msg {
+    background-color: #5662eb;
+    display: block;
+    font-size: 14px;
+    padding: 5px;
+    color: #fff;
+    border-radius: 5px;
+    width: 60%;
+    margin-left: 20%;
 }
+
+.below-header-col2 a.plugin-active-msg {
+    background-color: #5662eb;
+    display: block;
+    font-size: 14px;
+    padding: 5px;
+    color: #fff;
+    border-radius: 5px;
+    width: 60%;
+    margin-left: 20%
+}
+
+a.plugin-active-msg:hover{
+text-decoration: underline !important;
+}
+.right .main-header-col2 a.plugin-active-msg{
+    text-align: center;
+}
+.search-wrapper .container a.plugin-active-msg{
+  text-align: center;
+  }
+
 
 /* Landscape*/
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
