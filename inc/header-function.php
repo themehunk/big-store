@@ -590,11 +590,11 @@ function big_store_header_icon()
       big_store_account();
       if (class_exists('WPCleverWoosw')) { ?>
         <a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>">
-          <i class="fa fa-heart-o" aria-hidden="true"></i><span class="tooltiptext"><?php echo esc_html('Wishlist', 'big-store'); ?></span></a>
+          <i class="fa fa-heart-o" aria-hidden="true"></i></a>
       <?php }
       if (class_exists('YITH_WCWL') && (!class_exists('WPCleverWoosw'))) { ?>
         <a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>">
-          <i class="fa fa-heart-o" aria-hidden="true"></i><span class="tooltiptext"><?php echo esc_html('Wishlist', 'big-store'); ?></span></a>
+          <i class="fa fa-heart-o" aria-hidden="true"></i></a>
       <?php }
 
 

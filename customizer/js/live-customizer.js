@@ -419,6 +419,15 @@ wp.customize('big_store_blog_read_more_txt', function(value){
              $('a.thunk-readmore.button ').text(to);
          });
      });
+
+//tooltip option
+//big_store_css('big_store_add_to_cart_tooltip_txt','background', '.tooltip-show-with-title');
+wp.customize('big_store_add_to_cart_tooltip_txt', function(value){
+         value.bind(function(to){
+             $('.tooltip-show-with-title ').text(to);
+         });
+     });
+
 /****************/
 // footer
 /****************/
@@ -585,6 +594,11 @@ big_store_css( 'big_store_sub_menu_lnk_hvr_clr','color', '.big-store-menu li ul.
 //move to top
 big_store_css( 'big_store_move_to_top_bg_clr','background', '#move-to-top');
 big_store_css( 'big_store_move_to_top_icon_clr','color', '#move-to-top');
+
+//tooltip option
+big_store_css( 'big_store_tooltip_bg_clr','background-color', 'div.tooltip-show-with-title');
+big_store_css( 'big_store_tooltip_text_clr','color', 'div.tooltip-show-with-title');
+
 
 //Slider Bg
 big_store_css('big_store_lay3_bg_img_ovrly','background', '.thunk-slider-section.slide-layout-3:before');
