@@ -3,6 +3,7 @@
 /********************************/
 
 (function ($) {
+
   var BigStoreWooLib = {
     init: function () {
       this.bindEvents();
@@ -22,6 +23,16 @@
       $this.cartopen();
       $this.woccomerce_tab();
       $this.product_descr_excerpt();
+      $this.tooltip_option();
+    },
+
+    tooltip_option: function () {
+      $(document).ready(function () {
+        $(".account").attr("th-tooltip", 'Account');
+        $(".whishlist").attr("th-tooltip", big_store.big_store_tooltip_wishlist);
+        $(".cart-icon a.cart-contents i").attr("th-tooltip", big_store.big_store_tooltip_add_to_cart);
+        $(".add_to_cart_button").attr("th-tooltip", big_store.big_store_tooltip_add_to_cart);
+      });
     },
     woccomerce_tab: function () {
       $(document).ready(function () {
@@ -467,6 +478,10 @@
                   },
                 },
               });
+
+
+              
+
               $(".thunk-product-tab-section .thunk-loadContainer").css(
                 "display",
                 "none"

@@ -177,6 +177,19 @@ if($big_store_color_scheme==false){
     line-height: 24px;
     max-height: inherit;}";
 }
+
+//tooltip bg color and text color
+
+$big_store_tooltip_bg_clr = esc_html(get_theme_mod('big_store_tooltip_bg_clr'));
+$big_store_tooltip_text_clr = esc_html(get_theme_mod('big_store_tooltip_text_clr'));
+$big_store_style.=".tooltip-show-with-title{background-color:{$big_store_tooltip_bg_clr}}
+        .tooltip-show-with-title{color:{$big_store_tooltip_text_clr}}
+        .tooltip-show-with-title{border:{$big_store_tooltip_bg_clr}}
+        .tooltip-show-with-title .pointer_{fill:{$big_store_tooltip_bg_clr}}
+      .span.th-ttt {color:{$big_store_tooltip_text_clr}}";
+
+
+
 //Hide yith if WPC SMART Icon 
 
 if( (class_exists( 'YITH_WCWL' )) ){

@@ -344,9 +344,19 @@ if ( ! class_exists( 'Big_Store_Pro_Woocommerce_Ext' ) ) :
 		/****************/
         // add to compare
         /****************/
+
+
         function big_store_add_to_compare($pid=''){
+        	$big_store_tooltip_enable = get_theme_mod('big_store_tooltip_enable', false);
+
+        	 if ($big_store_tooltip_enable == true) {
+
+        	$big_store_compare_tooltip = esc_html(get_theme_mod( 'big_store_compare_tooltip_txt' ));
+
+        }else {$big_store_compare_tooltip ='';}
+
         if( is_plugin_active('yith-woocommerce-compare/init.php') ){
-          return '<div class="thunk-compare"><span class="compare-list"><div class="woocommerce product compare-button"><a href="'.esc_url(home_url()).'?action=yith-woocompare-add-product&id='.esc_attr($pid).'" class="compare button" data-product_id="'.esc_attr($pid).'" rel="nofollow">Compare</a></div></span></div>';
+          return '<div class="thunk-compare"><span class="compare-list"><div class="woocommerce product compare-button"><a href="'.esc_url(home_url()).'?action=yith-woocompare-add-product&id='.esc_attr($pid).'" th-tooltip="'.$big_store_compare_tooltip.'" class="compare button" data-product_id="'.esc_attr($pid).'" rel="nofollow">Compare</a></div></span></div>';
 
            }
         }
@@ -358,13 +368,15 @@ if ( ! class_exists( 'Big_Store_Pro_Woocommerce_Ext' ) ) :
             $button='';
 			$product_id = $product->get_id();
 
+			$big_store_quickview_tooltip = esc_html(get_theme_mod( 'big_store_quickview_tooltip_txt' ));
+
 			// Get label.
 			$label = __( 'Quick View', 'big-store' );
 
 			$button.='<div class="thunk-quik">
-			             <div class="thunk-quickview">
+			             <div class="thunk-quickview" th-tooltip="'.$big_store_quickview_tooltip.'">
                                <span class="quik-view">
-                                   <a href="#" class="opn-quick-view-text" data-product_id="' . esc_attr($product_id). '">
+                                   <a href="#" class="opn-quick-view-text"  data-product_id="' . esc_attr($product_id). '">
                                       <span>'.esc_html($label).'</span>
                                     
                                    </a>
