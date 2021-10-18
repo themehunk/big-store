@@ -69,6 +69,27 @@ $wp_customize->add_control(
 
 
 // add to cart Tool Tip text
+
+$wp_customize->add_setting('big_store_account_tooltip_txt', array(
+            'default'           =>'Account',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' =>'big_store_sanitize_text',
+            'transport'         => 'postMessage',
+        )
+    );
+    $wp_customize->add_control('big_store_account_tooltip_txt', array(
+            'type'        => 'text',
+            'section'     => 'big-store-woo-tooltip-page',
+            'label'       => __( 'Add To Cart Tooltip Text', 'big-store' ),
+            'settings' => 'big_store_account_tooltip_txt',
+             'priority'   =>11,
+            
+        )
+    );
+
+
+
+
     $wp_customize->add_setting('big_store_add_to_cart_tooltip_txt', array(
             'default'           =>'Add To Cart',
             'capability'        => 'edit_theme_options',

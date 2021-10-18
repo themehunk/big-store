@@ -597,6 +597,7 @@ big_store_css( 'big_store_move_to_top_icon_clr','color', '#move-to-top');
 
 //tooltip option
 big_store_css( 'big_store_tooltip_bg_clr','background-color', 'div.tooltip-show-with-title');
+big_store_css( 'big_store_tooltip_bg_clr','fill', '.tooltip-show-with-title .pointer_');
 big_store_css( 'big_store_tooltip_text_clr','color', 'div.tooltip-show-with-title');
 
 

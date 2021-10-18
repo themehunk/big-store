@@ -10,6 +10,8 @@
     },
     bindEvents: function () {
       var $this = this;
+            $this.tooltip_option();
+
       $this.listGridView();
       $this.OffCanvas();
       $this.cartDropdown();
@@ -23,35 +25,112 @@
       $this.cartopen();
       $this.woccomerce_tab();
       $this.product_descr_excerpt();
-      $this.tooltip_option();
+      $this.tooltip();
     },
 
     tooltip_option: function () {
+        // header tooltip
+        if(big_store.header_tt_enable){
 
-console.log('big_store->',big_store);
-      
-      if(big_store.big_store_hdr_tp_enable != ''){
-        $(document).ready(function () {
-        $(".account").attr("th-tooltip", 'Account');
-        $(".header-icon a.prd-search i").attr("th-tooltip", 'Search'); 
-        $(".cart-icon a.cart-contents i").attr("th-tooltip", big_store.big_store_tooltip_add_to_cart);
-        $(".whishlist").attr("th-tooltip", big_store.big_store_tooltip_wishlist);
-        $(".cart-icon a.cart-contents i").attr("th-tooltip", big_store.big_store_tooltip_add_to_cart);
-        $(".header-icon .add_to_cart_button").attr("th-tooltip", big_store.big_store_tooltip_add_to_cart);
 
-      });
+                        setTimeout(() => {
+
+           if($('.cart-contents').length && big_store.tt_add_to_cart){
+             $(".header-support-icon .cart-contents i").attr("th-tooltip", big_store.tt_add_to_cart);
+          }
+                        }, 1000);
+
+
+          if($('.account').length && big_store.tt_account){
+             $(".header-support-icon .account").attr("th-tooltip", big_store.tt_account);
+          }
+
+
+            if($('.whishlist').length && big_store.tt_wishlist){
+            $(".header-support-icon .whishlist").attr("th-tooltip", big_store.tt_wishlist);
+          }
+
+        }
+              // page tootle tip
+        if(big_store.page_tt_enable){
+
+            if($('.add_to_cart_button').length && big_store.tt_add_to_cart){
+             $(".add_to_cart_button").attr("th-tooltip", big_store.tt_add_to_cart);
+          }
+
+          if($('.opn-quick-view-text').length && big_store.tt_quickview){
+            $(".opn-quick-view-text").attr("th-tooltip", big_store.tt_quickview);
+          }
+
+          if($('.compare').length && big_store.tt_compare){
+            $(".compare").attr("th-tooltip", big_store.tt_compare);
+          }
+
+          if($('.add_to_wishlist').length && big_store.tt_wishlist){
+            $(".add_to_wishlist").attr("th-tooltip", big_store.tt_wishlist);
+          }
+        }
+    },
+
+    tooltip: function(){
+              setTimeout(() => {
+
+    // fn start 
+          let initTooltip = $("[th-tooltip]");
+      if (initTooltip.length) {
+        // keep tool tip in document
+        let tooltipHtml = '<div class="tooltip-show-with-title">';
+        tooltipHtml += '<span class="th-ttt"></span>';
+        tooltipHtml +=
+          '<svg class="pointer_" viewBox="0 0 1280 70" preserveAspectRatio="none">';
+        tooltipHtml += '<polygon points="1280,70 0,70 640,0 "></polygon>';
+        tooltipHtml += "</svg>";
+        tooltipHtml += "</div>";
+          let keepToolTip = $(".tooltip-show-with-title");
+          if (keepToolTip.length == 0) {
+            $("body").append(tooltipHtml);
+          }
+
+        $(document).on(
+          {
+            mouseenter: function () {
+
+              let element = $(this);
+
+              let element_ = element[0].getBoundingClientRect();
+              let tooltip_ = $(".tooltip-show-with-title");
+              if(tooltip_.length){
+                            //text and content
+                            let title_ = element.attr("th-tooltip");
+                            tooltip_.find(".th-ttt").text(title_);
+                            // style and dimensions
+                            // calculate top
+                            let getScrollTop = $(window).scrollTop();
+                            let tooltip = tooltip_[0].getBoundingClientRect();
+                            let TopMargin = element_.top - (tooltip.height + 12);
+                            TopMargin = getScrollTop + TopMargin;
+                            // calculate left
+                            let getTTwidth = tooltip.width / 2;
+                            let elementWidth = element_.width / 2;
+                            let leftMargin = element_.left - (getTTwidth - elementWidth);
+                            tooltip_.addClass("active");
+                            tooltip_.css({ top: TopMargin, left: leftMargin });
+                          }
+            },
+            mouseleave: function () {
+              let element_ = $(this);
+              let tooltip = $(".tooltip-show-with-title");
+              tooltip.removeClass("active");
+            },
+          },
+          "[th-tooltip]"
+        ); 
       }
 
-      if(big_store.big_store_page_tp_enable == ''){
-        $(document).ready(function () {
-          $(".add_to_cart_button").removeAttr("th-tooltip");
-          $(".thunk-quickview").removeAttr("th-tooltip");
-          $(".compare.button").removeAttr("th-tooltip");
-          $(".thunk-wishlist").removeAttr("th-tooltip");
+              }, 1000);
 
-          });
-      } 
-    },
+    // fn end 
+  },
     woccomerce_tab: function () {
       $(document).ready(function () {
         if ($(".description_tab").hasClass("active")) {
