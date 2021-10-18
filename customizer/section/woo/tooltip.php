@@ -7,16 +7,28 @@ if ( ! class_exists( 'WooCommerce' ) ){
 /***************/
 
 
-$wp_customize->add_setting('big_store_tooltip_enable', array(
+$wp_customize->add_setting('big_store_hdr_tp_enable', array(
                 'default'               => true,
                 'sanitize_callback'     => 'big_store_sanitize_checkbox',
             ) );
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize,'big_store_tooltip_enable', array(
-                'label'         => esc_html__('Enable Tooltip.', 'big-store'),
+$wp_customize->add_control( new WP_Customize_Control( $wp_customize,'big_store_hdr_tp_enable', array(
+                'label'         => esc_html__('Header Tooltip Enable.', 'big-store'),
                 'type'          => 'checkbox',
                 'section'       => 'big-store-woo-tooltip-page',
-                'settings'      => 'big_store_tooltip_enable',
+                'settings'      => 'big_store_hdr_tp_enable',
                 'priority'   =>1,
+            ) ) );
+
+$wp_customize->add_setting('big_store_page_tp_enable', array(
+                'default'               => false,
+                'sanitize_callback'     => 'big_store_sanitize_checkbox',
+            ) );
+$wp_customize->add_control( new WP_Customize_Control( $wp_customize,'big_store_page_tp_enable', array(
+                'label'         => esc_html__('Page Tooltip Enable.', 'big-store'),
+                'type'          => 'checkbox',
+                'section'       => 'big-store-woo-tooltip-page',
+                'settings'      => 'big_store_page_tp_enable',
+                'priority'   =>2,
             ) ) );
 
 
@@ -96,7 +108,7 @@ $wp_customize->add_control(
 
     // Quickview Tool Tip text
     $wp_customize->add_setting('big_store_quickview_tooltip_txt', array(
-            'default'           =>'Qick View',
+            'default'           =>'Quickview',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' =>'big_store_sanitize_text',
             'transport'         => 'postMessage',

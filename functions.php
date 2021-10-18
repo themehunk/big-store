@@ -298,7 +298,7 @@ function big_store_scripts(){
     wp_enqueue_script("jquery-effects-core",array( 'jquery' ));
     wp_enqueue_script( 'jquery-ui-autocomplete',array( 'jquery' ),'',true );
     wp_enqueue_script('imagesloaded');
-    wp_enqueue_script( 'th-tooltip-js', BIG_STORE_THEME_URI . 'third-party/th-tooltip/th-tooltip.js', array( 'jquery' ), '1.0.0', true  );
+     wp_enqueue_script( 'th-tooltip-js', BIG_STORE_THEME_URI . 'third-party/th-tooltip/th-tooltip.js', array( 'jquery' ), '1.0.0', true  );
     wp_enqueue_script('big-store-menu-js', BIG_STORE_THEME_URI .'js/big-store-menu.js', array( 'jquery' ), '1.0.0', true );
    
     wp_enqueue_script('owl.carousel-js', BIG_STORE_THEME_URI .'js/owl.carousel.js', array( 'jquery' ), '1.0.1', true );
@@ -307,10 +307,13 @@ function big_store_scripts(){
 
     wp_enqueue_script( 'big-store-custom-js', BIG_STORE_THEME_URI .'js/big-store-custom.js', array( 'jquery' ), BIG_STORE_THEME_VERSION , true );
      $bigstorelocalize = array(
-     			'big_store_tooltip_add_to_cart' =>  get_theme_mod( 'big_store_add_to_cart_tooltip_txt'),
-     			'big_store_tooltip_wishlist' =>  get_theme_mod( 'big_store_wishlist_tooltip_txt'),
-     			'big_store_tooltip_quickview' =>  get_theme_mod( 'big_store_quickview_tooltip_txt'),
-     			'big_store_tooltip_compare' =>  get_theme_mod( 'big_store_compare_tooltip_txt'),
+
+     			'big_store_hdr_tp_enable' => get_theme_mod('big_store_hdr_tp_enable'),
+     			'big_store_page_tp_enable' => get_theme_mod('big_store_page_tp_enable'),
+     			'big_store_tooltip_add_to_cart' =>  get_theme_mod( 'big_store_add_to_cart_tooltip_txt', __( 'Add To Cart', 'big-store' )),
+     			'big_store_tooltip_wishlist' =>  get_theme_mod( 'big_store_wishlist_tooltip_txt', __( 'Wishlist', 'big-store' )),
+     			'big_store_tooltip_quickview' =>  get_theme_mod( 'big_store_quickview_tooltip_txt', __( 'Quickview', 'big-store' )),
+     			'big_store_tooltip_compare' =>  get_theme_mod( 'big_store_compare_tooltip_txt', __( 'Compare', 'big-store' )),
 				'big_store_top_slider_optn' => get_theme_mod('big_store_top_slider_optn',false),
 				'big_store_move_to_top_optn' => get_theme_mod('big_store_move_to_top',false),
 				'big_store_sticky_header_effect' => get_theme_mod('big_store_sticky_header_effect','scrldwmn'),

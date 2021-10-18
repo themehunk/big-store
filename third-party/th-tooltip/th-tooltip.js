@@ -2,6 +2,11 @@
 //tootip v 1.0
 /****************/
 (function ($) {
+
+/// call here 
+// tool_tip
+
+
   th_tooltip();
   function th_tooltip(){
     // fn start 

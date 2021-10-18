@@ -27,12 +27,30 @@
     },
 
     tooltip_option: function () {
-      $(document).ready(function () {
+
+console.log('big_store->',big_store);
+      
+      if(big_store.big_store_hdr_tp_enable != ''){
+        $(document).ready(function () {
         $(".account").attr("th-tooltip", 'Account');
+        $(".header-icon a.prd-search i").attr("th-tooltip", 'Search'); 
+        $(".cart-icon a.cart-contents i").attr("th-tooltip", big_store.big_store_tooltip_add_to_cart);
         $(".whishlist").attr("th-tooltip", big_store.big_store_tooltip_wishlist);
         $(".cart-icon a.cart-contents i").attr("th-tooltip", big_store.big_store_tooltip_add_to_cart);
-        $(".add_to_cart_button").attr("th-tooltip", big_store.big_store_tooltip_add_to_cart);
+        $(".header-icon .add_to_cart_button").attr("th-tooltip", big_store.big_store_tooltip_add_to_cart);
+
       });
+      }
+
+      if(big_store.big_store_page_tp_enable == ''){
+        $(document).ready(function () {
+          $(".add_to_cart_button").removeAttr("th-tooltip");
+          $(".thunk-quickview").removeAttr("th-tooltip");
+          $(".compare.button").removeAttr("th-tooltip");
+          $(".thunk-wishlist").removeAttr("th-tooltip");
+
+          });
+      } 
     },
     woccomerce_tab: function () {
       $(document).ready(function () {
