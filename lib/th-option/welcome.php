@@ -36,7 +36,7 @@
 <div class="theme_link">
 
     <h3><?php _e('Documentation','big-store'); ?><!-- <php echo $theme_config['plugin_title']; ?> --></h3>
-    <p><?php _e('Our WordPress Theme is well Documented, you can go with our Documentation and learn to customize Big Store Theme','big-store'); ?></p>
+    <p><?php _e('Our WordPress Theme is well documented, you can go with our documentation and learn to customize Big Store Theme','big-store'); ?></p>
     <p><a target="_blank" href="https://themehunk.com/docs/big-store/"><?php _e(' Go to docs','big-store'); ?></a></p>
 
     
@@ -51,7 +51,7 @@
 <!--- tab second -->
 <div class="theme_link">
     <h3><?php _e('Customize Your Website','big-store'); ?><!-- <php echo $theme_config['plugin_title']; ?> --></h3>
-    <p><?php _e('Onelinelite theme support live customizer for home page set up. Everything visible at home page can be changed through customize panel','big-store'); ?></p>
+    <p><?php _e('Big Store theme support live customizer for home page set up. Everything visible at home page can be changed through customize panel','big-store'); ?></p>
     <p>
     <a href="<?php echo admin_url('customize.php'); ?>" class="button button-primary"><?php _e("Start Customize","big-store"); ?></a>
     </p>
