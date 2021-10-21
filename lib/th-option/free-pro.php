@@ -240,7 +240,7 @@
                         </div>
                      </td>
                      <td class="status upsell"><?php _e('Get access to all Pro features','big-store'); ?> </td>
-                     <td class="status success"><a href="https://themehunk.com/product/big-store-pro/" target="_blank" rel="external noreferrer noopener" class="components-button is-primary"><?php _e('Get BigStore Pro Now','big-store'); ?></a></td>
+                     <td class="status success"><a href="https://themehunk.com/product/big-store-pro/" target="_blank" rel="external noreferrer noopener" class="components-button is-primary"><?php _e('Get Big Store Pro Now','big-store'); ?></a></td>
                   </tr>
 
 

@@ -139,12 +139,12 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
             'yith-woocommerce-wishlist' => array(
                  'name' => esc_html__( 'YITH WooCommerce Wishlist', 'big-store' ),
                   'img' => 'icon-128x128.jpg',
-                 'active_filename' => 'yith-woocommerce-wishlist/yith-woocommerce-wishlist.php',
+                 'active_filename' => 'yith-woocommerce-wishlist/init.php',
              ),
             'yith-woocommerce-compare' => array(
                  'name' => esc_html__( 'YITH WooCommerce Compare', 'big-store' ),
                   'img' => 'icon-128x128.jpg',
-                 'active_filename' => 'yith-woocommerce-compare/yith-woocommerce-compare.php',
+                 'active_filename' => 'yith-woocommerce-compare/init.php',
              ),
 
             'themehunk-megamenu-plus' => array(
