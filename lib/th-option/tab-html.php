@@ -58,9 +58,9 @@
                 <div class="rcp theme_link th-row">
                 
                 <div class="title-plugin">
-                <h3><?php _e('Click Here To import Demo Content','big-store'); ?></h3>
+                <h3><?php _e('Click Here To Import Demo Content','big-store'); ?></h3>
 				 
-				 <p> <?php _e('You need to Install required plugins like- Hunk Companion, WooCommerce and One click demo import plugin. After installing required plugins Import Butoon will activate.', 'big-store'); ?></p>
+				 <p> <?php _e('You need to Install required plugins like- Themehunk Customizer, WooCommerce and One click demo import plugin. After installing required plugins import button will activate.', 'big-store'); ?></p>
               <a class="button disabled importdemo"><?php _e( 'Import Demo', 'big-store' ); ?></a>
 				 
              </div>
