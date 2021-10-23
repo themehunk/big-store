@@ -353,6 +353,7 @@ function big_store_scripts(){
 				'big_store_sticky_header_effect' => get_theme_mod('big_store_sticky_header_effect','scrldwmn'),
 				'big_store_slider_speed' => get_theme_mod('big_store_slider_speed','3000'),
 				'big_store_rtl' => (bool)get_theme_mod('big_store_rtl'),
+				'mobile_menuclose' => __('Close','big-store'),
 				
 			);
     wp_localize_script( 'big-store-custom-js', 'big_store',  $bigstorelocalize);
