@@ -27,6 +27,7 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
 		 * Make theme available for translation.
 		 */
 		load_theme_textdomain( 'big-store', get_template_directory() . '/languages' );
+
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 		/*
