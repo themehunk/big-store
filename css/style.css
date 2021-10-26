@@ -8214,6 +8214,10 @@ text-decoration: underline !important;
   }
 }
 @media screen and (max-width: 1024px) {
+  .thunk-icon-market #themehunk-megamenu-wrap-big-store-main-menu{
+display:inline-flex;
+}
+
   header .mobile-nav-bar.sider.left,
   header .mobile-nav-bar.sider.right {
     display: block;
@@ -10115,6 +10119,31 @@ text-decoration: underline !important;
     .price {
     font-size: 13px;
   }
+
+  #bigstore-mobile-bar .mega-menu-themehunk-megamenu-toggle .mega-toggle-blocks-right {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    margin-top: 5px;
+    margin-right: 0!important;
+}
+
+#bigstore-mobile-bar .mega-menu-themehunk-megamenu-toggle {
+    display: block;
+    background:none;
+}
+
+#bigstore-mobile-bar #themehunk-megamenu-wrap-big-store-main-menu #themehunk-megamenu-big-store-main-menu > li.themehunk-megamenu-menu-item > a.themehunk-megamenu-menu-link{
+  align-items: flex-start;
+}
+
 }
 @media screen and (max-width: 550px) {
   .main-header-col3 {
@@ -10212,6 +10241,8 @@ text-decoration: underline !important;
   .thmk-woocommerce-search-wrap .thmk-woocommerce-search-result {
 width: 100%;
   }
+
+
 }
 
 @media screen and (max-width: 350px) {
