@@ -416,7 +416,11 @@ if (!function_exists('big_store_main_header_markup')) {
 
             <div class="main-header-col3">
               <div class="thunk-icon-market">
-                <div class="menu-toggle">
+                <?php 
+                if(is_plugin_active('themehunk-megamenu-plus/themehunk-megamenu.php')){ 
+                       big_store_main_nav_menu();
+                    }else{ ?>   
+                  <div class="menu-toggle">
                   <button type="button" class="menu-btn" id="menu-btn">
                     <div class="btn">
                       <span class="icon-bar"></span>
@@ -425,6 +429,7 @@ if (!function_exists('big_store_main_header_markup')) {
                     </div>
                   </button>
                 </div>
+                <?php } ?>
                 <div class="header-support-wrap">
                   <div class="header-support-icon">
                     <?php if (class_exists('WPCleverWoosw')) { ?>
@@ -742,11 +747,17 @@ function bigstore_mobile_navbar()
           <li><a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
         <?php } ?>
         <li>
-          <a href="#" class="menu-btn" id="mob-menu-btn">
+          <?php
+         if(is_plugin_active( 'themehunk-megamenu-plus/themehunk-megamenu.php')) { 
+         big_store_main_nav_menu();
+            }else{  ?>
+            
+             <a href="#" class="menu-btn" id="mob-menu-btn">
 
             <i class="icon fa fa-bars" aria-hidden="true"></i>
-
+            
           </a>
+       <?php  }?>
 
         </li>
         <li><?php big_store_account(); ?></li>
