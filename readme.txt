@@ -23,6 +23,10 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
+
+= 1.7.5=
+* Th advance product search plugin url fixed.
+
 = 1.7.4=
 * Themehunk Mega menu plugin Competible.
 
