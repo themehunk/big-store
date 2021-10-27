@@ -41,7 +41,7 @@ function tab_constant(){
     $tab_array = array();
     $tab_array['header'] = array('theme_brand' => __('ThemeHunk','big-store'),
     'theme_brand_url' => esc_url($theme_data->get( 'AuthorURI' )),
-    'welcome'=>sprintf(esc_html__('Welcome to %1s', 'big-store'), esc_html__($theme_data->get( 'Name' )), $theme_data->get( 'Version' ) ),
+    'welcome'=>sprintf(esc_html__('Welcome To %1s Theme', 'big-store'), esc_html__($theme_data->get( 'Name' )), $theme_data->get( 'Version' ) ),
     'welcome_desc' => esc_html__($theme_data->get( 'Name' ).' is an eCommerce WordPress theme specially made for shopping websites.', 'big-store' ),
     'v'=> 'Version '.$theme_data->get( 'Version' )
     );

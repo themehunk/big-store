@@ -29,7 +29,7 @@
 
 <div class="theme_link">
     <h3><?php _e('Join Group','big-store'); ?></h3>
-    <p><?php _e("Please Join Our Facebook Group",'big-store'); ?></p>
+    <p> <?php _e('Join the community of friendly ThemeHunk users. Get connected, share opinion, ask questions and help each other !','big-store');?></p> 
 
     <a href="https://www.facebook.com/groups/themehunk" target="_blank" rel="external noreferrer noopener" class="facebook-gropup is-link"><span class="dashicon dashicons dashicons-facebook-alt"></span><span>
         <?php _e(' Join our Facebook Group','big-store'); ?></span></a>
