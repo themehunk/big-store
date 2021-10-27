@@ -440,7 +440,7 @@ function big_store_not_a_shop_page() {
 // product category list
 //************************/
 function big_store_product_list_categories( $args = '' ){
-$term = get_theme_mod('big_store_exclde_category');
+$term = get_theme_mod('big_store_exclde_category','');
 if(!empty($term[0])){
   $exclude_id = $term;
   }else{
@@ -474,12 +474,18 @@ $defaults = array(
         echo '<ul class="product-cat-list thunk-product-cat-list" data-menu-style="vertical">'.$html.'</ul>';
   }
 function big_store_product_list_categories_mobile( $args = '' ){
+  $term = get_theme_mod('big_store_exclde_category','');
+if(!empty($term[0])){
+  $exclude_id = $term;
+  }else{
+  $exclude_id = '';
+ }
     $defaults = array(
         'child_of'            => 0,
         'current_category'    => 0,
         'depth'               => 5,
         'echo'                => 0,
-        'exclude'             => '',
+        'exclude'             => $exclude_id,
         'exclude_tree'        => '',
         'feed'                => '',
         'feed_image'          => '',
