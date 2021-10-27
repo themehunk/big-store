@@ -24,7 +24,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 == Changelog ==
 = 1.7.6=
-* Exclude categry in mobile issue resolved.
+* Exclude category in mobile issue resolved.
 
 = 1.7.5=
 * Th advance product search plugin url issue fixed.
@@ -159,7 +159,7 @@ Initial release
 
 == Upgrade Notice ==
 = 1.7.6=
-* Exclude categry in mobile issue resolved.
+* Exclude category in mobile issue resolved.
 
 == Resources ==
  
