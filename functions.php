@@ -104,17 +104,11 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
          // Recommend plugins
         add_theme_support( 'recommend-plugins', array(
 
-        	'lead-form-builder' => array(
-                'name' => esc_html__( 'Lead Form Builder', 'big-store' ),
+        	'themehunk-customizer' => array(
+                'name' => esc_html__( 'Themehunk Customizer (Highly Recommended)', 'big-store' ),
                  'img' => 'icon-128x128.png',
-                'active_filename' => 'lead-form-builder/lead-form-builder.php',
+                'active_filename' => 'themehunk-customizer/themehunk-customizer.php',
             ),
-            'wp-popup-builder' => array(
-                'name' => esc_html__( 'WP Popup Builder – Popup Forms & Newsletter', 'big-store' ),
-                 'img' => 'icon-128x128.png',
-                'active_filename' => 'wp-popup-builder/wp-popup-builder.php',
-            ), 
-
             'th-advance-product-search' => array(
             'name' => esc_html__( 'TH Advance Product Search', 'big-store' ),
             'img' => 'icon-128x128.gif',
@@ -125,12 +119,16 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
                  'img' => 'icon-128x128.gif',
                 'active_filename' => 'th-variation-swatches/th-variation-swatches.php',
             ),
-
-             'themehunk-customizer' => array(
-                'name' => esc_html__( 'Themehunk Customizer', 'big-store' ),
+            'lead-form-builder' => array(
+                'name' => esc_html__( 'Lead Form Builder', 'big-store' ),
                  'img' => 'icon-128x128.png',
-                'active_filename' => 'themehunk-customizer/themehunk-customizer.php',
+                'active_filename' => 'lead-form-builder/lead-form-builder.php',
             ),
+            'wp-popup-builder' => array(
+                'name' => esc_html__( 'WP Popup Builder – Popup Forms & Newsletter', 'big-store' ),
+                 'img' => 'icon-128x128.png',
+                'active_filename' => 'wp-popup-builder/wp-popup-builder.php',
+            ), 
             'woocommerce' => array(
                 'name' => esc_html__( 'Woocommerce', 'big-store' ),
                  'img' => 'icon-128x128.png',
