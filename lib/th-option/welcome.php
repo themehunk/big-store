@@ -1,8 +1,14 @@
 
 <!--- tab first -->
 <div class="theme_link">
-    <h3><?php _e('Setup Home Page','big-store'); ?><!-- <php echo $theme_config['plugin_title']; ?> --></h3>
-    <p><?php _e('Click button to set theme default home page','big-store'); ?></p>
+    <h3><?php _e('1. Install Recommended Plugins','big-store'); ?></h3>
+    <p><?php _e('We highly Recommend to install ThemeHunk Customizer plugin to get all customization options in Big Store theme. Also install recommended plugins available in recommended tab.','big-store'); ?></p>
+</div>
+<div class="theme_link">
+    <h3><?php _e('2. Setup Home Page','big-store'); ?><!-- <php echo $theme_config['plugin_title']; ?> --></h3>
+        <p><?php _e('To set up the HomePage in Big Store theme, Just follow the below given Instructions.','big-store'); ?> </p>
+<p><?php _e('Go to Wp Dashboard > Pages > Add New > Create a Page using “Home Page Template” available in Page attribute.','big-store'); ?> </p>
+<p><?php _e('Now go to Settings > Reading > Your homepage displays > A static page (select below) and set that page as your homepage.','big-store'); ?> </p>
      <p>
         <?php
 		if($this->_check_homepage_setup()){
@@ -20,28 +26,15 @@
         }
         ?>
         <button style="<?php echo $Bstyle; ?>"; class="button activate-now <?PHP echo $class; ?>"><?php _e($btn_text,'big-store'); ?></button>
-        <a style="<?php echo $style; ?>";  target="_blank" href="<?php echo get_home_url(); ?>" class="button alink button-primary"><?php _e('View Home Page','big-store'); ?></a>
 		
          </p>
 		 	 
 		 
     <p>
-        <a target="_blank" href="https://themehunk.com/docs/big-store/#homepage-setting"><?php _e('Manually Setup','big-store'); ?></a>
+        <a target="_blank" href="https://themehunk.com/docs/big-store/#homepage-setting" class="button"><?php _e('Go to Doc','big-store'); ?></a>
     </p>
 </div>
 
-
-
-<!--- tab second -->
-<div class="theme_link">
-
-    <h3><?php _e('Documentation','big-store'); ?><!-- <php echo $theme_config['plugin_title']; ?> --></h3>
-    <p><?php _e('Our WordPress Theme is well documented, you can go with our documentation and learn to customize Big Store Theme','big-store'); ?></p>
-    <p><a target="_blank" href="https://themehunk.com/docs/big-store/"><?php _e(' Go to docs','big-store'); ?></a></p>
-
-    
-    
-</div>
 <!--- tab third -->
 
 
@@ -50,7 +43,7 @@
 
 <!--- tab second -->
 <div class="theme_link">
-    <h3><?php _e('Customize Your Website','big-store'); ?><!-- <php echo $theme_config['plugin_title']; ?> --></h3>
+    <h3><?php _e('3. Customize Your Website','big-store'); ?><!-- <php echo $theme_config['plugin_title']; ?> --></h3>
     <p><?php _e('Big Store theme support live customizer for home page set up. Everything visible at home page can be changed through customize panel','big-store'); ?></p>
     <p>
     <a href="<?php echo admin_url('customize.php'); ?>" class="button button-primary"><?php _e("Start Customize","big-store"); ?></a>
@@ -59,7 +52,7 @@
 <!--- tab third -->
 
   <div class="theme_link">
-    <h3><?php _e("Customizer Links","big-store"); ?></h3>
+    <h3><?php _e("4. Customizer Links","big-store"); ?></h3>
     <div class="card-content">
         <div class="columns">
                 <div class="col">
