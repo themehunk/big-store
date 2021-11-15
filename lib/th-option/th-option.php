@@ -8,7 +8,6 @@ add_action('admin_menu', array($this,'menu_tab'));
     // AJAX.
     add_action( 'wp_ajax_th_activeplugin',array($this,'th_activeplugin') );
     add_action( 'wp_ajax_default_home',array($this, 'default_home') );
-    add_action( 'admin_notices', array($this, 'child_theme_admin_notice') );
 }
 function menu_tab() {
     $menu_title = esc_html__('Big Store Options', 'big-store');
@@ -224,14 +223,6 @@ function plugin_install_button($plugin){
     } // plugin check
 }
 
-	public function child_theme_admin_notice() {
-    ?>
-    <div class="notice notice-success is-dismissible child-theme-notice">
-        <p><?php _e( 'We highly recommended to use child theme. Child theme inherit the style and functionality of parent theme, you can easily update the parent theme without losing its Customization. Thats why we recommended to use child theme to make your site updateproof.', 'big-store' ); ?></p>
-        <a href="<?php echo esc_url('https://themehunk.com/child-theme/#big-store-child'); ?>" class="button" target="_blank"><?php _e('Get chld theme Now','big-store') ?></a>
-    </div>
-    <?php
-}	
 	
 } // class end
 $boj = new Big_Store_theme_option(); ?>

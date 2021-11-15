@@ -147,7 +147,7 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
              ),
 
             'themehunk-megamenu-plus' => array(
-                'name' => esc_html__( 'ThemeHunk Megamenu – Menu builder', 'top-store' ),
+                'name' => esc_html__( 'ThemeHunk Megamenu – Menu builder', 'big-store' ),
                 'img' => 'icon-128x128.png',
                 'active_filename' => 'themehunk-megamenu-plus/themehunk-megamenu.php',
             ), 
