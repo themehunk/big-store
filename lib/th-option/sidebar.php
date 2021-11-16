@@ -5,7 +5,7 @@
             </h3>
             <p>
             <b><?php _e('Pre-made premium templates','big-store'); ?> </b><br>
-            <?php _e('Big Store Pro is one of the most popular single page theme on WordPress.','big-store'); ?> </p>
+            <?php _e('Big Store Pro is one of the most popular eCommerce theme on WordPress.','big-store'); ?> </p>
                 <center><a class="button ztabtn" target="_blank" href="https://themehunk.com/product/big-store/"><?php _e('Upgrade','big-store'); ?> </a></center>
             </div>
             <hr>
