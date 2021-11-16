@@ -27,6 +27,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 = 1.7.8=
 * Child theme notification added.
 * Child theme notification text changed.
+* Free Vs Pro feature updated.
+* Th option panel sidebar text updated.
 
 = 1.7.7=
 * Theme option panel updated.

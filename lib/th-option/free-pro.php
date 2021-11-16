@@ -56,6 +56,18 @@
                   </tr>
 
 
+                   <tr class="feature-row">
+                     <td class="title">
+                        <div class="title-wrap">
+                           <h4><?php _e('Top Slider Section','big-store'); ?> </h4>
+                        </div>
+                     </td>
+                     <td class="status success"><span class="dashicon dashicons dashicons-yes" size="30"></span><span class="info"><?php _e('(Two Layouts)','big-store'); ?> </span></td>
+                     <td class="status success"><span class="dashicon dashicons dashicons-yes" size="30"></span><span class="info"><?php _e('(Four Layouts)','big-store'); ?> </span></td>
+                  </tr>
+
+
+
 
                   <tr class="feature-row">
                      <td class="title">
@@ -68,6 +80,20 @@
                      <td class="status success"><span class="dashicon dashicons dashicons-yes" size="30"></span>
 
                   </tr>
+
+
+                    <tr class="feature-row">
+                     <td class="title">
+                        <div class="title-wrap">
+                           <h4><?php _e('Product Carousel Section','big-store'); ?> </h4>
+                        </div>
+                     </td>
+                     <td class="status success"><span class="dashicon dashicons dashicons-yes" size="30"></span>
+
+                     <td class="status success"><span class="dashicon dashicons dashicons-yes" size="30"></span>
+
+                  </tr>
+
 
 
                   <tr class="feature-row">
@@ -89,6 +115,36 @@
                      <td class="title">
                         <div class="title-wrap">
                            <h4><?php _e('Product List Carousel Section','big-store'); ?> </h4>
+                        </div>
+                     </td>
+                     <td class="status success"><span class="dashicon dashicons dashicons-yes" size="30"></span>
+                        </td>
+
+                     <td class="status success"><span class="dashicon dashicons dashicons-yes" size="30"></span>
+                     </td>
+
+                  </tr>
+
+
+                  <tr class="feature-row">
+                     <td class="title">
+                        <div class="title-wrap">
+                           <h4><?php _e('Banner Section','big-store'); ?> </h4>
+                        </div>
+                     </td>
+                     <td class="status success"><span class="dashicon dashicons dashicons-yes" size="30"></span><span class="info"><?php _e('(Two Layouts)','big-store'); ?> </span>
+                        </td>
+
+                     <td class="status success"><span class="dashicon dashicons dashicons-yes" size="30"></span><span class="info"><?php _e('(Four Layouts)','big-store'); ?> </span>
+                     </td>
+
+                  </tr>
+
+
+                    <tr class="feature-row">
+                     <td class="title">
+                        <div class="title-wrap">
+                           <h4><?php _e('Ajax Search','big-store'); ?> </h4>
                         </div>
                      </td>
                      <td class="status success"><span class="dashicon dashicons dashicons-yes" size="30"></span>
@@ -214,7 +270,7 @@
                   <tr class="feature-row">
                      <td class="title">
                         <div class="title-wrap">
-                           <h4> <?php _e('About us Widget ','big-store'); ?> </h4>
+                           <h4> <?php _e('About Us Widget ','big-store'); ?> </h4>
                         </div>
                      </td>
                      <td class="status error"><span class="dashicon dashicons dashicons-no-alt" size="30"></span></td>
