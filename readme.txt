@@ -172,9 +172,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= 1.7.8=
-* Child theme notification added.
-* Child theme notification text changed.
+= 1.7.9=
+* Mega menu plugin removed recommended plugin section.
 
 == Resources ==
  
