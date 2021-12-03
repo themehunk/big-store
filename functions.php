@@ -145,12 +145,6 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
                   'img' => 'icon-128x128.jpg',
                  'active_filename' => 'yith-woocommerce-compare/init.php',
              ),
-
-            'themehunk-megamenu-plus' => array(
-                'name' => esc_html__( 'ThemeHunk Megamenu – Menu builder', 'big-store' ),
-                'img' => 'icon-128x128.png',
-                'active_filename' => 'themehunk-megamenu-plus/themehunk-megamenu.php',
-            ), 
             
 
         ) );
