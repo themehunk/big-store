@@ -142,7 +142,7 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
              ),
             'th-product-compare' => array(
                  'name' => esc_html__( 'TH Product Compare', 'big-store' ),
-                  'img' => 'icon-128x128.jpg',
+                  'img' => 'icon-128x128.png',
                  'active_filename' => 'th-product-compare/th-product-compare.php',
              ),
             

@@ -362,7 +362,7 @@ function big_store_add_to_compare_fltr_both($pid){
 /** compare **/
 /**********************/
 
-function big_store_add_to_compare_fltr_single($pid){
+function big_store_add_to_compare_fltr_single(){
   global $product;
 $pid = $product->get_id();
       if(class_exists(('th_product_compare') )){

@@ -26,6 +26,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 = 1.8.0=
 * Th product compare plugin added.
+* Th advance product search pro plugin issue fixed.
 
 = 1.7.9=
 * Mega menu plugin removed recommended plugin section.
