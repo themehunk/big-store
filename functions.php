@@ -140,10 +140,10 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
                   'img' => 'icon-128x128.jpg',
                  'active_filename' => 'yith-woocommerce-wishlist/init.php',
              ),
-            'yith-woocommerce-compare' => array(
-                 'name' => esc_html__( 'YITH WooCommerce Compare', 'big-store' ),
-                  'img' => 'icon-128x128.jpg',
-                 'active_filename' => 'yith-woocommerce-compare/init.php',
+            'th-product-compare' => array(
+                 'name' => esc_html__( 'TH Product Compare', 'big-store' ),
+                  'img' => 'icon-128x128.png',
+                 'active_filename' => 'th-product-compare/th-product-compare.php',
              ),
             
 
