@@ -5183,6 +5183,7 @@ section.upsells.products > h2,
   width: 200px;
 }
 /*compare style*/
+.woocommerce .entry-summary a.th-product-compare-btn,
 .woocommerce .entry-summary a.compare.button {
   border: 1px solid;
   border-radius: 0;
@@ -5198,6 +5199,7 @@ section.upsells.products > h2,
   font-weight: normal;
   min-width: auto;
 }
+.woocommerce .entry-summary a.th-product-compare-btn.btn_type:before,
 .woocommerce .entry-summary a.compare.button:before {
   content: "\f021";
   font-family: FontAwesome;
@@ -5205,6 +5207,8 @@ section.upsells.products > h2,
   color: #9c9c9c;
   font-size: 13px;
 }
+
+
 .woocommerce .entry-summary a.compare.button.added:before {
   color: #1f4c94;
 }
@@ -8169,41 +8173,16 @@ text-decoration: underline !important;
   }
 
 
-
   /*th product compare */
-.woocommerce .entry-summary a.th-product-compare-btn {
-    border: 1px solid;
-    border-radius: 0;
-    color: #9c9c9c;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0;
-    height: 45px;
-    line-height: 45px;
-    width: 45px;
-    background: transparent;
-    text-align: center;
-    margin-left: 10px;
-    font-weight: normal;
-    min-width: auto;
-}
-
-.woocommerce .entry-summary a.th-product-compare-btn.btn_type:before {
-    content: "\f021";
-    font-family: FontAwesome;
-    display: block;
-    color: #9c9c9c;
-    font-size: 13px;
-}
-
 .woocommerce .entry-summary .th-product-compare-btn-wrap {
     display: inline-block;
 }   
 .woocommerce .entry-summary .th-product-compare-btn {
   margin: 0;
+  padding: 0;
   }
 
+  /*th-compare-button animation */
   .woocommerce .entry-summary a.th-product-compare-btn.btn_type.loading:before{
 -webkit-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
@@ -8217,7 +8196,6 @@ text-decoration: underline !important;
   100% { transform: rotate(360deg); }
 }
 
-/*th-compare-button animation */
 .thunk-compare .compare-button a.loading:before{
   -webkit-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
@@ -8231,17 +8209,12 @@ text-decoration: underline !important;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
-
 .woocommerce a.button.th-product-compare-btn.loading::after{
   display: none;
 }
 .woocommerce .entry-summary a.th-product-compare-btn.loading::after{
   display: none;
 }
-
-
-
 
 
 /* Landscape*/
