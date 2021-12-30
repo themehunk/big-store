@@ -432,16 +432,12 @@ if (!function_exists('big_store_main_header_markup')) {
                 <?php } ?>
                 <div class="header-support-wrap">
                   <div class="header-support-icon">
-                    <?php if (class_exists('WPCleverWoosw')) { ?>
-                      <a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>">
-                        <i class="fa fa-heart-o" aria-hidden="true"></i><span><?php _e('Wishlist', 'big-store'); ?></span></a>
-                    <?php } ?>
-                    <?php if (class_exists('YITH_WCWL') && (!class_exists('WPCleverWoosw'))) { ?>
+                    <?php if( class_exists( 'WooCommerce' ) &&get_theme_mod('big_store_whislist_mobile_disable',false) != true){ ?>
                       <a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>">
                         <i class="fa fa-heart-o" aria-hidden="true"></i><span><?php _e('Wishlist', 'big-store'); ?></span></a>
                     <?php } ?>
 
-                    <?php if (class_exists('WooCommerce')) {
+                    <?php if(class_exists( 'WooCommerce' ) && get_theme_mod('big_store_account_mobile_disable',false) != true){
                       big_store_account();
                     } ?>
 
@@ -449,9 +445,8 @@ if (!function_exists('big_store_main_header_markup')) {
                   <div class="thunk-icon">
 
                     <?php if (class_exists('WooCommerce')) {
-                      if (get_theme_mod('big_store_cart_mobile_disable') == true) {
-                        if (wp_is_mobile() !== true) :
-
+                      if (wp_is_mobile()) {
+                      if (get_theme_mod('big_store_cart_mobile_disable',false) !== true) {
                     ?>
                           <div class="cart-icon">
                             <?php
@@ -459,15 +454,16 @@ if (!function_exists('big_store_main_header_markup')) {
                             do_action('big_store_woo_cart');
                             ?>
                           </div>
-                        <?php endif;
-                      } elseif (get_theme_mod('big_store_cart_mobile_disable') == false) { ?>
+                        <?php 
+                      }}
+                      else{ ?>
                         <div class="cart-icon">
-                          <?php
-                          do_action('open_cart_count');
-                          do_action('big_store_woo_cart');
-                          ?>
-                        </div>
-                    <?php  }
+                            <?php
+                            do_action('open_cart_count');
+                            do_action('big_store_woo_cart');
+                            ?>
+                          </div>
+                   <?php   } 
                     } ?>
                   </div>
 
