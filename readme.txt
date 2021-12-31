@@ -26,6 +26,9 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 = 1.8.1 =
 * Icons disable in mobile issue resolved.
 
+= 1.8.1=
+* Th compare product style improved.
+
 = 1.8.0=
 * Th product compare plugin added.
 * Th advance product search pro plugin issue fixed.
