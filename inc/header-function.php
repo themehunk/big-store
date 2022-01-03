@@ -299,20 +299,23 @@ if (!function_exists('big_store_below_header_markup')) {
                           if (wp_is_mobile() !== true) :
 
                       ?>
-                            <div class="cart-icon">
-                              <?php
-                              do_action('open_cart_count');
-                              do_action('big_store_woo_cart');
-                              ?>
-                            </div>
+
+                            
+                            <?php if ( shortcode_exists( 'taiowc' ) ){
+                       echo do_shortcode('[taiowc]');
+                             } ?>
+
+
+            
                           <?php endif;
                         } elseif (get_theme_mod('big_store_cart_mobile_disable') == false) { ?>
-                          <div class="cart-icon">
-                            <?php
-                            do_action('open_cart_count');
-                            do_action('big_store_woo_cart');
-                            ?>
-                          </div>
+
+
+                          <?php if ( shortcode_exists( 'taiowc' ) ){
+                              echo do_shortcode('[taiowc]');
+                             } ?>
+
+                         
                       <?php  }
                       } ?>
                     </div>
@@ -448,21 +451,24 @@ if (!function_exists('big_store_main_header_markup')) {
                       if (wp_is_mobile()) {
                       if (get_theme_mod('big_store_cart_mobile_disable',false) !== true) {
                     ?>
-                          <div class="cart-icon">
-                            <?php
-                            do_action('open_cart_count');
-                            do_action('big_store_woo_cart');
-                            ?>
-                          </div>
+
+                            <?php if ( shortcode_exists( 'taiowc' ) ){
+                                echo do_shortcode('[taiowc]');
+                             } ?>
+                          
+
+                          
                         <?php 
                       }}
                       else{ ?>
-                        <div class="cart-icon">
-                            <?php
-                            do_action('open_cart_count');
-                            do_action('big_store_woo_cart');
-                            ?>
-                          </div>
+
+
+                               <?php if ( shortcode_exists( 'taiowc' ) ){
+                                echo do_shortcode('[taiowc]');
+                             } ?>
+
+                        
+                        
                    <?php   } 
                     } ?>
                   </div>
@@ -525,20 +531,17 @@ function big_store_main_header_optn()
               if (wp_is_mobile() !== true) :
 
           ?>
-                <div class="cart-icon">
-                  <?php
-                  do_action('open_cart_count');
-                  do_action('big_store_woo_cart');
-                  ?>
-                </div>
+
+                   <?php if ( shortcode_exists( 'taiowc' ) ){
+                                echo do_shortcode('[taiowc]');
+                             } ?>
               <?php endif;
             } elseif (get_theme_mod('big_store_cart_mobile_disable') == false) { ?>
-              <div class="cart-icon">
-                <?php
-                do_action('open_cart_count');
-                do_action('big_store_woo_cart');
-                ?>
-              </div>
+
+              
+                     <?php if ( shortcode_exists( 'taiowc' ) ){
+                               echo do_shortcode('[taiowc]');
+                             } ?>
           <?php  }
           } ?>
         </div>
@@ -697,12 +700,10 @@ if (!function_exists('big_store_sticky_header_markup')) {
                 ?>
               </div>
               <?php if (class_exists('WooCommerce')) { ?>
-                <div class="cart-icon">
-                  <?php
-                  do_action('open_cart_count');
-                  do_action('big_store_woo_cart');
-                  ?>
-                </div>
+
+                       <?php if ( shortcode_exists( 'taiowc' ) ){
+                                echo do_shortcode('[taiowc]');
+                             } ?>
               <?php  } ?>
             </div>
           </div>
@@ -758,7 +759,7 @@ function bigstore_mobile_navbar()
         </li>
         <li><?php big_store_account(); ?></li>
         <li><?php
-            do_action('open_cart_count');
+            //do_action('open_cart_count');
             ?>
         </li>
 
