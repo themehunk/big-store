@@ -15,6 +15,7 @@
           // widget-footer
 		      do_action( 'big_store_widget_footer' );
 		      // below-footer
+          do_action('big_store_shop_default_below_footer');    
           do_action( 'big_store_below_footer' );  
         ?>
      </footer> <!-- end footer -->
