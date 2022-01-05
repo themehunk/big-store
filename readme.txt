@@ -29,11 +29,12 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Add pro and docs button in customizer.
 * Below footer copyright section disable.
 * Th all in one woo cart plugin added.
+* Th option panel sidebar text updated.
+* th all in one woo cart plugin class taiowc-fly-cart added.
+* Remove theme support for widget block editor.
 
 = 1.8.1 =
 * Icons disable in mobile issue resolved.
-
-= 1.8.1=
 * Th compare product style improved.
 
 = 1.8.0=

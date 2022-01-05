@@ -224,6 +224,10 @@ if ( ! class_exists( 'Big_Store_Pro_Woocommerce_Ext' ) ) :
 			  }
 		  
 		   }
+
+		   if(class_exists('Taiowc_Pro')){
+                $classes[] ='taiowc-fly-cart';
+			}
 			return $classes;
 		}
 		/**
