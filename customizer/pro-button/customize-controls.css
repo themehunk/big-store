@@ -19,3 +19,19 @@ a.button.pro-button-secondary.alignright {
     color: white;
     border: 1px;
 }
+
+
+li#customize-control-big-store-footer-pro-link a {
+    background: #2e78ff;
+    width: 100%;
+    display: block;
+    padding: 9px;
+    max-width: 108px;
+    margin: 0 auto;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 21px;
+    border-radius: 6px;
+}

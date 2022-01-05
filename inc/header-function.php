@@ -300,20 +300,22 @@ if (!function_exists('big_store_below_header_markup')) {
 
                       ?>
 
-                            
+                            <div class="cart-icon">
                             <?php if ( shortcode_exists( 'taiowc' ) ){
-                       echo do_shortcode('[taiowc]');
+                              echo do_shortcode('[taiowc]');
                              } ?>
+                           </div>
 
-
+                             
             
                           <?php endif;
                         } elseif (get_theme_mod('big_store_cart_mobile_disable') == false) { ?>
 
-
+                          <div class="cart-icon">
                           <?php if ( shortcode_exists( 'taiowc' ) ){
                               echo do_shortcode('[taiowc]');
                              } ?>
+                            </div>
 
                          
                       <?php  }
@@ -451,10 +453,11 @@ if (!function_exists('big_store_main_header_markup')) {
                       if (wp_is_mobile()) {
                       if (get_theme_mod('big_store_cart_mobile_disable',false) !== true) {
                     ?>
-
+                            <div class="cart-icon">
                             <?php if ( shortcode_exists( 'taiowc' ) ){
                                 echo do_shortcode('[taiowc]');
                              } ?>
+                           </div>
                           
 
                           
@@ -462,10 +465,11 @@ if (!function_exists('big_store_main_header_markup')) {
                       }}
                       else{ ?>
 
-
+                                <div class="cart-icon">
                                <?php if ( shortcode_exists( 'taiowc' ) ){
                                 echo do_shortcode('[taiowc]');
                              } ?>
+                           </div>
 
                         
                         
@@ -531,17 +535,21 @@ function big_store_main_header_optn()
               if (wp_is_mobile() !== true) :
 
           ?>
-
+                    <div class="cart-icon">
                    <?php if ( shortcode_exists( 'taiowc' ) ){
                                 echo do_shortcode('[taiowc]');
                              } ?>
+                     </div>        
               <?php endif;
             } elseif (get_theme_mod('big_store_cart_mobile_disable') == false) { ?>
 
-              
+                    <div class="cart-icon">
                      <?php if ( shortcode_exists( 'taiowc' ) ){
                                echo do_shortcode('[taiowc]');
                              } ?>
+
+                     </div>
+                         
           <?php  }
           } ?>
         </div>
@@ -699,11 +707,13 @@ if (!function_exists('big_store_sticky_header_markup')) {
                 }
                 ?>
               </div>
+              <div class="cart-icon">
               <?php if (class_exists('WooCommerce')) { ?>
 
                        <?php if ( shortcode_exists( 'taiowc' ) ){
                                 echo do_shortcode('[taiowc]');
                              } ?>
+                      </div>       
               <?php  } ?>
             </div>
           </div>

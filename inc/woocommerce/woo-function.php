@@ -277,9 +277,7 @@ function big_store_add_to_compare_fltr_both($pid){
   if( ( class_exists( 'th_product_compare' ))){
              big_store_add_to_compare_fltr($pid);      
                 }
-                  elseif( ( class_exists( 'WPCleverWoosc' ))){
-                     echo do_shortcode('[woosc id='.$pid.']');
-                  }
+                  
 }
 }
 
@@ -296,7 +294,6 @@ $pid = $product->get_id();
           <a class="th-product-compare-btn compare button" data-th-product-id="'.$pid.'"></a>
           </div></span></div>';
 
-
            } 
 
         }
@@ -307,9 +304,7 @@ function big_store_add_to_compare_fltr($pid){
           <a class="th-product-compare-btn compare button" data-th-product-id="'.$pid.'"></a>
           </div></span></div>';
 
-           }elseif( ( class_exists( 'WPCleverWoosc' ))){
-                     echo do_shortcode('[woosc id='.$pid.']');
-                  }
+           }
         }
 /**********************/
 /** wishlist **/
