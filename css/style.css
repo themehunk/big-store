@@ -931,6 +931,11 @@ header {
 .right .sidebar-content-area {
   float: right;
 }
+
+.no-sidebar .sidebar-content-area{
+  display: none;
+}
+
 .main-area.left-sidebar .sidebar-content-area {
   margin-left: 0;
   margin-right: 1.5%;

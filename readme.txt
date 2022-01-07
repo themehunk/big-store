@@ -33,6 +33,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * th all in one woo cart plugin class taiowc-fly-cart added.
 * Remove theme support for widget block editor.
 * Fix shopping cart icon issue.
+* Shop page no-sidebar issue fixed.
 
 = 1.8.1 =
 * Icons disable in mobile issue resolved.
