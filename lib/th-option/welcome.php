@@ -37,10 +37,6 @@
 
 <!--- tab third -->
 
-
-
-
-
 <!--- tab second -->
 <div class="theme_link">
     <h3><?php _e('3. Customize Your Website','big-store'); ?><!-- <php echo $theme_config['plugin_title']; ?> --></h3>
