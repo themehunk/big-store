@@ -66,14 +66,14 @@ class ThemeHunk_Child_Notify{
           	<h1>
         <?php
         /* translators: %1$s: theme name, %2$s theme version */
-        printf( esc_html__( 'Welcome to %1$s - Version %2$s', 'm-shop' ), esc_html( $my_theme->Name ), esc_html( $my_theme->Version ) );
+        printf( esc_html__( 'Welcome to %1$s - Version %2$s', 'big-store' ), esc_html( $my_theme->Name ), esc_html( $my_theme->Version ) );
         ?>
       </h1>
 
-        <p><?php _e( "Get Started with ".esc_html( $my_theme->Name )." and Start customizing your website, also Install the Child theme if you want to edit the core code of the theme.", 'm-shop' ); ?></p>
-        <a href="<?php echo esc_url(admin_url('themes.php?page=thunk_started')); ?>" class="button button-primary th-blue"><?php _e('Get Started with '.esc_html( $my_theme->Name ),'m-shop') ?></a>
+        <p><?php _e( "Get Started with ".esc_html( $my_theme->Name )." and Start customizing your website, also Install the Child theme if you want to edit the core code of the theme.", "big-store" ); ?></p>
+        <a href="<?php echo esc_url(admin_url('themes.php?page=thunk_started')); ?>" class="button button-primary th-blue"><?php _e('Get Started with '.esc_html( $my_theme->Name ),'big-store') ?></a>
 
-        <a href="<?php echo esc_url(admin_url('themes.php?page=thunk_started')); ?>" class=" button-secondary"><?php _e('Get Child Theme Now','m-shop') ?></a>
+        <a href="<?php echo esc_url(admin_url('themes.php?page=thunk_started')); ?>" class=" button-secondary"><?php _e("Get Child Theme Now","big-store") ?></a>
 
         <a href="?notice-disable=1"  class="notice-dismiss dashicons dashicons-dismiss dashicons-dismiss-icon"></a>
     </div> 
