@@ -57,3 +57,4 @@ get_template_part('inc/woocommerce/woocommerce-ajax');
 // Probutton
 /******************************/
 get_template_part('customizer/pro-button/class-customize');
+get_template_part( 'inc/footer');
