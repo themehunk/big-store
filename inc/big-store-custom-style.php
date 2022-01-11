@@ -150,10 +150,9 @@ $big_store_style.="#move-to-top{background:{$big_store_move_to_top_bg_clr};color
    $big_store_sq_icon_clr = esc_html(get_theme_mod('big_store_sq_icon_clr','#fff'));
    $big_store_style.=".header-icon a ,.header-support-icon a.whishlist, .thunk-icon .cart-icon a.cart-contents i,.cat-icon,.sticky-header .header-icon a , .sticky-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .header-support-icon a,.responsive-main-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .menu-toggle .menu-btn,.sticky-header-bar .menu-toggle .menu-btn,.header-icon a.account,.header-icon a.prd-search .header-support-icon a.compare i {background:{$big_store_sq_icon_bg_clr};color:{$big_store_sq_icon_clr};} .thunk-icon .taiowc-icon, .thunk-icon .taiowc-cart-item{background:{$big_store_sq_icon_bg_clr};color:{$big_store_sq_icon_clr};fill:{$big_store_sq_icon_clr};}
     .header-support-icon a.whishlist i {color:{$big_store_sq_icon_clr}!important;}
-    .cat-icon span,.menu-toggle .icon-bar, {background:{$big_store_sq_icon_clr}};
+    .cat-icon span,.menu-toggle .icon-bar{background:{$big_store_sq_icon_clr};}";
 
-";
-   /**************************/
+  /**************************/
   //Main Menu
   /**************************/
   $big_store_menu_link_clr = esc_html(get_theme_mod('big_store_menu_link_clr'));
