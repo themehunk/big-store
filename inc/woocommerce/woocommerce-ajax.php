@@ -55,6 +55,7 @@ function big_store_search_site()
     } else {
       $taxsrch = '';
     }
+
     $match_ = sanitize_text_field($_POST['match']);
     $results = new WP_Query(array(
       'post_type'     => 'product',
@@ -62,6 +63,10 @@ function big_store_search_site()
       'nopaging'      => true,
       'posts_per_page' => 100,
       's'             => $match_,
+       'meta_query' => array( array(
+            'key' => '_stock_status',
+            'value' => 'instock'
+            ) ),
       'tax_query' => $taxsrch,
     ));
     $items = array();

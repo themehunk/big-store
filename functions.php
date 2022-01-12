@@ -27,6 +27,7 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
 		 * Make theme available for translation.
 		 */
 		load_theme_textdomain( 'big-store', get_template_directory() . '/languages' );
+
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 		/*
@@ -69,6 +70,8 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
         add_theme_support( 'responsive-embeds' );
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
+		// Remove theme support for widget block editor
+		remove_theme_support( 'widgets-block-editor' );
 		/**
 		 * Add support for core custom logo.
 		 */
@@ -102,39 +105,80 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
                                              ) );
          // Recommend plugins
         add_theme_support( 'recommend-plugins', array(
-             'themehunk-customizer' => array(
-                'name' => esc_html__( 'Themehunk Customizer', 'big-store' ),
+
+        	'themehunk-customizer' => array(
+                'name' => esc_html__( 'Themehunk Customizer (Highly Recommended)', 'big-store' ),
+                 'img' => 'icon-128x128.png',
                 'active_filename' => 'themehunk-customizer/themehunk-customizer.php',
             ),
-            'woocommerce' => array(
-                'name' => esc_html__( 'Woocommerce', 'big-store' ),
-                'active_filename' => 'woocommerce/woocommerce.php',
+            'th-advance-product-search' => array(
+            'name' => esc_html__( 'TH Advance Product Search', 'big-store' ),
+            'img' => 'icon-128x128.gif',
+            'active_filename' => 'th-advance-product-search/th-advance-product-search.php',
             ),
+            'th-all-in-one-woo-cart' => array(
+                 'name' => esc_html__( 'TH All In One Woo Cart', 'big-store' ),
+                  'img' => 'icon-128x128.png',
+                 'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
+             ),
+            'th-product-compare' => array(
+                 'name' => esc_html__( 'TH Product Compare', 'big-store' ),
+                  'img' => 'icon-128x128.png',
+                 'active_filename' => 'th-product-compare/th-product-compare.php',
+             ),
             'th-variation-swatches' => array(
                 'name' => esc_html__( 'TH Variation Swatches', 'big-store' ),
+                 'img' => 'icon-128x128.gif',
                 'active_filename' => 'th-variation-swatches/th-variation-swatches.php',
             ),
-            'woo-smart-wishlist' => array(
-                 'name' => esc_html__( 'WPC Smart Wishlist for WooCommerce', 'big-store' ),
-                 'active_filename' => 'woo-smart-wishlist/wpc-smart-wishlist.php',
-             ),
-            'woo-smart-compare' => array(
-                 'name' => esc_html__( 'WPC Smart Compare for WooCommerce', 'big-store' ),
-                 'active_filename' => 'woo-smart-compare/wpc-smart-compare.php',
-             ),
             'lead-form-builder' => array(
                 'name' => esc_html__( 'Lead Form Builder', 'big-store' ),
+                 'img' => 'icon-128x128.png',
                 'active_filename' => 'lead-form-builder/lead-form-builder.php',
             ),
             'wp-popup-builder' => array(
                 'name' => esc_html__( 'WP Popup Builder – Popup Forms & Newsletter', 'big-store' ),
+                 'img' => 'icon-128x128.png',
                 'active_filename' => 'wp-popup-builder/wp-popup-builder.php',
             ), 
+            'woocommerce' => array(
+                'name' => esc_html__( 'Woocommerce', 'big-store' ),
+                 'img' => 'icon-128x128.png',
+                'active_filename' => 'woocommerce/woocommerce.php',
+            ),
+
+            'yith-woocommerce-wishlist' => array(
+                 'name' => esc_html__( 'YITH WooCommerce Wishlist', 'big-store' ),
+                  'img' => 'icon-128x128.jpg',
+                 'active_filename' => 'yith-woocommerce-wishlist/init.php',
+             ),
+            
+            
+
+        ) );
+
+        // Import Data Content plugins
+        add_theme_support( 'import-demo-content', array(
+             'themehunk-customizer' => array(
+                'name' => esc_html__( 'Themehunk Customizer', 'big-store' ),
+                 'img' => 'icon-128x128.png',
+                'active_filename' => 'themehunk-customizer/themehunk-customizer.php',
+            ),
+
             'one-click-demo-import' => array(
                 'name' => esc_html__( 'One Click Demo Import', 'big-store' ),
+                'img' => 'icon-128x128.png',
                 'active_filename' => 'one-click-demo-import/one-click-demo-import.php',
+            ), 
+            'woocommerce' => array(
+                'name' => esc_html__( 'Woocommerce', 'big-store' ),
+                'img' => 'icon-128x128.png',
+                'active_filename' => 'woocommerce/woocommerce.php',
             ),
-        ) );
+
+        ));
+
+
 
         // Useful plugins
         add_theme_support( 'useful-plugins', array(
@@ -283,7 +327,6 @@ function big_store_scripts(){
 	}else{
 	wp_enqueue_style( 'big-store-main-style', BIG_STORE_THEME_URI . 'css/style.css','',BIG_STORE_THEME_VERSION);	
 	}	
-
 	wp_enqueue_style( 'big-store-style', get_stylesheet_uri(), array(), BIG_STORE_THEME_VERSION );
 	wp_add_inline_style('big-store-style', big_store_custom_style());
 	
@@ -299,11 +342,19 @@ function big_store_scripts(){
 
     wp_enqueue_script( 'big-store-custom-js', BIG_STORE_THEME_URI .'js/big-store-custom.js', array( 'jquery' ), BIG_STORE_THEME_VERSION , true );
      $bigstorelocalize = array(
+     			'page_tt_enable' => get_theme_mod('big_store_page_tp_enable'),
+     			'header_tt_enable' => get_theme_mod('big_store_hdr_tp_enable'),
+     			'tt_account' =>  get_theme_mod( 'big_store_account_tooltip_txt', __( 'Account', 'big-store' )),
+     			'tt_add_to_cart' =>  get_theme_mod( 'big_store_add_to_cart_tooltip_txt', __( 'Add To Cart', 'big-store' )),
+     			'tt_wishlist' =>  get_theme_mod( 'big_store_wishlist_tooltip_txt', __( 'Wishlist', 'big-store' )),
+     			'tt_quickview' =>  get_theme_mod( 'big_store_quickview_tooltip_txt', __( 'Quickview', 'big-store' )),
+     			'tt_compare' =>  get_theme_mod( 'big_store_compare_tooltip_txt', __( 'Compare', 'big-store' )),
 				'big_store_top_slider_optn' => get_theme_mod('big_store_top_slider_optn',false),
 				'big_store_move_to_top_optn' => get_theme_mod('big_store_move_to_top',false),
 				'big_store_sticky_header_effect' => get_theme_mod('big_store_sticky_header_effect','scrldwmn'),
 				'big_store_slider_speed' => get_theme_mod('big_store_slider_speed','3000'),
 				'big_store_rtl' => (bool)get_theme_mod('big_store_rtl'),
+				'mobile_menuclose' => __('Close','big-store'),
 				
 			);
     wp_localize_script( 'big-store-custom-js', 'big_store',  $bigstorelocalize);

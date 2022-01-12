@@ -419,6 +419,15 @@ wp.customize('big_store_blog_read_more_txt', function(value){
              $('a.thunk-readmore.button ').text(to);
          });
      });
+
+//tooltip option
+//big_store_css('big_store_add_to_cart_tooltip_txt','background', '.tooltip-show-with-title');
+wp.customize('big_store_add_to_cart_tooltip_txt', function(value){
+         value.bind(function(to){
+             $('.tooltip-show-with-title ').text(to);
+         });
+     });
+
 /****************/
 // footer
 /****************/
@@ -573,8 +582,8 @@ big_store_css( 'big_store_below_hd_bg_clr','background', '.below-header:before')
 big_store_css( 'big_store_category_text_clr','color', '.menu-category-list .toggle-title,.toggle-icon');
 big_store_css( 'big_store_category_icon_clr','background', '.below-header .cat-icon span');
 //header icon
-big_store_css( 'big_store_sq_icon_bg_clr','background', '.header-icon a ,.header-support-icon a.whishlist ,.thunk-icon .cart-icon a.cart-contents i,.cat-icon,.sticky-header .header-icon a , .sticky-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .header-support-icon a,.responsive-main-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .menu-toggle .menu-btn,.sticky-header-bar .menu-toggle .menu-btn,.header-icon a.account,.header-icon a.prd-search');
-big_store_css( 'big_store_sq_icon_clr','color', '.header-icon a ,.header-support-icon a.whishlist ,.thunk-icon .cart-icon a.cart-contents i,.cat-icon,.sticky-header .header-icon a , .sticky-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .header-support-icon a,.responsive-main-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .menu-toggle .menu-btn,.sticky-header-bar .menu-toggle .menu-btn,.header-icon a.account,.header-icon a.prd-search');
+big_store_css( 'big_store_sq_icon_bg_clr','background', '.header-icon a ,.header-support-icon a.whishlist ,.thunk-icon .cart-icon a.cart-contents i,.cat-icon,.sticky-header .header-icon a , .sticky-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .header-support-icon a,.responsive-main-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .menu-toggle .menu-btn,.sticky-header-bar .menu-toggle .menu-btn,.header-icon a.account,.header-icon a.prd-search,.thunk-icon .taiowc-icon, .thunk-icon .taiowc-cart-item');
+big_store_css( 'big_store_sq_icon_clr','color', '.header-icon a ,.header-support-icon a.whishlist ,.thunk-icon .cart-icon a.cart-contents i,.cat-icon,.sticky-header .header-icon a , .sticky-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .header-support-icon a,.responsive-main-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .menu-toggle .menu-btn,.sticky-header-bar .menu-toggle .menu-btn,.header-icon a.account,.header-icon a.prd-search,.header-support-icon a.compare i, .header-support-icon a.wishlist i, .header-icon a.account, .thunk-icon .taiowc-icon,.thunk-icon .taiowc-cart-item');
 big_store_css( 'big_store_sq_icon_clr','background', '.cat-icon span');
 //menu
 big_store_css( 'big_store_menu_link_clr','color', '.big-store-menu > li > a,.menu-category-list .toggle-title,.toggle-icon');
@@ -585,6 +594,12 @@ big_store_css( 'big_store_sub_menu_lnk_hvr_clr','color', '.big-store-menu li ul.
 //move to top
 big_store_css( 'big_store_move_to_top_bg_clr','background', '#move-to-top');
 big_store_css( 'big_store_move_to_top_icon_clr','color', '#move-to-top');
+
+//tooltip option
+big_store_css( 'big_store_tooltip_bg_clr','background-color', 'div.tooltip-show-with-title');
+big_store_css( 'big_store_tooltip_bg_clr','fill', '.tooltip-show-with-title .pointer_');
+big_store_css( 'big_store_tooltip_text_clr','color', 'div.tooltip-show-with-title');
+
 
 //Slider Bg
 big_store_css('big_store_lay3_bg_img_ovrly','background', '.thunk-slider-section.slide-layout-3:before');

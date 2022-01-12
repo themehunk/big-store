@@ -13,85 +13,11 @@ if ( ! function_exists( 'is_plugin_active' ) ){
   require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
 
-/*******************************/
-/** Sidebar Add Cart Product **/
-/*******************************/
-if ( ! function_exists( 'big_store_cart_total_item' ) ){
-  /**
-   * Cart Link
-   * Displayed a link to the cart including the number of items present and the cart total
-   */
- function big_store_cart_total_item(){
-   global $woocommerce; 
-  ?>
- <a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','big-store' ); ?>">
-  <i class="fa fa-shopping-basket"></i> 
-  <?php if(WC()->cart->get_cart_contents_count()!='0'){ ?> 
-  <span class="count-item"><?php echo WC()->cart->get_cart_contents_count();?></span>
-  <span class="cart-total"><?php echo WC()->cart->get_cart_total(); ?></span>
-<?php }?>
-</a>
-  <?php }
-}
-//cart view function
-function big_store_menu_cart_view($cart_view){
-	global $woocommerce;
-    $cart_view= big_store_cart_total_item();
-    return $cart_view;
-}
-add_action( 'open_cart_count','big_store_menu_cart_view');
-
-function big_store_woo_cart_product(){
-global $woocommerce;
-?>
-<div class="cart-overlay"></div>
-<div id="open-cart" class="open-cart">
-<div class="cart-widget-heading">
-  <h4><?php _e('Shopping Cart','big-store');?></h4>
-  <a class="cart-close-btn"><?php _e('close','big-store');?></a></div>  
-<div class="open-quickcart-dropdown">
-<?php 
-woocommerce_mini_cart(); 
-?>
-</div>
-<?php if ($woocommerce->cart->is_empty() ) : ?>
-<a class="button return wc-backward" href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"> <?php _e( 'Return to shop', 'big-store' ); ?> </a>
-<?php endif;?>
-</div>
-    <?php
-}
-add_action( 'big_store_woo_cart', 'big_store_woo_cart_product' );
-add_filter('woocommerce_add_to_cart_fragments', 'big_store_add_to_cart_dropdown_fragment');
-function big_store_add_to_cart_dropdown_fragment( $fragments ){
-   global $woocommerce;
-   ob_start();
-   ?>
-   <div class="open-quickcart-dropdown">
-       <?php woocommerce_mini_cart(); ?>
-   </div>
-   <?php $fragments['div.open-quickcart-dropdown'] = ob_get_clean();
-   return $fragments;
-}
-add_filter('woocommerce_add_to_cart_fragments', 'big_store_add_to_cart_fragment');
-function big_store_add_to_cart_fragment($fragments) {
-        ob_start();?>
-
-        <a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','big-store' ); ?>">
-          <i class="fa fa-shopping-basket"></i> 
-          <?php if(WC()->cart->get_cart_contents_count()!='0'){ ?> 
-          <span class="count-item"><?php echo WC()->cart->get_cart_contents_count();?></span>
-          <span class="cart-total"><?php echo WC()->cart->get_cart_total(); ?></span>
-           <?php }?>
-        </a>
-
-       <?php  $fragments['a.cart-contents'] = ob_get_clean();
-
-        return $fragments;
-    }
 /***********************************************/
 //Sort section Woocommerce category filter show
 /***********************************************/
 function big_store_add_to_cart_url($product){
+
  $cart_url =  apply_filters( 'woocommerce_loop_add_to_cart_link',
     sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" data-quantity="%s" class="button th-button %s %s"><span>%s</span></a>',
         esc_url( $product->add_to_cart_url() ),
@@ -237,10 +163,8 @@ add_action( 'woocommerce_before_shop_loop_item_title', 'big_store_product_image_
 add_action( 'woocommerce_before_shop_loop_item_title', 'big_store_product_image_end',10 );
 add_action( 'woocommerce_after_single_product_summary', 'woocommerce_show_product_sale_flash',4);
 add_action( 'woocommerce_after_shop_loop_item', 'big_store_quickview',11);
-add_action( 'woocommerce_after_shop_loop_item', 'big_store_whish_list',11);
-if ( ( class_exists( 'YITH_Woocompare' )) && (! class_exists( 'WPCleverWooscp' ))) {
-add_action( 'woocommerce_after_shop_loop_item', 'big_store_add_to_compare_fltr',11);
-}
+add_action( 'woocommerce_after_shop_loop_item', 'big_store_whish_list_both',11);
+add_action( 'woocommerce_after_shop_loop_item', 'big_store_add_to_compare_fltr_single',11);
 
 add_action( 'woocommerce_before_shop_loop', 'big_store_shop_content_start',1);
 add_action( 'woocommerce_after_shop_loop', 'big_store_shop_content_end',1);
@@ -248,6 +172,7 @@ add_action( 'woocommerce_after_shop_loop', 'big_store_shop_content_end',1);
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open');
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+remove_action('woocommerce_init','th_compare_add_action_shop_list');
 /***************/
 // single page
 /***************/
@@ -332,44 +257,79 @@ return $plugin_version;
 }
 }
 
-if(bigstore_lite_plugin_get_version() > '2.4.1' || bigstore_pro_plugin_get_version() > '1.0.9'){
-function big_store_add_to_compare_fltr($pid){
-      $product_id = $pid;
-        if( is_plugin_active('yith-woocommerce-compare/init.php') ){
-          echo '<div class="thunk-compare"><span class="compare-list"><div class="woocommerce product compare-button"><a href="'.esc_url(home_url()).'?action=yith-woocompare-add-product&id='.esc_attr($product_id).'" class="compare button" data-product_id="'.esc_attr($product_id).'" rel="nofollow">Compare</a></div></span></div>';
 
-           }
-        }
-}else{
-function big_store_add_to_compare_fltr(){
-  global $product;
-      $product_id = $product->get_id();
-        if( is_plugin_active('yith-woocommerce-compare/init.php') ){
-          echo '<div class="thunk-compare"><span class="compare-list"><div class="woocommerce product compare-button"><a href="'.esc_url(home_url()).'?action=yith-woocompare-add-product&id='.esc_attr($product_id).'" class="compare button" data-product_id="'.esc_attr($product_id).'" rel="nofollow">Compare</a></div></span></div>';
-
-           }
-        }
-
+/**********************/
+/** whishlist and compare both **/
+/**********************/
+if ( ! function_exists('big_store_whish_list_both')){
+ function big_store_whish_list_both($pid){
+      if( class_exists( 'YITH_WCWL' )){
+        big_store_whish_list($pid);
+    }
+    elseif( ( class_exists( 'WPCleverWoosw' ))){
+     echo do_shortcode('[woosw id='.$pid.']');
+    }
 }
+}
+
+if ( ! function_exists('big_store_add_to_compare_fltr_both')){
+function big_store_add_to_compare_fltr_both($pid){
+  if( ( class_exists( 'th_product_compare' ))){
+             big_store_add_to_compare_fltr($pid);      
+                }
+                  
+}
+}
+
+
+/**********************/
+/** compare **/
+/**********************/
+
+function big_store_add_to_compare_fltr_single(){
+  global $product;
+$pid = $product->get_id();
+      if(class_exists(('th_product_compare') )){
+    echo '<div class="thunk-compare"><span class="compare-list"><div class="woocommerce product compare-button">
+          <a class="th-product-compare-btn compare button" data-th-product-id="'.$pid.'"></a>
+          </div></span></div>';
+
+           } 
+
+        }
+
+function big_store_add_to_compare_fltr($pid){ 
+  if(class_exists(('th_product_compare') )){
+    echo '<div class="thunk-compare"><span class="compare-list"><div class="woocommerce product compare-button">
+          <a class="th-product-compare-btn compare button" data-th-product-id="'.$pid.'"></a>
+          </div></span></div>';
+
+           }
+        }
 /**********************/
 /** wishlist **/
 /**********************/
-if(bigstore_lite_plugin_get_version() > '2.4.1' || bigstore_pro_plugin_get_version() > '1.0.9'){
-function big_store_whish_list($pid){
-       if( shortcode_exists( 'yith_wcwl_add_to_wishlist' ) && (! class_exists( 'WPCleverWoosw' ))){
-        echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner">'.do_shortcode('[yith_wcwl_add_to_wishlist product_id='.$pid.' icon="fa fa-heart" label='.__('wishlist','big-store').'
-         already_in_wishslist_text='.__('Already','big-store').' browse_wishlist_text='.__('Added','big-store').']' ).'</span></div>';
-       }
-} 
-}else{
-  function big_store_whish_list(){
-       if( shortcode_exists( 'yith_wcwl_add_to_wishlist' ) && (! class_exists( 'WPCleverWoosw' ))){
-        echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner">'.do_shortcode('[yith_wcwl_add_to_wishlist icon="fa fa-heart" label='.__('wishlist','big-store').'
-         already_in_wishslist_text='.__('Already','big-store').' browse_wishlist_text='.__('Added','big-store').']' ).'</span></div>';
-       }
- } 
-}
 
+ function big_store_whish_list_single($pid){
+       if( shortcode_exists( 'yith_wcwl_add_to_wishlist' ) ){
+        echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner">'.do_shortcode('[yith_wcwl_add_to_wishlist  product_id='.$pid.' icon="fa fa-heart-o" label="wishlist" already_in_wishslist_text="Already" browse_wishlist_text="Added"]' ).'</span></div>';
+     }
+ } 
+
+  function big_store_whish_list($pid){
+       if( shortcode_exists( 'yith_wcwl_add_to_wishlist' ) ){
+        echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner">'.do_shortcode('[yith_wcwl_add_to_wishlist  product_id='.$pid.' icon="fa fa-heart-o" label="wishlist" already_in_wishslist_text="Already" browse_wishlist_text="Added"]' ).'</span></div>';
+     }
+     elseif( ( class_exists( 'WPCleverWoosw' ))){
+     echo do_shortcode('[woosw id='.$pid.']');
+    }
+
+ } 
+
+
+/**********************/
+/** wishlist url**/
+/**********************/
 function big_store_whishlist_url(){
 $wishlist_page_id =  get_option( 'yith_wcwl_wishlist_page_id' );
 $wishlist_permalink = get_the_permalink( $wishlist_page_id );
@@ -379,10 +339,10 @@ return $wishlist_permalink ;
 /** My Account Menu **/
 function big_store_account(){
  if ( is_user_logged_in() ){
-  $return = '<a class="account" href="'.get_permalink( get_option('woocommerce_myaccount_page_id') ).'"><i class="fa fa-user-o" aria-hidden="true"></i><span class="tooltiptext">'.__('Account','big-store').'</span></a>';
+  $return = '<a class="account" href="'.get_permalink( get_option('woocommerce_myaccount_page_id') ).'"><i class="fa fa-user-o" aria-hidden="true"></i></a>';
   } 
  else {
-  $return = '<a class="account" href="'.get_permalink( get_option('woocommerce_myaccount_page_id') ).'"><i class="fa fa-lock" aria-hidden="true"></i><span class="tooltiptext">'.__('Register','big-store').'</span></a>';
+  $return = '<a class="account" href="'.get_permalink( get_option('woocommerce_myaccount_page_id') ).'"><i class="fa fa-lock" aria-hidden="true"></i></a>';
 }
  echo $return;
  }
@@ -407,7 +367,7 @@ function big_store_not_a_shop_page() {
 // product category list
 //************************/
 function big_store_product_list_categories( $args = '' ){
-$term = get_theme_mod('big_store_exclde_category');
+$term = get_theme_mod('big_store_exclde_category','');
 if(!empty($term[0])){
   $exclude_id = $term;
   }else{
@@ -441,12 +401,18 @@ $defaults = array(
         echo '<ul class="product-cat-list thunk-product-cat-list" data-menu-style="vertical">'.$html.'</ul>';
   }
 function big_store_product_list_categories_mobile( $args = '' ){
+  $term = get_theme_mod('big_store_exclde_category','');
+if(!empty($term[0])){
+  $exclude_id = $term;
+  }else{
+  $exclude_id = '';
+ }
     $defaults = array(
         'child_of'            => 0,
         'current_category'    => 0,
         'depth'               => 5,
         'echo'                => 0,
-        'exclude'             => '',
+        'exclude'             => $exclude_id,
         'exclude_tree'        => '',
         'feed'                => '',
         'feed_image'          => '',

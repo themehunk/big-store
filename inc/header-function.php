@@ -1,5 +1,4 @@
 <?php
-include_once 'product-search.php';
 /**
  * Header Function for big store theme.
  * 
@@ -281,9 +280,9 @@ if (!function_exists('big_store_below_header_markup')) {
 
                 </nav>
               <?php } else {
-                if (class_exists('WooCommerce')) {
-                  echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
-                }
+
+                echo big_store_th_advance_product_search();
+                
               } ?>
             </div>
             <?php if ($main_header_layout == 'mhdrdefault' || $main_header_layout == 'mhdrone') { ?>
@@ -300,20 +299,25 @@ if (!function_exists('big_store_below_header_markup')) {
                           if (wp_is_mobile() !== true) :
 
                       ?>
-                            <div class="cart-icon">
-                              <?php
-                              do_action('open_cart_count');
-                              do_action('big_store_woo_cart');
-                              ?>
-                            </div>
+
+                            
+                            <?php if ( shortcode_exists( 'taiowc' ) ){
+                              echo do_shortcode('[taiowc]');
+                             } ?>
+                           
+
+                             
+            
                           <?php endif;
                         } elseif (get_theme_mod('big_store_cart_mobile_disable') == false) { ?>
-                          <div class="cart-icon">
-                            <?php
-                            do_action('open_cart_count');
-                            do_action('big_store_woo_cart');
-                            ?>
-                          </div>
+
+                          
+                          <?php if ( shortcode_exists( 'taiowc' ) ){
+                              echo do_shortcode('[taiowc]');
+                             } ?>
+                           
+
+                         
                       <?php  }
                       } ?>
                     </div>
@@ -390,9 +394,7 @@ if (!function_exists('big_store_main_header_markup')) {
                   </div>
                 </nav>
               <?php } else {
-                if (class_exists('WooCommerce')) {
-                  echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
-                }
+                echo big_store_th_advance_product_search();
               } ?>
             </div>
             <div class="main-header-col3">
@@ -412,14 +414,18 @@ if (!function_exists('big_store_main_header_markup')) {
             </div>
 
             <div class="main-header-col2">
-              <?php if (class_exists('WooCommerce')) {
-                echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
-              } ?>
+              <?php
+                echo big_store_th_advance_product_search();
+                ?>
             </div>
 
             <div class="main-header-col3">
               <div class="thunk-icon-market">
-                <div class="menu-toggle">
+                <?php 
+                if(is_plugin_active('themehunk-megamenu-plus/themehunk-megamenu.php')){ 
+                       big_store_main_nav_menu();
+                    }else{ ?>   
+                  <div class="menu-toggle">
                   <button type="button" class="menu-btn" id="menu-btn">
                     <div class="btn">
                       <span class="icon-bar"></span>
@@ -428,18 +434,15 @@ if (!function_exists('big_store_main_header_markup')) {
                     </div>
                   </button>
                 </div>
+                <?php } ?>
                 <div class="header-support-wrap">
                   <div class="header-support-icon">
-                    <?php if (class_exists('WPCleverWoosw')) { ?>
-                      <a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>">
-                        <i class="fa fa-heart-o" aria-hidden="true"></i><span><?php _e('Wishlist', 'big-store'); ?></span></a>
-                    <?php } ?>
-                    <?php if (class_exists('YITH_WCWL') && (!class_exists('WPCleverWoosw'))) { ?>
+                    <?php if( class_exists( 'WooCommerce' ) &&get_theme_mod('big_store_whislist_mobile_disable',false) != true){ ?>
                       <a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>">
                         <i class="fa fa-heart-o" aria-hidden="true"></i><span><?php _e('Wishlist', 'big-store'); ?></span></a>
                     <?php } ?>
 
-                    <?php if (class_exists('WooCommerce')) {
+                    <?php if(class_exists( 'WooCommerce' ) && get_theme_mod('big_store_account_mobile_disable',false) != true){
                       big_store_account();
                     } ?>
 
@@ -447,25 +450,30 @@ if (!function_exists('big_store_main_header_markup')) {
                   <div class="thunk-icon">
 
                     <?php if (class_exists('WooCommerce')) {
-                      if (get_theme_mod('big_store_cart_mobile_disable') == true) {
-                        if (wp_is_mobile() !== true) :
-
+                      if (wp_is_mobile()) {
+                      if (get_theme_mod('big_store_cart_mobile_disable',false) !== true) {
                     ?>
-                          <div class="cart-icon">
-                            <?php
-                            do_action('open_cart_count');
-                            do_action('big_store_woo_cart');
-                            ?>
-                          </div>
-                        <?php endif;
-                      } elseif (get_theme_mod('big_store_cart_mobile_disable') == false) { ?>
-                        <div class="cart-icon">
-                          <?php
-                          do_action('open_cart_count');
-                          do_action('big_store_woo_cart');
-                          ?>
-                        </div>
-                    <?php  }
+                            
+                            <?php if ( shortcode_exists( 'taiowc' ) ){
+                                echo do_shortcode('[taiowc]');
+                             } ?>
+                           
+                          
+
+                          
+                        <?php 
+                      }}
+                      else{ ?>
+
+                                
+                               <?php if ( shortcode_exists( 'taiowc' ) ){
+                                echo do_shortcode('[taiowc]');
+                             } ?>
+                          
+
+                        
+                        
+                   <?php   } 
                     } ?>
                   </div>
 
@@ -479,9 +487,9 @@ if (!function_exists('big_store_main_header_markup')) {
     <div class="search-wrapper">
       <div class="container">
         <div class="search-close"><a class="search-close-btn"></a></div>
-        <?php if (class_exists('WooCommerce')) {
-          echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
-        } ?>
+        <?php 
+        echo big_store_th_advance_product_search();
+        ?>
       </div>
     </div>
   <?php  }
@@ -527,20 +535,21 @@ function big_store_main_header_optn()
               if (wp_is_mobile() !== true) :
 
           ?>
-                <div class="cart-icon">
-                  <?php
-                  do_action('open_cart_count');
-                  do_action('big_store_woo_cart');
-                  ?>
-                </div>
+                   
+                   <?php if ( shortcode_exists( 'taiowc' ) ){
+                                echo do_shortcode('[taiowc]');
+                             } ?>
+                          
               <?php endif;
             } elseif (get_theme_mod('big_store_cart_mobile_disable') == false) { ?>
-              <div class="cart-icon">
-                <?php
-                do_action('open_cart_count');
-                do_action('big_store_woo_cart');
-                ?>
-              </div>
+
+                   
+                     <?php if ( shortcode_exists( 'taiowc' ) ){
+                               echo do_shortcode('[taiowc]');
+                             } ?>
+
+                     
+                         
           <?php  }
           } ?>
         </div>
@@ -593,11 +602,11 @@ function big_store_header_icon()
       big_store_account();
       if (class_exists('WPCleverWoosw')) { ?>
         <a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>">
-          <i class="fa fa-heart-o" aria-hidden="true"></i><span class="tooltiptext"><?php echo esc_html('Wishlist', 'big-store'); ?></span></a>
+          <i class="fa fa-heart-o" aria-hidden="true"></i></a>
       <?php }
       if (class_exists('YITH_WCWL') && (!class_exists('WPCleverWoosw'))) { ?>
         <a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>">
-          <i class="fa fa-heart-o" aria-hidden="true"></i><span class="tooltiptext"><?php echo esc_html('Wishlist', 'big-store'); ?></span></a>
+          <i class="fa fa-heart-o" aria-hidden="true"></i></a>
       <?php }
 
 
@@ -698,13 +707,13 @@ if (!function_exists('big_store_sticky_header_markup')) {
                 }
                 ?>
               </div>
+              
               <?php if (class_exists('WooCommerce')) { ?>
-                <div class="cart-icon">
-                  <?php
-                  do_action('open_cart_count');
-                  do_action('big_store_woo_cart');
-                  ?>
-                </div>
+
+                       <?php if ( shortcode_exists( 'taiowc' ) ){
+                                echo do_shortcode('[taiowc]');
+                             } ?>
+                           
               <?php  } ?>
             </div>
           </div>
@@ -715,9 +724,9 @@ if (!function_exists('big_store_sticky_header_markup')) {
     <div class="search-wrapper">
       <div class="container">
         <div class="search-close"><a class="search-close-btn"></a></div>
-        <?php if (class_exists('WooCommerce')) {
-          echo big_store_product_search_box(!get_theme_mod('big_store_cat_search_disable'));
-        } ?>
+        <?php 
+        echo big_store_th_advance_product_search();
+        ?>
       </div>
     </div>
   <?php }
@@ -745,16 +754,22 @@ function bigstore_mobile_navbar()
           <li><a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
         <?php } ?>
         <li>
-          <a href="#" class="menu-btn" id="mob-menu-btn">
+          <?php
+         if(is_plugin_active( 'themehunk-megamenu-plus/themehunk-megamenu.php')) { 
+         big_store_main_nav_menu();
+            }else{  ?>
+            
+             <a href="#" class="menu-btn" id="mob-menu-btn">
 
             <i class="icon fa fa-bars" aria-hidden="true"></i>
-
+            
           </a>
+       <?php  }?>
 
         </li>
         <li><?php big_store_account(); ?></li>
         <li><?php
-            do_action('open_cart_count');
+            //do_action('open_cart_count');
             ?>
         </li>
 
@@ -836,3 +851,18 @@ function big_store_cart_mobile_panel()
 <?php
 }
 add_action('big_store_below_header', 'big_store_cart_mobile_panel');
+
+//********************************
+//th advance product search 
+//*******************************
+function big_store_th_advance_product_search(){
+  if ( shortcode_exists('th-aps') ){
+                echo do_shortcode('[th-aps]');
+              } elseif ( !shortcode_exists('th-aps') && is_user_logged_in()) {
+                $url = admin_url('themes.php?page=thunk_started&searchp');
+                $pro_url =admin_url('plugin-install.php?s=th%20advance%20product%20search&tab=search&type=term');
+                $url = (function_exists("big_store_pro_load_plugin"))?$pro_url:$url;
+
+                      echo '<a href="'.$url.'" target="_blank" class="plugin-active-msg">'.__('Please Install "th advance product search" Plugin','big-store').'</a>';
+                    }
+}

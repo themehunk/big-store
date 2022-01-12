@@ -3,8 +3,8 @@ Contributors: ThemeHunk
 Tags: e-commerce, blog, grid-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, add_editor_style, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready.
 Requires at least: WordPress 5.3
 Requires PHP: 5.3
-Tested up to: 5.8
-Stable tag: 1.6.1
+Tested up to: 5.8.3
+Stable tag: 1.8.4
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -23,10 +23,100 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
+= 1.8.4 =
+* Menu color issue fixed.
 
+= 1.8.3 =
+* footer issue fixed.
+
+= 1.8.2 =
+* Th option panel notification udpated.
+* Add pro and docs button in customizer.
+* Below footer copyright section disable.
+* Th all in one woo cart plugin added.
+* Th option panel sidebar text updated.
+* th all in one woo cart plugin class taiowc-fly-cart added.
+* Remove theme support for widget block editor.
+* Fix shopping cart icon issue.
+* Shop page no-sidebar issue fixed.
+* Th all in one woo cart make visible price.
+
+= 1.8.1 =
+* Icons disable in mobile issue resolved.
+* Th compare product style improved.
+
+= 1.8.0=
+* Th product compare plugin added.
+* Th advance product search pro plugin issue fixed.
+
+= 1.7.9=
+* Mega menu plugin removed recommended plugin section.
+
+= 1.7.8=
+* Child theme notification added.
+* Child theme notification text changed.
+* Free Vs Pro feature updated.
+* Th option panel sidebar text updated.
+
+= 1.7.7=
+* Theme option panel updated.
+
+= 1.7.6=
+* Exclude category in mobile issue resolved.
+
+= 1.7.5=
+* Th advance product search plugin url issue fixed.
+
+= 1.7.4=
+* Themehunk Mega menu plugin Competible.
+
+= 1.7.3=
+* Mobile menu close button translation issue resolved.
+
+= 1.7.2=
+* Th option panel updated.
+
+= 1.7.1=
+* Tooltip option added.
+
+= 1.7.0=
+* Th advance product search plugin installation message style improved.
+
+= 1.6.9=
+* Th advance product search plugin installation issue fixed.
+
+= 1.6.8=
+* Th advance product search plugin added.
+* Checkout page search button issue fixed.
+
+= 1.6.7=
+* Add to cart button issue resolved
+
+= 1.6.6=
+* Big feature product big image variation swatches align center style added.
+
+= 1.6.5=
+* Gallery image issue fixed.
+* Update langauge file.
+
+= 1.6.4=
+* Woocommerce Image cropping issue fixed.
+* Default yith and wpc plugin issue fixed.
+* Th variation swatches plugin pro compatible.
+* Draft post publish issue fixed.
+* out of stock serach issue fixed.
+
+= 1.6.3=
+* sidebar widget title font size fixed.
+* footer widget title font size fixed.
+
+= 1.6.2=
+* Product search improved.
+* Customizer draft issue fixed.
+* Woocommerce croping issue fixed.
 
 = 1.6.1=
-*Th Variation Swatches Plugin added.
+* Th Variation Swatches Plugin added.
 
 = 1.6.0=
 *Shop page sorting background issue fixed.
@@ -106,14 +196,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= 1.5.8=
-* Product image cropping added.
-* Shop page list view style improved.
-* category heading slider layout 3 issue resolved.
-* Z-index issue with product image zoom at single page.
-* Selected wishlist icon color issue resolved.
-* Improved category page list view.
-* Sidebar issue in tag pages.
+= 1.8.1 =
+* Icons disable in mobile issue resolved.
 
 == Resources ==
  

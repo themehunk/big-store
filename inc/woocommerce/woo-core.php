@@ -207,7 +207,7 @@ if ( ! class_exists( 'Big_Store_Pro_Woocommerce_Ext' ) ) :
 					$classes[] = 'open-shadow-hover-' . esc_attr($shadow_hvr_style);
 				}	
 			}
-			if ( 'swap' === $hover_style && (!is_admin()) && !big_store_is_blog()){
+			if ( 'swap' === $hover_style && !is_page_template('frontpage.php') && (!is_admin()) && !big_store_is_blog()){
             global $product;
 			$attachment_ids = $product->get_gallery_image_ids();
 			if(count($attachment_ids) > '0'){
@@ -215,14 +215,19 @@ if ( ! class_exists( 'Big_Store_Pro_Woocommerce_Ext' ) ) :
 			  }
 			
 		    }
-		     if('slide' === $hover_style && (!is_admin()) && !big_store_is_blog()){
+		     if ( 'slide' === $hover_style && !is_page_template('frontpage.php') && (!is_admin()) && !big_store_is_blog()){
             global $product;
+
 			$attachment_ids = $product->get_gallery_image_ids();
 			if(count($attachment_ids) > '0'){
                 $classes[] ='big-store-slide-item-hover';
 			  }
-		
+		  
 		   }
+
+		   if(class_exists('Taiowc_Pro')){
+                $classes[] ='taiowc-fly-cart';
+			}
 			return $classes;
 		}
 		/**
@@ -340,15 +345,7 @@ if ( ! class_exists( 'Big_Store_Pro_Woocommerce_Ext' ) ) :
 			$localize['qv_loader'] = $loader;
 			return $localize;
 		}
-		/****************/
-        // add to compare
-        /****************/
-        function big_store_add_to_compare($pid=''){
-        if( is_plugin_active('yith-woocommerce-compare/init.php') ){
-          return '<div class="thunk-compare"><span class="compare-list"><div class="woocommerce product compare-button"><a href="'.esc_url(home_url()).'?action=yith-woocompare-add-product&id='.esc_attr($pid).'" class="compare button" data-product_id="'.esc_attr($pid).'" rel="nofollow">Compare</a></div></span></div>';
 
-           }
-        }
 		/**
 		 * Quick view on image
 		 */
@@ -357,13 +354,14 @@ if ( ! class_exists( 'Big_Store_Pro_Woocommerce_Ext' ) ) :
             $button='';
 			$product_id = $product->get_id();
 
+			
 			// Get label.
 			$label = __( 'Quick View', 'big-store' );
 
 			$button.='<div class="thunk-quik">
 			             <div class="thunk-quickview">
                                <span class="quik-view">
-                                   <a href="#" class="opn-quick-view-text" data-product_id="' . esc_attr($product_id). '">
+                                   <a href="#" class="opn-quick-view-text"  data-product_id="' . esc_attr($product_id). '">
                                       <span>'.esc_html($label).'</span>
                                     
                                    </a>

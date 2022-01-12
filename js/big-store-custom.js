@@ -189,7 +189,8 @@
        
         MobileMenuFunction : function(){
                  // close-button-active
-                   $('body').find('.sider').prepend('<div class="menu-close"><a href="#" class="menu-close-btn">close</a></div>');
+                 var menuclose = big_store.mobile_menuclose;
+                   $('body').find('.sider').prepend('<div class="menu-close"><a href="#" class="menu-close-btn">'+menuclose+'</a></div>');
                         $('.menu-close-btn').removeAttr("href");
                         //Menu close
                         $('.menu-close-btn,.big-store-menu li a span.big-store-menu-link').click(function(){

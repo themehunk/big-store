@@ -37,6 +37,7 @@ require BIG_STORE_THEME_DIR . 'customizer/section/woo/product.php';
 require BIG_STORE_THEME_DIR . 'customizer/section/woo/single-product.php';
 require BIG_STORE_THEME_DIR . 'customizer/section/woo/cart.php';
 require BIG_STORE_THEME_DIR . 'customizer/section/woo/shop.php';
+require BIG_STORE_THEME_DIR . 'customizer/section/woo/tooltip.php';
 
 // scroller
 if ( class_exists('Big_Store_Customize_Control_Scroll')){

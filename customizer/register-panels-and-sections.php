@@ -688,3 +688,11 @@ $big_store_woo_shop_page = new Big_Store_WP_Customize_Section( $wp_customize, 'b
      'priority' => 4,
 ));
 $wp_customize->add_section($big_store_woo_shop_page);
+
+
+$big_store_woo_tooltip_page = new Big_Store_WP_Customize_Section( $wp_customize, 'big-store-woo-tooltip-page', array(
+    'title'    => __( 'Tooltip Option', 'big-store' ),
+     'panel'    => 'woocommerce',
+     'priority' => 4,
+));
+$wp_customize->add_section($big_store_woo_tooltip_page);

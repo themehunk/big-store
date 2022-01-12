@@ -6,23 +6,6 @@
 // Disable product category search box
 /****************************************/
 
-
-
-
-$wp_customize->add_setting( 'big_store_cat_search_disable', array(
-                'default'               => false,
-                'sanitize_callback'     => 'big_store_sanitize_checkbox',
-            ) );
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'big_store_cat_search_disable', array(
-                'label'                 => esc_html__('Check to disable Category in Search Box', 'big-store'),
-                'type'                  => 'checkbox',
-                //'section'               => 'big-store-main-header',
-				'section'               => 'big-store-main-header',
-                'settings'              => 'big_store_cat_search_disable',
-                'priority'   => 1,
-            ) ) );
-
-
 // choose col layout
 
 

@@ -1,13 +1,17 @@
 /********************************/
 // BigStoreWooLib Custom Function
 /********************************/
+
 (function ($) {
+
   var BigStoreWooLib = {
     init: function () {
       this.bindEvents();
     },
     bindEvents: function () {
       var $this = this;
+            $this.tooltip_option();
+
       $this.listGridView();
       $this.OffCanvas();
       $this.cartDropdown();
@@ -21,7 +25,112 @@
       $this.cartopen();
       $this.woccomerce_tab();
       $this.product_descr_excerpt();
+      $this.tooltip();
     },
+
+    tooltip_option: function () {
+        // header tooltip
+        if(big_store.header_tt_enable){
+
+
+                        setTimeout(() => {
+
+           if($('.cart-contents').length && big_store.tt_add_to_cart){
+             $(".header-support-icon .cart-contents i").attr("th-tooltip", big_store.tt_add_to_cart);
+          }
+                        }, 1000);
+
+
+          if($('.account').length && big_store.tt_account){
+             $(".header-support-icon .account").attr("th-tooltip", big_store.tt_account);
+          }
+
+
+            if($('.whishlist').length && big_store.tt_wishlist){
+            $(".header-support-icon .whishlist").attr("th-tooltip", big_store.tt_wishlist);
+          }
+
+        }
+              // page tootle tip
+        if(big_store.page_tt_enable){
+
+            if($('.add_to_cart_button').length && big_store.tt_add_to_cart){
+             $(".add_to_cart_button").attr("th-tooltip", big_store.tt_add_to_cart);
+          }
+
+          if($('.opn-quick-view-text').length && big_store.tt_quickview){
+            $(".opn-quick-view-text").attr("th-tooltip", big_store.tt_quickview);
+          }
+
+          if($('.compare').length && big_store.tt_compare){
+            $(".compare").attr("th-tooltip", big_store.tt_compare);
+          }
+
+          if($('.add_to_wishlist').length && big_store.tt_wishlist){
+            $(".add_to_wishlist").attr("th-tooltip", big_store.tt_wishlist);
+          }
+        }
+    },
+
+    tooltip: function(){
+              setTimeout(() => {
+
+    // fn start 
+          let initTooltip = $("[th-tooltip]");
+      if (initTooltip.length) {
+        // keep tool tip in document
+        let tooltipHtml = '<div class="tooltip-show-with-title">';
+        tooltipHtml += '<span class="th-ttt"></span>';
+        tooltipHtml +=
+          '<svg class="pointer_" viewBox="0 0 1280 70" preserveAspectRatio="none">';
+        tooltipHtml += '<polygon points="1280,70 0,70 640,0 "></polygon>';
+        tooltipHtml += "</svg>";
+        tooltipHtml += "</div>";
+          let keepToolTip = $(".tooltip-show-with-title");
+          if (keepToolTip.length == 0) {
+            $("body").append(tooltipHtml);
+          }
+
+        $(document).on(
+          {
+            mouseenter: function () {
+
+              let element = $(this);
+
+              let element_ = element[0].getBoundingClientRect();
+              let tooltip_ = $(".tooltip-show-with-title");
+              if(tooltip_.length){
+                            //text and content
+                            let title_ = element.attr("th-tooltip");
+                            tooltip_.find(".th-ttt").text(title_);
+                            // style and dimensions
+                            // calculate top
+                            let getScrollTop = $(window).scrollTop();
+                            let tooltip = tooltip_[0].getBoundingClientRect();
+                            let TopMargin = element_.top - (tooltip.height + 12);
+                            TopMargin = getScrollTop + TopMargin;
+                            // calculate left
+                            let getTTwidth = tooltip.width / 2;
+                            let elementWidth = element_.width / 2;
+                            let leftMargin = element_.left - (getTTwidth - elementWidth);
+                            tooltip_.addClass("active");
+                            tooltip_.css({ top: TopMargin, left: leftMargin });
+                          }
+            },
+            mouseleave: function () {
+              let element_ = $(this);
+              let tooltip = $(".tooltip-show-with-title");
+              tooltip.removeClass("active");
+            },
+          },
+          "[th-tooltip]"
+        ); 
+      }
+
+              }, 1000);
+
+    // fn end 
+  },
     woccomerce_tab: function () {
       $(document).ready(function () {
         if ($(".description_tab").hasClass("active")) {
@@ -318,118 +427,6 @@
         }
       }
     },
-    // AutoCompleteSearch: function () {
-    //   var cat = "";
-    //   $(".search-autocomplete")
-    //     .autocomplete({
-    //       classes: {
-    //         "ui-autocomplete": "th-wp-auto-search",
-    //       },
-    //       minLength: 1,
-    //       source: function (request, response, term) {
-    //         var matcher = $.ui.autocomplete.escapeRegex(request.term);
-
-    //         if ($("#product_cat").val()) {
-    //           var cat = $("#product_cat").val();
-    //         } else {
-    //           var cat = "0";
-    //         }
-
-    //         $(".search-autocomplete").removeClass("ui-autocomplete-loading");
-
-    //         $(".woocommerce-product-search #search-button").addClass(
-    //           "ui-autocomplete-loading"
-    //         );
-
-    //         $.ajax({
-    //           type: "POST",
-    //           dataType: "json",
-    //           url: bigstore.ajaxUrl,
-    //           data: {
-    //             action: "big_store_search_site",
-    //             match: matcher,
-    //             cat: cat,
-    //           },
-    //           success: function (res) {
-    //             if (res.data.length !== 0) {
-    //               var oldFn = $.ui.autocomplete.prototype._renderItem;
-    //               $.ui.autocomplete.prototype._renderItem = function (
-    //                 ul,
-    //                 item
-    //               ) {
-    //                 var re = new RegExp(this.term, "ig");
-    //                 var t = item.label.replace(
-    //                   re,
-    //                   "<span style='font-family:JosefinSans-Bold; color:#fe696a;'>" +
-    //                     this.term +
-    //                     "</span>"
-    //                 );
-    //                 return $("<li></li>")
-    //                   .data("item.autocomplete", item)
-    //                   .append(
-    //                     "<a href=" +
-    //                       item.link +
-    //                       "><div class='srch-prd-img'>" +
-    //                       item.imglink +
-    //                       "</div><div class='srch-prd-content'><span class='title'>" +
-    //                       t +
-    //                       "</span><span class='price'>" +
-    //                       item.price +
-    //                       "</spn></div></a>"
-    //                   )
-    //                   .appendTo(ul);
-    //               };
-    //             } else {
-    //               $.ui.autocomplete.prototype._renderItem = function (
-    //                 ul,
-    //                 item
-    //               ) {
-    //                 return $("<li></li>")
-    //                   .data("item.autocomplete", item)
-    //                   .append(
-    //                     "<div class='no-result-msg'>No Result Found</div>"
-    //                   )
-    //                   .appendTo(ul);
-    //               };
-    //             }
-    //             response(res.data.slice(0, 5));
-    //             if (res.data.length > 5) {
-    //               var href = window.location.href;
-    //               var index = href.indexOf("/wp-admin");
-    //               var homeUrl = href.substring(0, index);
-    //               var serachurl =
-    //                 homeUrl +
-    //                 "?s=" +
-    //                 matcher +
-    //                 "&product_cat=" +
-    //                 cat +
-    //                 "&post_type=product";
-    //               $(".th-wp-auto-search").append(
-    //                 '<a href="' +
-    //                   serachurl +
-    //                   '" class="search-bar__view-all" >View all results</a>'
-    //               );
-    //             }
-    //             $(".search-autocomplete").removeClass(
-    //               "ui-autocomplete-loading"
-    //             );
-    //             $(".woocommerce-product-search #search-button").removeClass(
-    //               "ui-autocomplete-loading"
-    //             );
-    //           },
-    //         });
-    //       },
-    //       response: function (event, ui) {
-    //         if (ui.content.length == 0) {
-    //           var noResult = { value: "", label: "", imglink: "", price: "" };
-    //           ui.content.push(noResult);
-    //         }
-    //       },
-    //     })
-    //     .bind("focus change", function () {
-    //       $(this).autocomplete("search");
-    //     });
-    // },
     cartopen: function () {
       $(document).on("click", "a.cart-contents", function (e) {
         e.preventDefault();
@@ -578,10 +575,22 @@
                   },
                 },
               });
+
+
+              
+
               $(".thunk-product-tab-section .thunk-loadContainer").css(
                 "display",
                 "none"
               );
+
+              $('li.thvs_loop-available-attributes__value').hover(function () {
+                               var src = $(this).attr('data-o-src');
+                               var id = $(this).attr('data-product-id');
+                               $('li.thvs_loop-available-attributes__value').closest('.post-'+ id ).find
+
+('img.attachment-woocommerce_thumbnail').attr("srcset", src );
+                            });
             }
           });
           e.preventDefault();
