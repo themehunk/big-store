@@ -2091,6 +2091,9 @@ a.slide-btn:after {
   border: none;
   background: none;
 }
+/* .thmk-woocommerce-search-wrap .thmk-woocommerce-search-wrap-select select option{
+  color: red;
+} */
 .thmk-woocommerce-search-wrap .thmk-woocommerce-search-wrap-submit {
   width: 10%;
   max-width: 60px;
