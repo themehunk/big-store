@@ -175,6 +175,18 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
                 'img' => 'icon-128x128.png',
                 'active_filename' => 'woocommerce/woocommerce.php',
             ),
+            
+            'th-advance-product-search' => array(
+            'name' => esc_html__( 'TH Advance Product Search', 'big-store' ),
+            'img' => 'icon-128x128.gif',
+            'active_filename' => 'th-advance-product-search/th-advance-product-search.php',
+            ),
+
+            'th-all-in-one-woo-cart' => array(
+                 'name' => esc_html__( 'TH All In One Woo Cart', 'big-store' ),
+                  'img' => 'icon-128x128.png',
+                 'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
+             ),
 
         ));
 
@@ -331,9 +343,9 @@ function big_store_scripts(){
 	wp_add_inline_style('big-store-style', big_store_custom_style());
 	
     //enqueue js
-    //wp_enqueue_script("jquery-effects-core",array( 'jquery' ));
-    //wp_enqueue_script( 'jquery-ui-autocomplete',array( 'jquery' ),'',true );
+    
     wp_enqueue_script('imagesloaded');
+
     wp_enqueue_script('big-store-menu-js', BIG_STORE_THEME_URI .'js/big-store-menu.js', array( 'jquery' ), '1.0.0', true );
    
     wp_enqueue_script('owl.carousel-js', BIG_STORE_THEME_URI .'js/owl.carousel.js', array( 'jquery' ), '1.0.1', true );

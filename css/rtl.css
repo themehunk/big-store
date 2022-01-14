@@ -9306,3 +9306,62 @@ section.thunk-ribbon-section {
     width: 36%;
   }
 }
+
+/* all in one woo cart */
+.thunk-icon .taiowc-cart-item {
+    padding: 0.5rem 0.4rem 0.5rem 0.4rem;
+}
+.sticky-header .cart-icon a span:hover {
+    color: #000;
+}
+
+.thunk-icon .taiowc-icon svg, .thunk-icon .taiowc-icon img {
+    width: 1.4rem
+}
+.thunk-icon .cart-count-item {
+    position: absolute;
+    background: #111;
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    color: #fff;
+    text-align: center;
+    font-size: 0.69rem;
+    border-radius: 100%;
+    top: -18px;
+    left: -18px;
+    z-index: 1;
+}
+/*** tooltip  */
+.tooltip-show-with-title {
+  background-color: black;
+  position: absolute;
+  z-index: 100000;
+  border: 1px solid black;
+  padding: 4px 13px;
+  color: white;
+  border-radius: 3px;
+  text-align: center;
+  width: fit-content;
+  max-width: 182px;
+  transition: 0.2s transform ease, 0.2s opacity ease;
+  transform: translateY(-25px);
+  opacity: 0;
+}
+.tooltip-show-with-title.active {
+  visibility: visible;
+  transform: translateY(0);
+  opacity: 1;
+}
+.tooltip-show-with-title .pointer_ {
+  height: 10px;
+  width: 15px;
+  margin: auto;
+  display: block;
+  fill: black;
+  position: absolute;
+  bottom: -10px;
+  transform: translateX(-50%) rotateZ(180deg);
+  left: 50%;
+}
+/*** tooltip  */
