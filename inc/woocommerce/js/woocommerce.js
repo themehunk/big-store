@@ -1,7 +1,6 @@
 /********************************/
 // BigStoreWooLib Custom Function
 /********************************/
-
 (function ($) {
   var BigStoreWooLib = {
     init: function () {
@@ -10,7 +9,6 @@
     bindEvents: function () {
       var $this = this;
       $this.tooltip_option();
-
       $this.listGridView();
       $this.OffCanvas();
       $this.cartDropdown();
@@ -72,7 +70,6 @@
         }
       }
     },
-
     tooltip: function () {
       setTimeout(() => {
         // fn start
@@ -132,7 +129,7 @@
 
       // fn end
     },
-    woccomerce_tab: function () {
+      woccomerce_tab: function () {
       $(document).ready(function () {
         if ($(".description_tab").hasClass("active")) {
           $(".woocommerce-Tabs-panel.woocommerce-Tabs-panel--description").css(

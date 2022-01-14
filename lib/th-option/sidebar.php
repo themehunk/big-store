@@ -10,7 +10,7 @@
             <hr>
             <div class="section">
                 <h3><?php _e('Why Upgrade?','big-store'); ?></h3>
-                <p><?php _e('Upgrading to Big Store Premium you will unlock a dozen of unique features that will take your website to the next level. See in the  Comparison table for more details.','big-store'); ?> </p>
+                <p><?php _e('Upgrading to Big Store Premium you will unlock dozen of unique features that will take your website to the next level. See the Comparison table for more details.','big-store'); ?> </p>
                  <center><a class="button button-primary" target="_blank" href="https://themehunk.com/product/big-store/#tabfix"><?php _e('View Big Store Premium Demo','big-store'); ?> </a></center>
 
             </div>
