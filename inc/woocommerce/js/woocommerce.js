@@ -10,8 +10,8 @@
     },
     bindEvents: function () {
       var $this = this;
-            $this.tooltip_option();
 
+      //$this.tooltip_option();
       $this.listGridView();
       $this.OffCanvas();
       $this.cartDropdown();
@@ -25,7 +25,7 @@
       $this.cartopen();
       $this.woccomerce_tab();
       $this.product_descr_excerpt();
-      $this.tooltip();
+     // $this.tooltip();
     },
 
     tooltip_option: function () {
@@ -33,7 +33,7 @@
         if(big_store.header_tt_enable){
 
 
-                        setTimeout(() => {
+           setTimeout(() => {
 
            if($('.cart-contents').length && big_store.tt_add_to_cart){
              $(".header-support-icon .cart-contents i").attr("th-tooltip", big_store.tt_add_to_cart);
@@ -51,15 +51,15 @@
           }
 
         }
-              // page tootle tip
+        // page tootle tip
         if(big_store.page_tt_enable){
-
-            if($('.add_to_cart_button').length && big_store.tt_add_to_cart){
-             $(".add_to_cart_button").attr("th-tooltip", big_store.tt_add_to_cart);
-          }
 
           if($('.opn-quick-view-text').length && big_store.tt_quickview){
             $(".opn-quick-view-text").attr("th-tooltip", big_store.tt_quickview);
+          }
+
+            if($('.add_to_cart_button').length && big_store.tt_add_to_cart){
+             $(".add_to_cart_button").attr("th-tooltip", big_store.tt_add_to_cart);
           }
 
           if($('.compare').length && big_store.tt_compare){
@@ -73,10 +73,9 @@
     },
 
     tooltip: function(){
-              setTimeout(() => {
-
+    setTimeout(() => {
     // fn start 
-          let initTooltip = $("[th-tooltip]");
+      let initTooltip = $("[th-tooltip]");
       if (initTooltip.length) {
         // keep tool tip in document
         let tooltipHtml = '<div class="tooltip-show-with-title">';
@@ -94,9 +93,7 @@
         $(document).on(
           {
             mouseenter: function () {
-
               let element = $(this);
-
               let element_ = element[0].getBoundingClientRect();
               let tooltip_ = $(".tooltip-show-with-title");
               if(tooltip_.length){
@@ -129,8 +126,8 @@
 
               }, 1000);
 
-    // fn end 
-  },
+      // fn end 
+    },
     woccomerce_tab: function () {
       $(document).ready(function () {
         if ($(".description_tab").hasClass("active")) {

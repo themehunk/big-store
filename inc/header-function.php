@@ -315,9 +315,7 @@ if (!function_exists('big_store_below_header_markup')) {
                           <?php if ( shortcode_exists( 'taiowc' ) ){
                               echo do_shortcode('[taiowc]');
                              } ?>
-                           
-
-                         
+ 
                       <?php  }
                       } ?>
                     </div>

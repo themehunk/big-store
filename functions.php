@@ -331,8 +331,8 @@ function big_store_scripts(){
 	wp_add_inline_style('big-store-style', big_store_custom_style());
 	
     //enqueue js
-    wp_enqueue_script("jquery-effects-core",array( 'jquery' ));
-    wp_enqueue_script( 'jquery-ui-autocomplete',array( 'jquery' ),'',true );
+    //wp_enqueue_script("jquery-effects-core",array( 'jquery' ));
+    //wp_enqueue_script( 'jquery-ui-autocomplete',array( 'jquery' ),'',true );
     wp_enqueue_script('imagesloaded');
     wp_enqueue_script('big-store-menu-js', BIG_STORE_THEME_URI .'js/big-store-menu.js', array( 'jquery' ), '1.0.0', true );
    
@@ -342,8 +342,8 @@ function big_store_scripts(){
 
     wp_enqueue_script( 'big-store-custom-js', BIG_STORE_THEME_URI .'js/big-store-custom.js', array( 'jquery' ), BIG_STORE_THEME_VERSION , true );
      $bigstorelocalize = array(
-     			'page_tt_enable' => get_theme_mod('big_store_page_tp_enable'),
-     			'header_tt_enable' => get_theme_mod('big_store_hdr_tp_enable'),
+     			'page_tt_enable' => get_theme_mod('big_store_page_tp_enable', false),
+     			'header_tt_enable' => get_theme_mod('big_store_hdr_tp_enable', false),
      			'tt_account' =>  get_theme_mod( 'big_store_account_tooltip_txt', __( 'Account', 'big-store' )),
      			'tt_add_to_cart' =>  get_theme_mod( 'big_store_add_to_cart_tooltip_txt', __( 'Add To Cart', 'big-store' )),
      			'tt_wishlist' =>  get_theme_mod( 'big_store_wishlist_tooltip_txt', __( 'Wishlist', 'big-store' )),
