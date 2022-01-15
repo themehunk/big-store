@@ -57,7 +57,8 @@ class ThemeHunk_Child_Notify{
 		
 		  $my_theme = wp_get_theme();
 		  $theme =  esc_html( $my_theme->get( 'TextDomain' ) );
-		$display = isset($_GET['notice-disable'])?'none':'block'; 
+		  $display = isset($_GET['notice-disable'])?'none':'block'; 
+
 		?>
 
 
@@ -70,8 +71,18 @@ class ThemeHunk_Child_Notify{
         ?>
       </h1>
 
-        <p><?php _e( "Get Started with ".esc_html( $my_theme->Name )." and Start customizing your website, also Install the Child theme if you want to edit the core code of the theme.", "big-store" ); ?></p>
-        <a href="<?php echo esc_url(admin_url('themes.php?page=thunk_started')); ?>" class="button button-primary th-blue"><?php _e('Get Started with '.esc_html( $my_theme->Name ),'big-store') ?></a>
+        <p>
+        <?php printf( esc_html__( 'Get Started with %1$s and Start customizing your website, also Install the Child theme if you want to edit the core code of the theme.', 'big-store' ), esc_html( $my_theme->Name ));?>
+        	
+        </p>
+
+        <a href="<?php echo esc_url(admin_url('themes.php?page=thunk_started')); ?>" class="button button-primary th-blue">
+        	<?php
+
+               printf( esc_html__( 'Get Started with %1$s', 'big-store' ), esc_html( $my_theme->Name ));
+
+              ?>	
+        </a>
 
         <a href="<?php echo esc_url(admin_url('themes.php?page=thunk_started')); ?>" class=" button-secondary"><?php _e("Get Child Theme Now","big-store") ?></a>
 

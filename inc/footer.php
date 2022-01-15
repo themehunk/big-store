@@ -156,14 +156,14 @@ function big_store_shop_below_footer_markup(){ ?>
               <?php
               echo date_i18n(
                 /* translators: Copyright date format, see https://www.php.net/date */
-                _x( 'Y', 'copyright date format', 'm-shop' )
+                _x( 'Y', 'copyright date format', 'big-store' )
               );
               ?>
               <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
               <span class="powered-by-wordpress">
-              <span><?php _e( 'Designed by', 'm-shop' ); ?></span>
-              <a href="<?php echo esc_url( __( 'https://themehunk.com/', 'm-shop' ) ); ?>" target="_blank">
-                <?php _e( 'Themehunk', 'm-shop' ); ?>
+              <span><?php _e( 'Designed by', 'big-store' ); ?></span>
+              <a href="<?php echo esc_url( __( 'https://themehunk.com/', 'big-store' ) ); ?>" target="_blank">
+                <?php _e( 'Themehunk', 'big-store' ); ?>
               </a>
             </span>
             </p><!-- .footer-copyright -->
