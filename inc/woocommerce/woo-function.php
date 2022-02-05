@@ -13,24 +13,46 @@ if ( ! function_exists( 'is_plugin_active' ) ){
   require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
 
-/***********************************************/
-//Sort section Woocommerce category filter show
-/***********************************************/
-function big_store_add_to_cart_url($product){
+if ( ! function_exists( 'big_store_add_to_cart_url' ) ) {
+  /**
+   * Get the add to cart template for the loop.
+   *
+   * @param array $args Arguments.
+   */
+  function big_store_add_to_cart_url($product){
+     $args = array();
+     if ( $product ){
+      $defaults = array(
+        'quantity'   => 1,
+        'class'      => implode(
+          ' ',
+          array_filter(
+            array(
+              'button th-button',
+              'product_type_' . $product->get_type(),
+              $product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
+              $product->supports( 'ajax_add_to_cart' ) && $product->is_purchasable() && $product->is_in_stock() ? 'ajax_add_to_cart' : '',
+            )
+          )
+        ),
+        'attributes' => array(
+          'data-product_id'  => $product->get_id(),
+          'data-product_sku' => $product->get_sku(),
+          'aria-label'       => $product->add_to_cart_description(),
+          'rel'              => 'nofollow',
+        ),
+      );
 
- $cart_url =  apply_filters( 'woocommerce_loop_add_to_cart_link',
-    sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" data-quantity="%s" class="button th-button %s %s"><span>%s</span></a>',
-        esc_url( $product->add_to_cart_url() ),
-        esc_attr( $product->get_id() ),
-        esc_attr( $product->get_sku() ),
-        esc_attr( isset( $quantity ) ? $quantity : 1 ),
-        $product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
-        $product->is_purchasable() && $product->is_in_stock() && $product->supports( 'ajax_add_to_cart' ) ? 'ajax_add_to_cart' : '',
-        esc_html( $product->add_to_cart_text() )
-    ),$product );
- return $cart_url;
+      $args = apply_filters( 'woocommerce_loop_add_to_cart_args', wp_parse_args( $args, $defaults ), $product );
+
+      if ( isset( $args['attributes']['aria-label'] ) ) {
+        $args['attributes']['aria-label'] = wp_strip_all_tags( $args['attributes']['aria-label'] );
+      }
+
+      wc_get_template( 'loop/add-to-cart.php', $args );
+    }
+  }
 }
-
 /**********************************/
 //Shop Product Markup
 /**********************************/
@@ -155,8 +177,10 @@ add_action( 'woocommerce_before_shop_loop_item_title', 'big_store_product_conten
 add_action( 'woocommerce_after_shop_loop_item_title', 'big_store_product_content_end', 20 );
 add_action( 'woocommerce_after_shop_loop_item_title', 'big_store_product_hover_start',50);
 add_action( 'woocommerce_after_shop_loop_item', 'big_store_product_hover_end',20);
-add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_link_open',20);
-add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_link_open',0);
+add_action( 'woocommerce_before_shop_loop_item_title','woocommerce_template_loop_product_link_open',5);
+add_action( 'woocommerce_before_shop_loop_item_title','woocommerce_template_loop_product_link_close',10);
+add_action( 'woocommerce_shop_loop_item_title','woocommerce_template_loop_product_link_open',0);
+add_action( 'woocommerce_shop_loop_item_title','woocommerce_template_loop_product_link_close',10);
 add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_rating', 20);
 add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price',0);
 add_action( 'woocommerce_before_shop_loop_item_title', 'big_store_product_image_start', 0);
