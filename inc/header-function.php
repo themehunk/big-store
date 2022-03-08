@@ -31,7 +31,7 @@ if (!function_exists('big_store_top_header_markup')) {
                 <?php big_store_top_header_conetnt_col2($big_store_above_header_col2_set, $big_store_menu_open); ?>
               </div>
               <div class="top-header-col3">
-                <?php big_store_top_header_conetnt_col2($big_store_above_header_col3_set, $big_store_menu_open); ?>
+                <?php big_store_top_header_conetnt_col3($big_store_above_header_col3_set, $big_store_menu_open); ?>
               </div>
             </div>
           <?php } ?>
@@ -198,8 +198,8 @@ if (!function_exists('big_store_top_header_conetnt_col3')) {
       <?php }
     } elseif ($content == 'widget') { ?>
       <div class="content-widget">
-        <?php if (is_active_sidebar('top-header-widget-col2')) {
-          dynamic_sidebar('top-header-widget-col2');
+        <?php if (is_active_sidebar('top-header-widget-col3')) {
+          dynamic_sidebar('top-header-widget-col3');
         } else { ?>
           <a href="<?php echo esc_url(admin_url('widgets.php')); ?>"><?php esc_html_e('Add Widget', 'big-store'); ?></a>
         <?php } ?>
