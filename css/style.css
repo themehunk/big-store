@@ -3211,8 +3211,8 @@ header #open-cart {
 .thunk-product .yith-wcwl-wishlistexistsbrowse:before,
 .thunk-product .yith-wcwl-wishlistaddedbrowse:before,
 .thunk-product .woosw-btn:before {
-  content: "\f004";
-  font-family: "fontawesome";
+  content: "\e909";
+  font-family: "th-icon";
   margin: 0;
   font-size: 16px;
 }
@@ -3259,9 +3259,10 @@ header #open-cart {
   opacity: 1;
 }
 .thunk-compare .compare-button a:before {
-  content: "\f021";
-  font-family: "fontawesome";
+  content: "\e917";
+  font-family: "th-icon"!important;
   margin-right: 5px;
+  font-size: 14px!important;
 }
 .thunk-product-hover {
   opacity: 0;
@@ -3402,8 +3403,8 @@ header #open-cart {
 .woocommerce
   .thunk-product-hover
   a.add_to_cart_button.ajax_add_to_cart::before {
-  content: "\f07a";
-  font-family: "FontAwesome";
+  content: "\e919";
+  font-family: "th-icon";
   font-size: 16px;
   left: 0;
   right: 0;
@@ -3434,8 +3435,8 @@ header #open-cart {
   line-height: 35px;
 }
 a.opn-quick-view-text::before {
-  content: "\f06e";
-  font-family: "FontAwesome";
+  content: "\e910";
+  font-family: "th-icon";
   font-size: 16px;
   font-weight: 400;
   position: absolute;
@@ -5269,9 +5270,9 @@ section.upsells.products > h2,
 .summary .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse a::before,
 .summary .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse a::before,
 .summary .woosw-added:before {
-  content: "\f004";
-  font-family: fontawesome;
-  font-size: 13px;
+  content: "\e909";
+  font-family: th-icon;
+  font-size: 16px;
 }
 .thunk-single-product-summary-wrap .yith-wcwl-add-button .yith-wcwl-icon {
   display: none;
@@ -5355,17 +5356,17 @@ section.upsells.products > h2,
   font-weight: normal;
   min-width: auto;
 }
-.woocommerce .entry-summary a.th-product-compare-btn.btn_type:before{
-  content: "\f021";
-  font-family: FontAwesome;
-  display: block;
-  color: #9c9c9c;
-  font-size: 13px;
+
+.woocommerce .entry-summary a.th-product-compare-btn.button:before {
+    content: "\e917";
+    font-family: th-icon;
+    display: block;
+    font-size: 16px;
 }
 
-
-.woocommerce .entry-summary a.compare.button.added:before {
-  color: #1f4c94;
+.woocommerce .entry-summary a.th-product-compare-btn.th-added-compare:before,
+.woocommerce .entry-summary a.th-product-compare-btn.th-added-compare {
+  color: #ffd200;
 }
 .woocommerce .entry-summary .clear {
   clear: initial;
@@ -6867,10 +6868,6 @@ a.prd-search {
   color: #fff;
 }
 
-.sticky-header .account span,
-.sticky-header .cart-contents .cart-total {
-  display: none;
-}
 .sticky-header-bar .menu-toggle .menu-btn {
   height: 38px;
   width: 38px;
@@ -6883,16 +6880,15 @@ a.prd-search {
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-.sticky-header-bar .menu-toggle .menu-btn .btn {
-  margin: 0 auto;
-  margin-top: 10px;
-}
+
 .sticky-header-bar .menu-toggle .menu-btn span {
   display: block !important;
   width: 17px;
-  margin: 3px;
+  margin:4px;
 }
+
 /*search wrapper*/
+
 .search-wrapper {
   position: fixed;
   top: 0;
@@ -8397,7 +8393,64 @@ text-decoration: underline !important;
     left: -18px;
     z-index: 1;
 }
+/************************************************/
+.header-support-icon .taiowcp-cart-item, 
+.header-support-icon .taiowc-cart-item,
+.sticky-header-col3 .taiowc-cart-item,
+.sticky-header-col3 .taiowcp-cart-item {
+    background: #1f4c94;
+    padding: 0.6rem;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height:42px;
+}
+.header-icon a, 
+.sticky-header-col3 .header-icon a, 
+.sticky-header-col3 .header-icon a.prd-search-icon > .tapsp-search-box > .th-icon,
+.sticky-header-col3 .header-icon a.prd-search-icon > .thaps-search-box > .th-icon,
+.header-icon a.prd-search-icon > .tapsp-search-box > .th-icon{
+    height: 42px;
+    width: 42px;
+    line-height: 42px;
+    background: #1f4c94;
+    color: #fff;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 10px 0px 0px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-align: center;
+}
 
+.header-support-icon .header-icon .th-icon,
+.sticky-header-col3 .header-icon a .th-icon{
+    font-size: 24px;
+    line-height: inherit;
+}
+
+.header-support-icon .taiowcp-icon .th-icon,
+.header-support-icon .taiowc-icon .th-icon,
+.sticky-header-col3 .taiowcp-icon .th-icon,
+.sticky-header-col3 .taiowc-icon .th-icon {
+    font-size: 29px;
+}
+
+.header-support-icon .header-icon .taiowcp-content .taiowcp-total,
+.header-support-icon .header-icon .taiowc-content .taiowc-total,
+.sticky-header-col3 .header-icon .taiowcp-content .taiowcp-total,
+.sticky-header-col3 .header-icon .taiowc-content .taiowc-total{
+font-size:12px;
+}
+
+.header-support-icon .taiowcp-icon .th-icon,
+.header-support-icon .taiowc-icon .th-icon,
+.sticky-header-col3 .taiowcp-icon .th-icon,
+.sticky-header-col3 .taiowc-icon .th-icon,
+.taiowcp-content .taiowcp-total,
+.taiowc-content .taiowcp-total{
+color:#fff;
+}
 /* Landscape*/
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .thunk-slide .owl-stage-outer {
@@ -8453,9 +8506,50 @@ display:inline-flex;
   .mobile-nav-bar {
     display: block;
   }
-  .responsive-main-header {
+
+  .responsive-main-header{
     display: block;
   }
+
+  .responsive-main-header a.whishlist .th-icon,
+  .responsive-main-header a.compare .th-icon,
+  .responsive-main-header a.account .th-icon{
+    display: block;
+        font-size: 24px;
+    line-height: inherit;
+  }
+
+  .responsive-main-header .taiowcp-cart-item, 
+  .responsive-main-header .taiowc-cart-item{
+    background: #1f4c94;
+    padding: 0.6rem;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 42px;
+    width: 42px;
+   }
+
+.thunk-icon {
+    margin: 0px 10px 0px 0px;
+   }
+
+    .responsive-main-header .taiowcp-content .taiowcp-total, 
+    .responsive-main-header .taiowc-content .taiowcp-total,
+    .sticky-header .taiowcp-content .taiowcp-total, 
+    .sticky-header .taiowc-content .taiowcp-total  {
+    display: none;
+    }
+
+   .responsive-main-header .taiowcp-icon .th-icon,
+    .responsive-main-header .taiowc-icon .th-icon{
+        color: #fff;
+   }
+    .responsive-main-header .taiowcp-icon .th-icon,
+    .responsive-main-header .taiowc-icon .th-icon {
+    font-size: 29px;
+   }
+
   .responsive-main-header a.whishlist span,
   .responsive-main-header a.compare span,
   .responsive-main-header a.compare span,
@@ -8738,9 +8832,9 @@ display:inline-flex;
   .responsive-main-header .header-support-icon a,
   .responsive-main-header .thunk-icon .cart-icon a.cart-contents,
   .responsive-main-header .menu-toggle .menu-btn {
-    height: 35px;
-    width: 35px;
-    line-height: 35px;
+    height: 42px;
+    width: 42px;
+    line-height: 42px;
     background: #1f4c94;
     color: #fff;
     padding: 0px 0px 0px 0px;
@@ -8768,7 +8862,7 @@ display:inline-flex;
   .responsive-main-header .menu-toggle .icon-bar {
     display: block !important;
     width: 17px;
-    margin: 3px;
+    margin: 4px;
   }
 
   .responsive-main-header #search-box input[type="text"]{
@@ -9238,6 +9332,100 @@ display:inline-flex;
 .taiowc-cart-item .taiowc-total span {
     display: none;
   }
+
+  .responsive-main-header .header-support-icon a,
+   .responsive-main-header .thunk-icon .cart-icon a.cart-contents,
+    .responsive-main-header .menu-toggle .menu-btn {
+    height: 36px;
+    width: 36px;
+    line-height:36px;
+    background: #1f4c94;
+    color: #fff;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 6px 0px 0px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-align: center;
+}
+.responsive-main-header .taiowcp-cart-item, .responsive-main-header .taiowc-cart-item {
+    background: #1f4c94;
+    padding: 0rem;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 36px;
+    width: 36px;
+    line-height:36px;
+         }
+
+  .responsive-main-header a.whishlist .th-icon,
+   .responsive-main-header a.compare .th-icon, 
+   .responsive-main-header a.account .th-icon {
+    display: block;
+    font-size: 22px;
+    line-height: inherit;
+  }
+
+  .responsive-main-header .taiowcp-icon .th-icon, 
+  .responsive-main-header .taiowc-icon .th-icon {
+    font-size: 26px;
+}
+
+.responsive-main-header .tapsp-search-box .th-icon,
+.responsive-main-header .thaps-search-box .th-icon {
+    font-size: 1.4rem;
+}
+
+.responsive-main-header .tapsp-search-form .tapsp-search-autocomplete,
+.responsive-main-header .thaps-search-form .tapsp-search-autocomplete {
+    min-height: 30px;
+    line-height: 30px;
+    border: none!important;
+    font-size: 14px;
+    width: 100%;
+    padding: 0.3rem 0.8rem;
+    margin: 0;
+    border-radius: 4px;
+}
+.header-icon a, .sticky-header-col3 .header-icon a, .sticky-header-col3 .header-icon a.prd-search-icon > .tapsp-search-box > .th-icon, .sticky-header-col3 .header-icon a.prd-search-icon > .thaps-search-box > .th-icon {
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    background: #1f4c94;
+    color: #fff;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 6px 0px 0px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.header-support-icon .taiowcp-cart-item, .header-support-icon .taiowc-cart-item, .sticky-header-col3 .taiowc-cart-item, .sticky-header-col3 .taiowcp-cart-item {
+    background: #1f4c94;
+    padding:0rem;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 36px;
+    width: 36px;
+}
+.header-support-icon .header-icon .th-icon, .sticky-header-col3 .header-icon a .th-icon {
+    font-size: 22px;
+    line-height: inherit;
+}
+.header-support-icon .taiowcp-icon .th-icon, .header-support-icon .taiowc-icon .th-icon, .sticky-header-col3 .taiowcp-icon .th-icon, .sticky-header-col3 .taiowc-icon .th-icon {
+    font-size: 26px;
+}
+.sticky-header .tapsp-search-box ,.sticky-header .thaps-search-box{
+
+    min-width: 42px;
+  }
+
+  .thunk-icon {
+    margin: 0px 6px 0px 0px;
+}
 }
 @media screen and (max-width: 767px) {
   .thunk-title .title:before,
@@ -9349,15 +9537,7 @@ display:inline-flex;
     line-height: inherit !important;
   }
 
-  .sticky-header-bar .menu-toggle .icon-bar {
-    display: block !important;
-    width: 18px;
-    height: 2px;
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    border-radius: 1px;
-    margin: 3px;
-  }
+ 
   .sticky-header-col1 {
     width: 50%;
   }
@@ -9652,16 +9832,7 @@ display:inline-flex;
   .cat-icon i {
     font-size: 12px;
   }
-  .menu-toggle .icon-bar {
-    display: block !important;
-    width: 22px;
-    height: 2px;
-    background-color: #fff;
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    border-radius: 1px;
-    margin: 4px;
-  }
+
   .below-header-col2 {
     width: 45%;
     margin-left: 8px;
@@ -9849,8 +10020,8 @@ display:inline-flex;
   .woocommerce
     .thunk-product-hover
     a.add_to_cart_button.ajax_add_to_cart::before {
-    content: "\f07a";
-    font-family: "FontAwesome";
+        content: "\e919";
+    font-family: "th-icon";
     font-size: 16px;
     left: 0;
     right: 0;
@@ -9858,9 +10029,7 @@ display:inline-flex;
     width: 30px;
     height: 30px;
   }
-  #bigstore-mobile-bar span {
-    display: none;
-  }
+ 
 
   .header__cat__item.dropdown a.more-cat {
     width: 25px;
@@ -10284,8 +10453,15 @@ display:inline-flex;
     height: 52px;
     line-height: 52px;
     transition: 0.3s;
-    font-size: 18px;
+    font-size: 22px;
   }
+  #bigstore-mobile-bar .icon-bar {
+    display: block !important;
+    width: 17px;
+    height: 1px;
+    background-color: #fff;
+    margin: 4px;
+}
   #move-to-top {
     right: 30px;
     bottom: 58px;
@@ -10312,8 +10488,8 @@ display:inline-flex;
   .woosw-added:before,
   .summary .woosw-added:before,
   .summary .woosw-btn:before,
-  .summary .wooscp-btn:before {
-    font-size: 13px;
+  .summary .wooscp-btn:before,.thunk-product .yith-wcwl-wishlistexistsbrowse:before, .thunk-product .yith-wcwl-wishlistaddedbrowse:before, .thunk-product .woosw-btn:before {
+    font-size: 13px!important;
   }
   section.thunk-ribbon-section {
     margin: 5px 0px;
@@ -10470,10 +10646,7 @@ display:inline-flex;
     border-radius: 4px;
     text-align: center;
   }
-  .sticky-header-bar .menu-toggle .menu-btn .btn {
-    margin: 0 auto;
-    margin-top: 8px;
-  }
+
   .sticky-header-col3 {
     order: 2;
     flex: 1;

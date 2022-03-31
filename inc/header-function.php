@@ -433,7 +433,7 @@ if (!function_exists('big_store_main_header_markup')) {
                   <div class="header-support-icon">
                     <?php if( class_exists( 'WooCommerce' ) &&get_theme_mod('big_store_whislist_mobile_disable',false) != true){ ?>
                       <a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>">
-                        <i class="fa fa-heart-o" aria-hidden="true"></i><span><?php _e('Wishlist', 'big-store'); ?></span></a>
+                        <span class="th-icon th-icon-heartline"></span><span><?php _e('Wishlist', 'big-store'); ?></span></a>
                     <?php } ?>
 
                     <?php if(class_exists( 'WooCommerce' ) && get_theme_mod('big_store_account_mobile_disable',false) != true){
@@ -583,16 +583,16 @@ function big_store_header_icon()
     <div class="header-icon">
       <?php
       if (get_theme_mod('big_store_main_header_layout') == 'mhdrtwo') { ?>
-        <a class="prd-search" href="#"><i class="fa fa-search"></i></a>
+        <a class="prd-search-icon" ><?php echo do_shortcode('[tapsp layout="icon_style"]'); ?></span></a>
       <?php }
       big_store_account();
-      if (class_exists('WPCleverWoosw')) { ?>
+      if(class_exists('WPCleverWoosw')){ ?>
         <a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>">
-          <i class="fa fa-heart-o" aria-hidden="true"></i></a>
+        <span class="th-icon th-icon-heartline"></span></a>
       <?php }
       if (class_exists('YITH_WCWL') && (!class_exists('WPCleverWoosw'))) { ?>
         <a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>">
-          <i class="fa fa-heart-o" aria-hidden="true"></i></a>
+        <span class="th-icon th-icon-heartline"></span></a></a>
       <?php }
 
 
@@ -678,15 +678,15 @@ if (!function_exists('big_store_sticky_header_markup')) {
             <div class="thunk-icon">
 
               <div class="header-icon">
-                <a class="prd-search" href="#"><i class="fa fa-search"></i></a>
+                <a class="prd-search-icon" ><?php echo do_shortcode('[tapsp layout="icon_style"]'); ?></span></a>
                 <?php
                 if (class_exists('WPCleverWoosw')) {
                 ?>
-                  <a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                  <a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>"><span class="th-icon th-icon-heartline"></span></a>
                 <?php }
                 if (class_exists('YITH_WCWL') && (!class_exists('WPCleverWoosw'))) {
                 ?>
-                  <a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                  <a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>"><span class="th-icon th-icon-heartline"></span></a>
                 <?php }
                 if (class_exists('WooCommerce')) {
                   big_store_account();
@@ -729,23 +729,29 @@ function bigstore_mobile_navbar()
     <div id="bigstore-mobile-bar">
       <ul>
 
-        <li><a class="gethome" href="<?php echo esc_url(get_home_url()); ?>"><i class="icon below fa fa-home" aria-hidden="true"></i></a></li>
+        <li><a class="gethome" href="<?php echo esc_url(get_home_url()); ?>"><span class="th-icon th-icon-home"></span></a></li>
         <?php
         if (class_exists('WPCleverWoosw')) { ?>
-          <li><a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+          <li><a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>"><span class="th-icon th-icon-heartline"></span></a></li>
         <?php }
         if (class_exists('YITH_WCWL') && (!class_exists('WPCleverWoosw'))) { ?>
-          <li><a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+          <li><a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>"><span class="th-icon th-icon-heartline"></span></a></li>
         <?php } ?>
         <li>
           <?php
          if(is_plugin_active( 'themehunk-megamenu-plus/themehunk-megamenu.php')) { 
+          
          big_store_main_nav_menu();
+
             }else{  ?>
             
              <a href="#" class="menu-btn" id="mob-menu-btn">
 
-            <i class="icon fa fa-bars" aria-hidden="true"></i>
+            <div class="btn">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </div>
             
           </a>
        <?php  }?>
@@ -839,9 +845,13 @@ function big_store_th_advance_product_search(){
 
               if ( shortcode_exists('th-aps') ){
 
-                echo do_shortcode('[th-aps]');
+                 echo do_shortcode('[th-aps]');
 
-              } elseif ( !shortcode_exists('th-aps') && is_user_logged_in()) {
+                }elseif ( shortcode_exists('tapsp') ){
+
+                 echo do_shortcode('[tapsp]');
+
+                }elseif( !shortcode_exists('th-aps') && !shortcode_exists('tapsp') && is_user_logged_in()){
 
                 $url = admin_url('themes.php?page=thunk_started&th-tab=recommended-plugin');
 
@@ -873,7 +883,11 @@ function big_store_th_cart(){
 
                 echo do_shortcode('[taiowc]');
 
-              } elseif ( !shortcode_exists('taiowc') && is_user_logged_in()) {
+              }elseif ( shortcode_exists('taiowcp') ){
+
+                echo do_shortcode('[taiowcp]');
+
+              }elseif ( !shortcode_exists('taiowc') && !shortcode_exists('taiowcp') && is_user_logged_in()) {
 
                 $url = admin_url('themes.php?page=thunk_started&th-tab=recommended-plugin');
 
