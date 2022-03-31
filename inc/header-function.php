@@ -583,7 +583,17 @@ function big_store_header_icon()
     <div class="header-icon">
       <?php
       if (get_theme_mod('big_store_main_header_layout') == 'mhdrtwo') { ?>
-        <a class="prd-search-icon" ><?php echo do_shortcode('[tapsp layout="icon_style"]'); ?></span></a>
+
+        <a class="prd-search-icon" ><?php  if ( shortcode_exists('tapsp') ){
+
+          echo do_shortcode('[tapsp layout="icon_style"]'); 
+
+        }elseif( shortcode_exists('th-aps') ){
+
+              echo do_shortcode('[th-aps layout="icon_style"]'); 
+
+        }?></span></a>
+
       <?php }
       big_store_account();
       if(class_exists('WPCleverWoosw')){ ?>
@@ -678,7 +688,15 @@ if (!function_exists('big_store_sticky_header_markup')) {
             <div class="thunk-icon">
 
               <div class="header-icon">
-                <a class="prd-search-icon" ><?php echo do_shortcode('[tapsp layout="icon_style"]'); ?></span></a>
+                <a class="prd-search-icon" ><?php  if ( shortcode_exists('tapsp') ){
+
+          echo do_shortcode('[tapsp layout="icon_style"]'); 
+
+        }elseif( shortcode_exists('th-aps') ){
+
+              echo do_shortcode('[th-aps layout="icon_style"]'); 
+              
+        }?></span></a>
                 <?php
                 if (class_exists('WPCleverWoosw')) {
                 ?>
