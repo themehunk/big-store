@@ -23,14 +23,9 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
-= 1.8.8 =
-
-* Above header widget issue resolved.
-
-
 = 1.9.0 =
-
 * Search icon style issue fixed.
+* Underline important removed.
 
 = 1.8.9 =
 
@@ -40,6 +35,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 * Icon Improved.
 * competible with cart and search plugin.
+* Above header widget issue resolved.
 
 = 1.8.7 =
 
@@ -228,8 +224,9 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= 1.8.8 =
-* Above header widget issue resolved.
+= 1.9.0 =
+* Search icon style issue fixed.
+* Underline important removed.
 
 == Resources ==
  

@@ -488,11 +488,11 @@ body {
   text-rendering: optimizeLegibility;
   -moz-font-feature-settings: "liga" on;
 }
-.thunk-post-excerpt a,
-.thunk-content-wrap .entry-content a,
-.widget .textwidget a,
-.comment-content a {
-  text-decoration: underline !important;
+.bigstore-site .thunk-post-excerpt a,
+.bigstore-site .thunk-content-wrap .entry-content a,
+.bigstore-site .widget .textwidget a,
+.bigstore-site .comment-content a {
+  text-decoration: underline;
 }
 article.thunk-post-article a.thunk-readmore {
   text-decoration: none !important;
