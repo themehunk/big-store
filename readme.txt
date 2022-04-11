@@ -1,7 +1,7 @@
 == Theme: Big Store ==
 Contributors: ThemeHunk
 Tags: e-commerce, blog, grid-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, add_editor_style, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready.
-Requires at least: WordPress 5.3
+Requires at least: WordPress 5.0
 Requires PHP: 5.3
 Tested up to: 5.9.2
 Stable tag: 1.9.0
@@ -23,10 +23,9 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
-
 = 1.9.0 =
-
 * Search icon style issue fixed.
+* Underline important removed.
 
 = 1.8.9 =
 
@@ -36,6 +35,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 * Icon Improved.
 * competible with cart and search plugin.
+* Above header widget issue resolved.
 
 = 1.8.7 =
 
@@ -224,8 +224,9 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= 1.8.1 =
-* Icons disable in mobile issue resolved.
+= 1.9.0 =
+* Search icon style issue fixed.
+* Underline important removed.
 
 == Resources ==
  
