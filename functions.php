@@ -331,6 +331,7 @@ function big_store_scripts(){
 	// enqueue css
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	wp_enqueue_style( 'font-awesome-th', BIG_STORE_THEME_URI . 'third-party/fonts/font-awesome/css/font-awesome.css', '', BIG_STORE_THEME_VERSION );
+	wp_enqueue_style( 'th-icon', BIG_STORE_THEME_URI . 'third-party/fonts/th-icon/style.css', '', BIG_STORE_THEME_VERSION );
 	wp_enqueue_style( 'animate', BIG_STORE_THEME_URI . 'css/animate.css','',BIG_STORE_THEME_VERSION);
 	wp_enqueue_style( 'owl.carousel-css', BIG_STORE_THEME_URI . 'css/owl.carousel.css','',BIG_STORE_THEME_VERSION);
 	wp_enqueue_style( 'big-store-pro-menu', BIG_STORE_THEME_URI . 'css/big-store-menu.css','',BIG_STORE_THEME_VERSION);

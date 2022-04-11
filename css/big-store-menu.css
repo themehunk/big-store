@@ -147,7 +147,7 @@ background-color: #2457AA;
 .menu-toggle .icon-bar{
     display: block !important;
     width: 25px;
-    height: 2px;
+    height:1px;
     background-color:#fff;
     margin:4px;
 }

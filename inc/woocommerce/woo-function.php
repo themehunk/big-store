@@ -311,7 +311,7 @@ function big_store_add_to_compare_fltr_both($pid){
 /**********************/
 
 function big_store_add_to_compare_fltr_single(){
-  global $product;
+global $product;
 $pid = $product->get_id();
       if(class_exists(('th_product_compare') )){
     echo '<div class="thunk-compare"><span class="compare-list"><div class="woocommerce product compare-button">
@@ -320,7 +320,7 @@ $pid = $product->get_id();
 
            } 
 
-        }
+   }
 
 function big_store_add_to_compare_fltr($pid){ 
   if(class_exists(('th_product_compare') )){
@@ -342,7 +342,8 @@ function big_store_add_to_compare_fltr($pid){
 
   function big_store_whish_list($pid){
        if( shortcode_exists( 'yith_wcwl_add_to_wishlist' ) ){
-        echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner">'.do_shortcode('[yith_wcwl_add_to_wishlist  product_id='.$pid.' icon="fa fa-heart-o" label="wishlist" already_in_wishslist_text="Already" browse_wishlist_text="Added"]' ).'</span></div>';
+        echo '<div class="thunk-wishlist">
+        <span class="thunk-wishlist-inner">'.do_shortcode('[yith_wcwl_add_to_wishlist  product_id='.$pid.' icon="th-icon th-icon-heart1" label="wishlist" already_in_wishslist_text="Already" browse_wishlist_text="Added"]' ).'</span></div>';
      }
      elseif( ( class_exists( 'WPCleverWoosw' ))){
      echo do_shortcode('[woosw id='.$pid.']');
@@ -363,10 +364,10 @@ return $wishlist_permalink ;
 /** My Account Menu **/
 function big_store_account(){
  if ( is_user_logged_in() ){
-  $return = '<a class="account" href="'.get_permalink( get_option('woocommerce_myaccount_page_id') ).'"><i class="fa fa-user-o" aria-hidden="true"></i></a>';
+  $return = '<a class="account" href="'.get_permalink( get_option('woocommerce_myaccount_page_id') ).'"><span class="th-icon th-icon-user"></span></a></a>';
   } 
  else {
-  $return = '<a class="account" href="'.get_permalink( get_option('woocommerce_myaccount_page_id') ).'"><i class="fa fa-lock" aria-hidden="true"></i></a>';
+  $return = '<a class="account" href="'.get_permalink( get_option('woocommerce_myaccount_page_id') ).'"><span class="th-icon th-icon-lock1"></a>';
 }
  echo $return;
  }
