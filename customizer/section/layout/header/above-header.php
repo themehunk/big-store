@@ -12,7 +12,7 @@ $wp_customize->add_setting( 'big_store_above_mobile_disable', array(
                 'sanitize_callback'     => 'big_store_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'big_store_above_mobile_disable', array(
-                'label'                 => esc_html__('Disable in mobile', 'big-store'),
+                'label'                 => esc_html__('Disable in mobile (Pro)', 'big-store'),
                 'type'                  => 'checkbox',
                 'section'               => 'big-store-above-header',
                 'settings'              => 'big_store_above_mobile_disable',
@@ -22,7 +22,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'big_store_
 if(class_exists('Big_Store_WP_Customize_Control_Radio_Image')){
         $wp_customize->add_setting(
             'big_store_above_header_layout', array(
-                'default'           => 'abv-none',
+                'default'           => 'abv-two',
                 'sanitize_callback' => 'big_store_sanitize_radio',
             )
         );
@@ -61,11 +61,11 @@ $wp_customize->add_control( 'big_store_above_header_col1_set', array(
         'section' => 'big-store-above-header',
         'type'    => 'select',
         'choices'    => array(
-        'none'       => __('None','big-store'),
+        'none'       => __('None (Pro)','big-store'),
         'text'       => __('Text','big-store'),
-        'menu'       => __('Menu','big-store'),
-        'widget'     => __('Widget','big-store'),
-        'social'     => __('Social Media','big-store'),
+        'menu'       => __('Menu (Pro)','big-store'),
+        'widget'     => __('Widget (Pro)','big-store'),
+        'social'     => __('Social Media (Pro)','big-store'),
             
         ),
     ));
@@ -136,7 +136,7 @@ $wp_customize->add_control(
 } 
 // col2
 $wp_customize->add_setting('big_store_above_header_col2_set', array(
-        'default'        => 'none',
+        'default'        => 'social',
         'capability'     => 'edit_theme_options',
         'sanitize_callback' => 'big_store_sanitize_select',
     ));
@@ -146,10 +146,10 @@ $wp_customize->add_control( 'big_store_above_header_col2_set', array(
         'section' => 'big-store-above-header',
         'type'    => 'select',
         'choices'    => array(
-        'none'                 => __('None','big-store'),
-        'text'             => __('Text','big-store'),
-        'menu'                 => __('Menu','big-store'),
-        'widget'                 => __('Widget','big-store'),
+        'none'                 => __('None (Pro)','big-store'),
+        'text'             => __('Text (Pro)','big-store'),
+        'menu'                 => __('Menu (Pro)','big-store'),
+        'widget'                 => __('Widget (Pro)','big-store'),
         'social'             => __('Social Media','big-store'),
             
         ),

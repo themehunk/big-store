@@ -14,9 +14,9 @@
 if (!function_exists('big_store_top_header_markup')) {
   function big_store_top_header_markup()
   {
-    $big_store_above_header_layout     = get_theme_mod('big_store_above_header_layout', 'abv-none');
+    $big_store_above_header_layout     = get_theme_mod('big_store_above_header_layout', 'abv-two');
     $big_store_above_header_col1_set   = get_theme_mod('big_store_above_header_col1_set', 'text');
-    $big_store_above_header_col2_set   = get_theme_mod('big_store_above_header_col2_set', 'text');
+    $big_store_above_header_col2_set   = get_theme_mod('big_store_above_header_col2_set', 'social');
     $big_store_above_header_col3_set   = get_theme_mod('big_store_above_header_col3_set', 'text');
     $big_store_menu_open = get_theme_mod('big_store_mobile_menu_open', 'left');
     if ($big_store_above_header_layout !== 'abv-none') : ?>
@@ -220,7 +220,7 @@ if (!function_exists('big_store_below_header_markup')) {
   function big_store_below_header_markup()
   {
     $main_header_layout = get_theme_mod('big_store_main_header_layout', 'mhdrthree');
-    $big_store_menu_alignment = get_theme_mod('big_store_menu_alignment', 'center');
+    $big_store_menu_alignment = get_theme_mod('big_store_menu_alignment', 'left');
     $big_store_menu_open = get_theme_mod('big_store_mobile_menu_open', 'left');
     if ($main_header_layout !== 'mhdrtwo') : ?>
       <div class="below-header  <?php echo esc_attr($main_header_layout); ?> <?php echo esc_attr($big_store_menu_alignment); ?>">
@@ -335,7 +335,7 @@ if (!function_exists('big_store_main_header_markup')) {
   {
     $main_header_layout = get_theme_mod('big_store_main_header_layout', 'mhdrthree');
     $main_header_opt = get_theme_mod('big_store_main_header_option', 'none');
-    $big_store_menu_alignment = get_theme_mod('big_store_menu_alignment', 'center');
+    $big_store_menu_alignment = get_theme_mod('big_store_menu_alignment', 'left');
     $big_store_menu_open = get_theme_mod('big_store_mobile_menu_open', 'left');
     $offcanvas = get_theme_mod('big_store_canvas_alignment', 'cnv-none');
 

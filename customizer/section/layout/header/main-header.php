@@ -59,7 +59,7 @@ $wp_customize->add_control(
 // menu alignment
 /***********************************/ 
 $wp_customize->add_setting('big_store_menu_alignment', array(
-                'default'               => 'center',
+                'default'               => 'left',
                 'sanitize_callback'     => 'big_store_sanitize_select',
             ) );
 $wp_customize->add_control( new Big_Store_Customizer_Buttonset_Control( $wp_customize, 'big_store_menu_alignment', array(
@@ -86,7 +86,7 @@ $wp_customize->add_control( 'big_store_main_header_option', array(
         'type'     => 'select',
         'choices'    => array(
         'none'       => __('None','big-store'),
-        'callto'     => __('Call-To','big-store'),
+        'callto'     => __('Call-To (Pro)','big-store'),
         'button'     => __('Button (Pro)','big-store'),
         
         'widget'     => __('Widget (Pro)','big-store'),     
