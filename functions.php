@@ -363,7 +363,7 @@ function big_store_scripts(){
      			'tt_quickview' =>  get_theme_mod( 'big_store_quickview_tooltip_txt', __( 'Quickview', 'big-store' )),
      			'tt_compare' =>  get_theme_mod( 'big_store_compare_tooltip_txt', __( 'Compare', 'big-store' )),
 				'big_store_top_slider_optn' => get_theme_mod('big_store_top_slider_optn',false),
-				'big_store_move_to_top_optn' => get_theme_mod('big_store_move_to_top',false),
+				'big_store_move_to_top_optn' => get_theme_mod('big_store_move_to_top',true),
 				'big_store_sticky_header_effect' => get_theme_mod('big_store_sticky_header_effect','scrldwmn'),
 				'big_store_slider_speed' => get_theme_mod('big_store_slider_speed','3000'),
 				'big_store_rtl' => (bool)get_theme_mod('big_store_rtl'),

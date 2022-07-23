@@ -3,7 +3,7 @@
 // Move To Top
 /********************/
  $wp_customize->add_setting( 'big_store_move_to_top', array(
-    'default'           => false,
+    'default'           => true,
     'sanitize_callback' => 'big_store_sanitize_checkbox',
   ) );
   $wp_customize->add_control( new Big_Store_Toggle_Control( $wp_customize, 'big_store_move_to_top', array(

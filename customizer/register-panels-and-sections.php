@@ -114,7 +114,7 @@ $big_store_section_sidebar_group = new  Big_Store_WP_Customize_Section( $wp_cust
 $wp_customize->add_section($big_store_section_sidebar_group);
 // Scroll to top
 $big_store_move_to_top = new  Big_Store_WP_Customize_Section( $wp_customize, 'big-store-move-to-top', array(
-    'title' =>  __( 'Move To Top', 'big-store' ),
+    'title' =>  __( 'Move To Top (Pro)', 'big-store' ),
     'panel' => 'big-store-panel-layout',
     'priority' => 3,
   ));
