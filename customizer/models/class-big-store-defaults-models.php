@@ -376,4 +376,41 @@ public function get_counter_default() {
 			)
 		);
 	}	
+
+	/**
+	 * Get default values for features section.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */
+	public function get_slider_default() {
+		return apply_filters(
+			'big_store_slider_default_content', json_encode(
+			array(
+			array(
+						'image_url' =>	'',
+
+						'title'     => '',
+						
+						'subtitle'  => '',
+						'text'      => '',
+						'link'       => '',
+
+					),
+			array(
+						'image_url' =>	'',
+
+						'title'     => '',
+						
+						'subtitle'  => '',
+						'text'      => '',
+						'link'       => '',
+
+					),
+			)
+		)
+
+		);
+		
+	}
 }
