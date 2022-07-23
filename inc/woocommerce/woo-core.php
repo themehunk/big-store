@@ -312,7 +312,7 @@ if ( ! class_exists( 'Big_Store_Pro_Woocommerce_Ext' ) ) :
 				//big-feature-product
 				'big_store_feature_product_slider_optn' => get_theme_mod('big_store_feature_product_slider_optn',false),
 				//category slider coloum
-				'big_store_cat_item_no' => get_theme_mod('big_store_cat_item_no','10'),
+				'big_store_cat_item_no' => get_theme_mod('big_store_cat_item_no','6'),
 				'big_store_rtl' => (bool)get_theme_mod('big_store_rtl'),
 				
 				
