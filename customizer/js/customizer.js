@@ -27,7 +27,7 @@ jQuery('input[id=big_store_above_header_layout-abv-none],input[id=big_store_abov
 
 // FrontPage
 // TopSlider
-jQuery('input[id=big_store_top_slide_layout-slide-layout-1],#customize-control-big_store_disable_top_slider_sec input').attr("disabled",true);
+jQuery('input[id=big_store_top_slide_layout-slide-layout-1],#customize-control-big_store_disable_top_slider_sec input,#customize-control-big_store_top_slider_optn input').attr("disabled",true);
 jQuery('#customize-control-big_store_include_category_slider li input').attr("disabled",true);
 jQuery('#customize-control-big_store_include_category_slider li:nth-of-type(1) input,#customize-control-big_store_include_category_slider li:nth-of-type(2) input,#customize-control-big_store_include_category_slider li:nth-of-type(3) input').attr("disabled",false);
 
