@@ -236,7 +236,7 @@ if ( ! function_exists( 'big_store_get_sidebar' ) ){
 //Banner Function
 /******************/
 function big_store_front_banner(){
-$big_store_banner_layout     = get_theme_mod( 'big_store_banner_layout','bnr-two');
+$big_store_banner_layout     = get_theme_mod( 'big_store_banner_layout','bnr-one');
 // first
 $big_store_bnr_1_img     = get_theme_mod( 'big_store_bnr_1_img','');
 $big_store_bnr_1_url     = get_theme_mod( 'big_store_bnr_1_url','');
