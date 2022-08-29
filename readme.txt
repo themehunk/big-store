@@ -4,7 +4,7 @@ Tags: e-commerce, blog, grid-layout, one-column, two-columns, three-columns, fou
 Requires at least: WordPress 5.0
 Requires PHP: 5.3
 Tested up to: 6.1
-Stable tag: 1.9.2
+Stable tag: 1.9.3
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -23,6 +23,9 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
+= 1.9.3 =
+* TH Compare Pro Integrated.
+
 = 1.9.2 =
 * Customizer Pro Feature Work.
 
