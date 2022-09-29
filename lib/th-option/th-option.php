@@ -28,6 +28,7 @@ $data = apply_filters(
                     'th_option_localize_vars',
                     array(
                         'oneClickDemo' =>esc_url( admin_url( 'themes.php?page=pt-one-click-demo-import' )),
+                        'nonce'         => wp_create_nonce( '_nonce' ),
 
                         )
                 );
@@ -54,6 +55,10 @@ function tab_constant(){
 
 
 function tab_page() {
+
+    if ( ! current_user_can( 'manage_options' ) ) {
+                wp_die( __( 'You do not have sufficient permissions to access this page.','big-store' ) );
+    }
     $text_array = $this->tab_constant();
     $theme_header =$text_array['header'];
     include('tab-html.php' ); 
@@ -63,12 +68,25 @@ function tab_page() {
 // Home Page Setup
 
 function default_home() {
-$pages = get_pages(array(
+
+if ( ! current_user_can( 'administrator' ) ) {
+
+                    wp_die( - 1, 403 );
+                    
+              } 
+
+check_ajax_referer( '_nonce','nonce');  
+
+$pages = get_pages(
+    array(
     'meta_key' => '_wp_page_template',
     'meta_value' => 'frontpage.php'
 ));
-  $post_id = isset($pages[0]->ID)?$pages[0]->ID:false;
+
+$post_id = isset($pages[0]->ID)?$pages[0]->ID:false;
+
 if(empty($pages)){
+
       $post_id = wp_insert_post(array (
        'post_type' => 'page',
        'post_title' => __('Home Page','big-store'),
@@ -106,13 +124,22 @@ function _check_homepage_setup(){
           * Setup Homepage
           */
         public function th_activeplugin(){
-      if ( ! current_user_can( 'install_plugins' ) || ! isset( $_POST['init'] ) || ! $_POST['init'] ) {
-        wp_send_json_error(
-          array(
-            'success' => false,
-            'message' => __( 'No plugin specified', 'big-store' ),
-          )
-        );
+
+            if ( ! current_user_can( 'administrator' ) ) {
+
+                    wp_die( - 1, 403 );
+                    
+              } 
+
+            check_ajax_referer( '_nonce','nonce');  
+
+            if ( ! current_user_can( 'install_plugins' ) || ! isset( $_POST['init'] ) || ! $_POST['init'] ) {
+            wp_send_json_error(
+              array(
+                'success' => false,
+                'message' => __( 'No plugin specified', 'big-store' ),
+              )
+            );
       }
 
       $plugin_init = ( isset( $_POST['init'] ) ) ? esc_attr( $_POST['init'] ) : '';
@@ -139,18 +166,20 @@ function _check_homepage_setup(){
 		
 
 
-function plugin_install_button($plugin){
-            $button = '<div class="rcp theme_link th-row">';
-            $button .= ' <div class="th-column"><img src="'.esc_url( $plugin['thumb'] ).'" /> </div>';
-            $button .= '<div class="th-column">';
+function plugin_install_button($plugin){?>
 
-            $button .= '<div class="title-plugin">
-            <h4>'.esc_html( $plugin['plugin_name'] ). ' </h4><a class="plugin-detail thickbox open-plugin-details-modal" href="'.esc_url( $plugin['detail_link'] ).'">'.esc_html__( 'Details & Version', 'big-store' ).'</a>
-            </div>';
-             $button .='<button data-activated="Activated" data-msg="Activating" data-init="'.esc_attr($plugin['plugin_init']).'" data-slug="'.esc_attr( $plugin['slug'] ).'" class="button '.esc_attr( $plugin['button_class'] ).'">'.esc_html($plugin['button_txt']).'</button>';
-            $button .= '</div></div>';
+        <div class="rcp theme_link th-row">
+           <div class="th-column"><img src="<?php echo esc_url( $plugin['thumb'] );?>" /> </div>
+            <div class="th-column">
 
-            echo $button;
+            <div class="title-plugin">
+            <h4><?php echo esc_html( $plugin['plugin_name'] );?> </h4><a class="plugin-detail thickbox open-plugin-details-modal" href="<?php echo esc_url( $plugin['detail_link'] );?>"><?php echo esc_html__( 'Details & Version', 'big-store' );?></a>
+            </div>
+            <button data-activated="Activated" data-msg="Activating" data-init="<?php echo esc_attr($plugin['plugin_init']);?>" data-slug="<?php echo esc_attr( $plugin['slug'] );?>" class="button <?php echo esc_attr( $plugin['button_class'] );?>"><?php echo esc_html($plugin['button_txt']);?>                
+            </button>
+            </div></div>
+<?php 
+           
 }
 
 

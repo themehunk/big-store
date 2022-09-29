@@ -139,7 +139,6 @@ if ( ! function_exists( 'big_store_replace_header_attr' ) ) :
 			if ( ! is_customize_preview() ){
 				$attach_data = wp_get_attachment_image_src( $attachment->ID, 'open-logo-size' );
 
-
 				if ( isset( $attach_data[0] ) ) {
 					$attr['src'] = $attach_data[0];
 				}

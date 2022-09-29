@@ -10,7 +10,7 @@ class ThemeHunk_Child_Notify{
 
     function __construct(){
 
-		if(isset($_GET['notice-disable']) && $_GET['notice-disable'] == true){
+		if(isset($_GET['notice-disable']) && sanitize_text_field($_GET['notice-disable']) == true){
 		add_action('admin_init', array($this,'set_cookie'));
 		}
 
@@ -45,7 +45,7 @@ class ThemeHunk_Child_Notify{
 		function unset_cookie(){
 
 			$visit_time = time();
-  			$cookie_time = $_COOKIE['thms_time'];
+  			$cookie_time = sanitize_text_field($_COOKIE['thms_time']);
 
 			if ($cookie_time < $visit_time) {
 				setcookie('thms_time', null, strtotime('-1 day'));
