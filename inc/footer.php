@@ -81,7 +81,7 @@ if ( ! function_exists( 'big_store_bottom_footer_conetnt_col2' ) ){
 function big_store_bottom_footer_conetnt_col2($content){ ?>
 <?php if($content=='text'){?>
 <div class='content-html'>
-  <?php echo esc_html(get_theme_mod('big_store_footer_bottom_col2_texthtml',  __( 'Add your content here', 'big-store' )));?>
+  <?php echo esc_html(get_theme_mod('big_store_bottom_footer_col2_texthtml',  __( 'Add your content here', 'big-store' )));?>
 </div>
 <?php }elseif($content=='menu'){
   if ( has_nav_menu('big-store-footer-menu' ) ) {?>
