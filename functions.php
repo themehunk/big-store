@@ -404,3 +404,6 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 		do_action( 'wp_body_open' );
 	}
 }
+
+// Add block patterns
+require get_template_directory() . '/block-pattern.php';
