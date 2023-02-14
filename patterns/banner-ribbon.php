@@ -2,7 +2,7 @@
 /**
  * Banner Ribbon Section
  * 
- * slug: 
+ * slug: ribbon
  * title: Banner Ribbon Section
  * categories: bigstore
  */
