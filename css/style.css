@@ -4624,7 +4624,9 @@ select {
 .single-product .thunk-woo-product-list {
   text-align: left;
 }
-
+.single-product .comment-form{
+  width: 100%;
+}
 .woocommerce div.product .flex-viewport {
   width: 100%;
   float: right;
@@ -7119,7 +7121,7 @@ span.product-title {
 }
 #move-to-top {
   right: 30px;
-  bottom: 30px;
+  bottom: 152px;
 }
 #move-to-top:not(.filling) {
   opacity: 0;
@@ -10500,7 +10502,7 @@ display:inline-flex;
 }
   #move-to-top {
     right: 30px;
-    bottom: 58px;
+    bottom: 152px;
   }
   .thunk-heading-wrap {
     margin: 0px 0px 15px 0px;
