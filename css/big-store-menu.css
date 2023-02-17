@@ -316,7 +316,7 @@ display: -webkit-inline-box;
     }
     .big-store-menu > li > a > .arrow:before {
         float: right;
-        content: "\f105";
+        content: "\f106";
     }
 .sider.left .big-store-menu > li, .sider.right .big-store-menu > li {
     float: none;
@@ -330,7 +330,7 @@ display: -webkit-inline-box;
     background: none;
 }
     li.menu-active > a > .arrow:before {
-        content: "\f107" !important;
+        content: "\f106" !important;
     }
     .big-store-menu li ul.sub-menu > li {
         width: 100%;
