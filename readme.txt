@@ -27,6 +27,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 = 1.9.8 =
 * Slug added in Ribbon Block.
 * Block pattern compatibility added.
+* Blank Template added.
 
 = 1.9.7 =
 * Block Pattern Added.
@@ -253,6 +254,7 @@ Initial release
 = 1.9.8 =
 * Slug added in Ribbon Block.
 * Block pattern compatibility added.
+* Blank Template added.
 
 == Resources ==
  
