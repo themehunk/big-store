@@ -113,17 +113,17 @@
 		            "slug": "background"
        			},
 		        {
-		          "color": "#ffffff",
+		          "color": "#111111",
 		          "name": "Heading Color",
 		          "slug": "heading"
 		        },
 		        {
 		          "slug": "bodytext",
-		          "color": "#111",
+		          "color": "#1c1d1e",
 		          "name": "Body Text"
 		        },
 		        {
-		          "color": "#ffe68d",
+		          "color": "#ffd200",
 		          "name": "Accent",
 		          "slug": "accent"
 		        }

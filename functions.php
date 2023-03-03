@@ -125,6 +125,11 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
                   'img' => 'icon-128x128.png',
                  'active_filename' => 'th-product-compare/th-product-compare.php',
              ),
+            'unlimited-blocks' => array(
+				'name' => esc_html__( 'Unlimited blocks For Gutenberg', 'big-store' ),
+				'img' => 'icon-128x128.png',
+				'active_filename' => 'unlimited-blocks/unlimited-blocks.php',
+				),
             'th-variation-swatches' => array(
                 'name' => esc_html__( 'TH Variation Swatches', 'big-store' ),
                  'img' => 'icon-128x128.gif',
