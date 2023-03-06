@@ -392,6 +392,9 @@ function big_store_not_a_shop_page() {
 // product category list
 //************************/
 function big_store_product_list_categories( $args = '' ){
+  if (!class_exists( 'WooCommerce' )) {
+    return;
+  }
 $term = get_theme_mod('big_store_exclde_category','');
 if(!empty($term[0])){
   $exclude_id = $term;
