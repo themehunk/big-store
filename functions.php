@@ -64,10 +64,14 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
         // Add support for editor styles.
         add_theme_support( 'editor-styles' );
 
+		add_editor_style( 'editor.css' );
+
         // Enqueue editor styles.
         add_editor_style( 'style-editor.css' );
         // Add support for responsive embedded content.
         add_theme_support( 'responsive-embeds' );
+
+		add_theme_support( 'custom-spacing' );
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 		// Remove theme support for widget block editor

@@ -4,7 +4,7 @@ Tags: wide-blocks, block-patterns, block-styles, editor-style, e-commerce, blog,
 Requires at least: WordPress 5.0
 Requires PHP: 5.3
 Tested up to: 6.1
-Stable tag: 1.9.7
+Stable tag: 1.9.8
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -23,6 +23,9 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
+
+= 1.9.8 =
+*Editor.css Added.
 
 = 1.9.7 =
 * Block Pattern Added.
@@ -250,12 +253,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= 1.9.7 =
-* Block Pattern Added.
-* Slug added in Ribbon Block.
-* Block pattern compatibility added.
-* Blank Template added.
-* Tags Added.
+= 1.9.8 =
+*Editor.css Added.
 
 == Resources ==
  
