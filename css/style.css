@@ -4618,8 +4618,17 @@ select {
 .thunk-single-product-summary-wrap {
   position: relative;
   display: block;
-  overflow: hidden;
   margin-bottom: 20px;
+}
+.thunk-single-product-summary-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.thunk-single-product-summary-wrap .woocommerce-product-gallery {
+  height: 100%;
+  position: sticky!important;
+  top: 45px;
 }
 .single-product .thunk-woo-product-list {
   text-align: left;
@@ -9042,6 +9051,11 @@ display:inline-flex;
 }
 
 @media screen and (max-width: 768px) {
+  .thunk-single-product-summary-wrap .woocommerce-product-gallery {
+  height: initial;
+  position: relative!important;
+  top: initial;
+}
   /*typography*/
   h1 {
     font-size: 22px;
