@@ -5,13 +5,13 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package Big Store
- * @since 1.0.0
+ * @since 2.0.0
  */
 /**
  * Theme functions and definitions
  */
 if ( ! function_exists( 'big_store_setup' ) ) :
-define( 'BIG_STORE_THEME_VERSION','1.0.0');
+define( 'BIG_STORE_THEME_VERSION','2.0.0');
 define( 'BIG_STORE_THEME_DIR', get_template_directory() . '/' );
 define( 'BIG_STORE_THEME_URI', get_template_directory_uri() . '/' );
 define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
@@ -121,12 +121,12 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
             ),
             'th-all-in-one-woo-cart' => array(
                  'name' => esc_html__( 'TH All In One Woo Cart', 'big-store' ),
-                  'img' => 'icon-128x128.png',
+                  'img' => 'icon-128x128.gif',
                  'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
              ),
             'th-product-compare' => array(
                  'name' => esc_html__( 'TH Product Compare', 'big-store' ),
-                  'img' => 'icon-128x128.png',
+                  'img' => 'icon-128x128.gif',
                  'active_filename' => 'th-product-compare/th-product-compare.php',
              ),
             'unlimited-blocks' => array(
@@ -151,7 +151,7 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
             ), 
             'woocommerce' => array(
                 'name' => esc_html__( 'Woocommerce', 'big-store' ),
-                 'img' => 'icon-128x128.png',
+                 'img' => 'icon-128x128.gif',
                 'active_filename' => 'woocommerce/woocommerce.php',
             ),
 
@@ -180,7 +180,7 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
             ), 
             'woocommerce' => array(
                 'name' => esc_html__( 'Woocommerce', 'big-store' ),
-                'img' => 'icon-128x128.png',
+                'img' => 'icon-128x128.gif',
                 'active_filename' => 'woocommerce/woocommerce.php',
             ),
             
@@ -192,7 +192,7 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
 
             'th-all-in-one-woo-cart' => array(
                  'name' => esc_html__( 'TH All In One Woo Cart', 'big-store' ),
-                  'img' => 'icon-128x128.png',
+                  'img' => 'icon-128x128.gif',
                  'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
              ),
 
