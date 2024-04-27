@@ -76,7 +76,7 @@ $big_store_color_scheme = esc_html(get_theme_mod('big_store_color_scheme','opn-l
   
 
 //Move to top 
-$big_store_move_to_top_bg_clr      = esc_html(get_theme_mod('big_store_move_to_top_bg_clr'));
+$big_store_move_to_top_bg_clr      = esc_html(get_theme_mod('big_store_move_to_top_bg_clr','#ffd200'));
 $big_store_move_to_top_icon_clr    = esc_html(get_theme_mod('big_store_move_to_top_icon_clr'));
 $big_store_style.="#move-to-top{background:{$big_store_move_to_top_bg_clr};color:{$big_store_move_to_top_icon_clr}}";
 
