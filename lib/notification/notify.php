@@ -1,49 +1,65 @@
 <?php
 include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 
-function set_cookie() { 
+function big_store_set_cookie() { 
  
        $expire_time = time() + (86400 * 7); // 7 days in seconds
 
-    if (!isset($_COOKIE['top_store_thms_time'])) {
+    if (!isset($_COOKIE['big_store_thms_time'])) {
         // Set a cookie for 7 days
-        setcookie('top_store_thms_time', $expire_time, $expire_time, COOKIEPATH, COOKIE_DOMAIN);
+        setcookie('big_store_thms_time', $expire_time, $expire_time, COOKIEPATH, COOKIE_DOMAIN);
     }
  
     }
-    function unset_cookie(){
+    function big_store_unset_cookie(){
 
             $visit_time = time();
-    if (isset($_COOKIE['top_store_thms_time']) && $_COOKIE['top_store_thms_time'] < $visit_time) {
-        setcookie('top_store_thms_time', '', time() - 3600, COOKIEPATH, COOKIE_DOMAIN);
+    if (isset($_COOKIE['big_store_thms_time']) && $_COOKIE['big_store_thms_time'] < $visit_time) {
+        setcookie('big_store_thms_time', '', time() - 3600, COOKIEPATH, COOKIE_DOMAIN);
     }
     }
 
-//     function clear_notice_cookie() {
-//     // Clear the cookie when the theme is switched
-//     if (isset($_COOKIE['top_store_thms_time'])) {
-//         setcookie('top_store_thms_time', '', time() - 3600, COOKIEPATH, COOKIE_DOMAIN);
-//     }
-// }
+    function big_store_clear_notice_cookie() {
+    // Clear the cookie when the theme is switched
+    if (isset($_COOKIE['big_store_thms_time'])) {
+        setcookie('big_store_thms_time', '', time() - 3600, COOKIEPATH, COOKIE_DOMAIN);
+    }
+}
 
-//     if(isset($_GET['notice-disable']) && $_GET['notice-disable'] == true){
-//         add_action('admin_init', 'set_cookie');
-//         }
+    if(isset($_GET['notice-disable']) && $_GET['notice-disable'] == true){
+        add_action('admin_init', 'big_store_set_cookie');
+        }
 
 
-//         if(!isset($_COOKIE['top_store_thms_time'])) {
-//              add_action('admin_notices', 'top_store_display_admin_notice');
+        if(!isset($_COOKIE['big_store_thms_time'])) {
+             add_action('admin_notices', 'big_store_display_admin_notice');
 
-//         }
+        }
 
-//         if(isset($_COOKIE['top_store_thms_time'])) {
-//             add_action( 'admin_notices', 'unset_cookie');
-//         }
-    add_action('admin_notices', 'top_store_display_admin_notice');
+        if(isset($_COOKIE['big_store_thms_time'])) {
+            add_action( 'admin_notices', 'big_store_unset_cookie');
+        }
+    // add_action('admin_notices', 'big_store_display_admin_notice');
 
 // Display admin notice
-function top_store_display_admin_notice() {
+function big_store_display_admin_notice() {
     // clearstatcache();
+     $allowed_pages = array(
+        'dashboard',             // index.php
+        'themes',                // themes.php
+        'plugins',               // plugins.php
+        'users',
+        'appearance_page_thunk_started' // appearance_page_thunk_started
+    );
+
+    // Get the current screen
+    $current_screen = get_current_screen();
+
+    // Check if the current screen is one of the allowed pages
+    if (!in_array($current_screen->base, $allowed_pages)) {
+        return; // Exit if not on an allowed page
+    }
+    
      global $current_user;
     $user_id   = $current_user->ID;
     $theme_data  = wp_get_theme();
@@ -77,9 +93,9 @@ function top_store_display_admin_notice() {
             // Plugin is activated
             echo '<div class="notice notice-info th-shop-mania-wrapper-banner is-dismissible">
                 <div class="left"><h2 class="title">
-                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'top-store' ), esc_html( $theme_data->Name ), esc_html( $theme_data->Version ) ).'</h2>
-                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'top-store') . '<strong>ThemeHunk Customizer</strong></p>
-                    <button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_pro_slug) . '">' . esc_html__('Go to Ready To Import website Templates ', 'top-store') . '</button>
+                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'big-store' ), esc_html( $theme_data->Name ), esc_html( $theme_data->Version ) ).'</h2>
+                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'big-store') . '<strong>ThemeHunk Customizer</strong></p>
+                    <button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_pro_slug) . '">' . esc_html__('Go to Ready To Import website Templates ', 'big-store') . '</button>
                 </div>
                 <div class="right">
                     <img src="' . esc_url(get_template_directory_uri() . '/lib/notification/banner.png') . '" />
@@ -90,10 +106,10 @@ function top_store_display_admin_notice() {
             echo '<div class="notice notice-info th-shop-mania-wrapper-banner is-dismissible">
                 <div class="left">
                     <h2 class="title">
-                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'top-store' ), esc_html( $theme_data->Name ), esc_html( $theme_data->Version ) ).'</h2>
-                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'top-store') . '<strong>Big Store Pro</strong></p>
-                    <button class="button button-primary" id="activate-top-store-pro" data-slug="' . esc_attr($plugin_pro_slug) . '"><span>' . esc_html__('Activate', 'top-store') . '</span><span class="dashicons dashicons-update loader"></span></button>
-                     <button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_pro_slug) . '" disabled>' . esc_html__('Go to Ready To Import website Templates ', 'top-store') . '</button>
+                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'big-store' ), esc_html( $theme_data->Name ), esc_html( $theme_data->Version ) ).'</h2>
+                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'big-store') . '<strong>Big Store Pro</strong></p>
+                    <button class="button button-primary" id="activate-big-store-pro" data-slug="' . esc_attr($plugin_pro_slug) . '"><span>' . esc_html__('Activate', 'big-store') . '</span><span class="dashicons dashicons-update loader"></span></button>
+                     <button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_pro_slug) . '" disabled>' . esc_html__('Go to Ready To Import website Templates ', 'big-store') . '</button>
                 </div>
                 <div class="right">
                     <img src="' . esc_url(get_template_directory_uri() . '/lib/notification/banner.png') . '" />
@@ -108,17 +124,17 @@ function top_store_display_admin_notice() {
         echo '<div class="notice notice-info th-shop-mania-wrapper-banner is-dismissible">
             <div class="left">
                   <h2 class="title">
-                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'top-store' ), esc_html( $theme_data->Name ), esc_html( $theme_data->Version ) ).'</h2>
-                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'top-store') . '<strong>ThemeHunk Customizer</strong></p>';
+                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'big-store' ), esc_html( $theme_data->Name ), esc_html( $theme_data->Version ) ).'</h2>
+                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'big-store') . '<strong>ThemeHunk Customizer</strong></p>';
 
         if ($plugin_companion_exists) {
             if ($plugin_companion_installed) {
-                echo '<button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_companion_slug) . '">' . esc_html__('Go to Ready To Import website Templates ', 'top-store') . '<span class="dashicons dashicons-update loader"></span></button>';
+                echo '<button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_companion_slug) . '">' . esc_html__('Go to Ready To Import website Templates ', 'big-store') . '<span class="dashicons dashicons-update loader"></span></button>';
             } else {
-                echo '<button class="button button-primary" id="activate-themehunk-customizer" data-slug="' . esc_attr($plugin_companion_slug) . '"><span>' . esc_html__('Activate', 'top-store') . '</span><span class="dashicons dashicons-update loader"></span></button> <button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_companion_slug) . '" disabled>' . esc_html__('Go to Ready To Import website Templates ', 'top-store') . '</button>';
+                echo '<button class="button button-primary" id="activate-themehunk-customizer" data-slug="' . esc_attr($plugin_companion_slug) . '"><span>' . esc_html__('Activate', 'big-store') . '</span><span class="dashicons dashicons-update loader"></span></button> <button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_companion_slug) . '" disabled>' . esc_html__('Go to Ready To Import website Templates ', 'big-store') . '</button>';
             }
         } else {
-            echo '<button class="button button-primary" id="install-themehunk-customizer" data-slug="' . esc_attr($plugin_companion_slug) . '"><span>' . esc_html__('Install', 'top-store') . '</span><span class="dashicons dashicons-update loader"></span></button><button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_companion_slug) . '"disabled >' . esc_html__('Go to Ready To Import website Templates ', 'top-store') . '</button>';
+            echo '<button class="button button-primary" id="install-themehunk-customizer" data-slug="' . esc_attr($plugin_companion_slug) . '"><span>' . esc_html__('Install', 'big-store') . '</span><span class="dashicons dashicons-update loader"></span></button><button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_companion_slug) . '"disabled >' . esc_html__('Go to Ready To Import website Templates ', 'big-store') . '</button>';
         }
 
         echo '</div>
@@ -134,7 +150,7 @@ function top_store_display_admin_notice() {
 // <a href="?notice-disable=1"  class="notice-dismiss dashicons dashicons-dismiss dashicons-dismiss-icon"></a>
 
 
-function top_store_install_custom_plugin($plugin_slug) {
+function big_store_install_custom_plugin($plugin_slug) {
     require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
     require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 
@@ -158,10 +174,10 @@ function top_store_install_custom_plugin($plugin_slug) {
 }
 
 // AJAX handler for installing and activating plugins
-add_action('wp_ajax_top_store_install_and_activate_callback', 'top_store_install_and_activate_callback');
+add_action('wp_ajax_big_store_install_and_activate_callback', 'big_store_install_and_activate_callback');
 
 // Callback function to install and activate plugin
-function top_store_install_and_activate_callback() {
+function big_store_install_and_activate_callback() {
     // Check nonce for security
     check_ajax_referer('thactivatenonce', 'security');
 
@@ -180,7 +196,7 @@ function top_store_install_and_activate_callback() {
         // Start output buffering to capture the plugin installation output
         ob_start();
         
-        $status = top_store_install_custom_plugin($plugin_slug);
+        $status = big_store_install_custom_plugin($plugin_slug);
         
         // Get the buffered content
         $install_output = ob_get_clean();
@@ -211,12 +227,13 @@ function top_store_install_and_activate_callback() {
 }
 
 
-function top_store_admin_script($hook_suffix) {
+function big_store_admin_script($hook_suffix) {
     // Define the pages where the script should be enqueued
     $allowed_pages = array(
         'index.php',
         'themes.php',
         'plugins.php',
+        'users.php',
         'appearance_page_thunk_started'
     );
 
@@ -226,20 +243,20 @@ function top_store_admin_script($hook_suffix) {
     }
 
     // Enqueue styles and scripts only on the allowed pages
-    wp_enqueue_style('top-store-admin-css', get_template_directory_uri() . '/lib/notification/css/admin.css', array(), BIG_STORE_THEME_VERSION, 'all');
-    wp_enqueue_script('top-store-notifyjs', get_template_directory_uri() . '/lib/notification/js/notify.js', array('jquery'), BIG_STORE_THEME_VERSION, true);
+    wp_enqueue_style('big-store-admin-css', get_template_directory_uri() . '/lib/notification/css/admin.css', array(), BIG_STORE_THEME_VERSION, 'all');
+    wp_enqueue_script('big-store-notifyjs', get_template_directory_uri() . '/lib/notification/js/notify.js', array('jquery'), BIG_STORE_THEME_VERSION, true);
 
     // Pass AJAX URL to the script
-    wp_localize_script('top-store-notifyjs', 'theme_data', array(
+    wp_localize_script('big-store-notifyjs', 'theme_data', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'security' => wp_create_nonce('thactivatenonce'), // Create nonce for security
         'redirectUrl' => esc_url(admin_url('themes.php?page=one-click-demo-import')), 
         'redirectUrlPro' => esc_url(admin_url('themes.php?page=themehunk-site-library'))
     ));
 }
-add_action('admin_enqueue_scripts', 'top_store_admin_script');
+add_action('admin_enqueue_scripts', 'big_store_admin_script');
 
 
 // Hook the function to clear the cookie when the theme is switched to
-// add_action('after_switch_theme', 'clear_notice_cookie');
+add_action('after_switch_theme', 'big_store_clear_notice_cookie');
 ?>

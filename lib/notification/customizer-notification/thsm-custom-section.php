@@ -1,7 +1,7 @@
 <?php
 if (class_exists('WP_Customize_Section')) {
 
-    class Top_Store_Custom_Section_Class extends WP_Customize_Section {
+    class Big_Store_Custom_Section_Class extends WP_Customize_Section {
         public $type = 'ts_themehunk_customizer_custom_section';
 
         protected function render_template() {
@@ -39,20 +39,20 @@ if (class_exists('WP_Customize_Section')) {
                         if ($plugin_pro_installed) {
                             $go_to_starter_sites_disabled = false;
                         } else {
-                            echo '<p>'. esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the Big Store Pro', 'top-store') .'</p><button class="button button-primary" id="activate-big-store-pro" data-slug="' . esc_attr($plugin_pro_slug) . '"><span class="text">'. esc_html__('Activate', 'top-store') .'</span><span class="icon dashicons dashicons-update th-loader"></span></button>';
+                            echo '<p>'. esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the Big Store Pro', 'big-store') .'</p><button class="button button-primary" id="activate-big-store-pro" data-slug="' . esc_attr($plugin_pro_slug) . '"><span class="text">'. esc_html__('Activate', 'big-store') .'</span><span class="icon dashicons dashicons-update th-loader"></span></button>';
                         }
                     } elseif ($plugin_companion_exists) {
                         if ($plugin_companion_installed) {
                             $go_to_starter_sites_disabled = false;
                         } else {
-                            echo '<p>'. esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ThemeHunk Customizer', 'top-store') .'</p><button class="button button-primary" id="activate-themehunk-customizer" data-slug="' . esc_attr($plugin_companion_slug) . '"><span class="text">'. esc_html__('Activate', 'top-store') .'</span><span class="icon dashicons dashicons-update th-loader"></span></button>';
+                            echo '<p>'. esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ThemeHunk Customizer', 'big-store') .'</p><button class="button button-primary" id="activate-themehunk-customizer" data-slug="' . esc_attr($plugin_companion_slug) . '"><span class="text">'. esc_html__('Activate', 'big-store') .'</span><span class="icon dashicons dashicons-update th-loader"></span></button>';
                         }
                     } else {
-                        echo '<p>'. esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ThemeHunk Customizer', 'top-store') .'</p><button class="button button-primary" id="install-themehunk-customizer" data-slug="' . esc_attr($plugin_companion_slug) . '"><span class="text">'. esc_html__('Install Now', 'top-store') .'</span><span class="icon dashicons dashicons-update th-loader"></span></button>';
+                        echo '<p>'. esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ThemeHunk Customizer', 'big-store') .'</p><button class="button button-primary" id="install-themehunk-customizer" data-slug="' . esc_attr($plugin_companion_slug) . '"><span class="text">'. esc_html__('Install Now', 'big-store') .'</span><span class="icon dashicons dashicons-update th-loader"></span></button>';
                     }
 
                     // Go to Starter Sites button (always present, conditionally enabled/disabled)
-                    echo '<button class="button button-primary" id="go-to-starter-sites" ' . ($go_to_starter_sites_disabled ? 'disabled' : '') . '>' . esc_html__('Go to Starter Sites', 'top-store') . '</button>';
+                    echo '<button class="button button-primary" id="go-to-starter-sites" ' . ($go_to_starter_sites_disabled ? 'disabled' : '') . '>' . esc_html__('Go to Starter Sites', 'big-store') . '</button>';
                     ?>
                 </div>
             </li>
@@ -62,20 +62,20 @@ if (class_exists('WP_Customize_Section')) {
     }
 }
 
-function top_store_customize_install_register($wp_customize) {
-    $wp_customize->register_section_type('Top_Store_Custom_Section_Class');
+function big_store_customize_install_register($wp_customize) {
+    $wp_customize->register_section_type('Big_Store_Custom_Section_Class');
 
     $wp_customize->add_section(
-        new Top_Store_Custom_Section_Class(
+        new Big_Store_Custom_Section_Class(
             $wp_customize,
             'ts_themehunk_customizer_custom_section',
             array(
-                'title' => __('Thank You for installing Top Store Theme', 'top-store'),
+                'title' => __('Thank You for installing Big Store Theme', 'big-store'),
                 'priority' => 0,
             )
         )
     );
 }
-add_action('customize_register', 'top_store_customize_install_register');
+add_action('customize_register', 'big_store_customize_install_register');
 
 get_template_part( 'lib/notification/customizer-notification/customizer-install');
