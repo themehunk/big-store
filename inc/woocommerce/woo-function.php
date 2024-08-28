@@ -419,6 +419,14 @@ function big_store_product_list_categories( $args = '' ){
   if (!class_exists( 'WooCommerce' )) {
     return;
   }
+
+  $limit = '';
+  if (function_exists( 'big_store_pro_load_plugin' ) ){
+    $limit = '';
+  }
+  else{
+    $limit = 5;
+  }
 $term = get_theme_mod('big_store_exclde_category','');
 if(!empty($term[0])){
   $exclude_id = $term;
@@ -431,6 +439,7 @@ $defaults = array(
         'depth'               => 5,
         'echo'                => 0,
         'exclude'             => $exclude_id,
+        'number'              => $limit,
         'exclude_tree'        => '',
         'feed'                => '',
         'feed_image'          => '',

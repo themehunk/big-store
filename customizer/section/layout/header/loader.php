@@ -62,7 +62,7 @@ $wp_customize->add_setting( 'big_store_rtl', array(
     'sanitize_callback' => 'big_store_sanitize_checkbox',
   ) );
 $wp_customize->add_control( new Big_Store_Toggle_Control( $wp_customize, 'big_store_rtl', array(
-    'label'       => esc_html__( 'Enable', 'big-store' ),
+    'label'       => esc_html__( 'Enable (Pro)', 'big-store' ),
     'section'     => 'big-store-rtl',
     'type'        => 'toggle',
     'settings'    => 'big_store_rtl',

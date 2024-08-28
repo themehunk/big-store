@@ -192,7 +192,7 @@ $wp_customize->add_control( new Big_Store_Customizer_Buttonset_Control( $wp_cust
     'sanitize_callback' => 'big_store_sanitize_checkbox',
   ) );
   $wp_customize->add_control( new Big_Store_Toggle_Control( $wp_customize, 'big_store_shadow_header', array(
-    'label'       => esc_html__( 'Header Shadow', 'big-store' ),
+    'label'       => esc_html__( 'Header Shadow (Pro)', 'big-store' ),
     'section'     => 'big-store-main-header',
     'type'        => 'toggle',
     'settings'    => 'big_store_shadow_header',
@@ -206,7 +206,7 @@ $wp_customize->add_control( new Big_Store_Customizer_Buttonset_Control( $wp_cust
     'sanitize_callback' => 'big_store_sanitize_checkbox',
   ) );
   $wp_customize->add_control( new Big_Store_Toggle_Control( $wp_customize, 'big_store_sticky_header', array(
-    'label'       => esc_html__( 'Sticky Header', 'big-store' ),
+    'label'       => esc_html__( 'Sticky Header (Pro)', 'big-store' ),
     'section'     => 'big-store-main-header',
     'type'        => 'toggle',
     'settings'    => 'big_store_sticky_header',
@@ -312,7 +312,7 @@ $wp_customize->add_control( 'big_store_main_hdr_cat_txt', array(
     $wp_customize->add_control(new Big_Store_Customize_Control_Checkbox_Multiple(
             $wp_customize,'big_store_exclde_category', array(
         'settings'=> 'big_store_exclde_category',
-        'label'   => __( 'Choose Categories To Exclude', 'big-store' ),
+        'label'   => __( 'Choose Categories To Exclude (Pro)', 'big-store' ),
         'section' => 'big_store_exclde_cat_header',
         'choices' => big_store_get_category_id(array('taxonomy' =>'product_cat'),true),
         ) 

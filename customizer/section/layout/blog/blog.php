@@ -15,9 +15,9 @@
         'section' => 'big-store-section-blog-group',
         'type'    => 'select',
         'choices'    => array(
-        'full'   => __('Full Content','big-store'),
+        'full'   => __('Full Content (Pro)','big-store'),
         'excerpt' => __('Excerpt Content','big-store'), 
-        'nocontent' => __('No Content','big-store'), 
+        'nocontent' => __('No Content (Pro)','big-store'), 
         ),
          'priority'   =>9,
     ));
@@ -51,7 +51,7 @@
 	$wp_customize->add_control('big_store_blog_read_more_txt', array(
 			'type'        => 'text',
 			'section'     => 'big-store-section-blog-group',
-			'label'       => __( 'Read More Text', 'big-store' ),
+			'label'       => __( 'Read More Text (Pro)', 'big-store' ),
 			'settings' => 'big_store_blog_read_more_txt',
              'priority'   =>11,
 			
