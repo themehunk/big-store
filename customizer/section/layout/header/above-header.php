@@ -136,7 +136,7 @@ $wp_customize->add_control(
 } 
 // col2
 $wp_customize->add_setting('big_store_above_header_col2_set', array(
-        'default'        => 'social',
+        'default'        => 'text',
         'capability'     => 'edit_theme_options',
         'sanitize_callback' => 'big_store_sanitize_select',
     ));
@@ -147,10 +147,10 @@ $wp_customize->add_control( 'big_store_above_header_col2_set', array(
         'type'    => 'select',
         'choices'    => array(
         'none'                 => __('None (Pro)','big-store'),
-        'text'             => __('Text (Pro)','big-store'),
+        'text'             => __('Text','big-store'),
         'menu'                 => __('Menu (Pro)','big-store'),
         'widget'                 => __('Widget (Pro)','big-store'),
-        'social'             => __('Social Media','big-store'),
+        'social'             => __('Social Media (Pro)','big-store'),
             
         ),
     ));

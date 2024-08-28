@@ -16,7 +16,7 @@ if (!function_exists('big_store_top_header_markup')) {
   {
     $big_store_above_header_layout     = get_theme_mod('big_store_above_header_layout', 'abv-two');
     $big_store_above_header_col1_set   = get_theme_mod('big_store_above_header_col1_set', 'text');
-    $big_store_above_header_col2_set   = get_theme_mod('big_store_above_header_col2_set', 'social');
+    $big_store_above_header_col2_set   = get_theme_mod('big_store_above_header_col2_set', 'text');
     $big_store_above_header_col3_set   = get_theme_mod('big_store_above_header_col3_set', 'text');
     $big_store_menu_open = get_theme_mod('big_store_mobile_menu_open', 'left');
     if ($big_store_above_header_layout !== 'abv-none') : ?>
