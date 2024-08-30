@@ -45,10 +45,10 @@ if (class_exists('WP_Customize_Section')) {
                         if ($plugin_companion_installed) {
                             $go_to_starter_sites_disabled = false;
                         } else {
-                            echo '<p>'. esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ThemeHunk Customizer', 'big-store') .'</p><button class="button button-primary" id="activate-themehunk-customizer" data-slug="' . esc_attr($plugin_companion_slug) . '"><span class="text">'. esc_html__('Activate', 'big-store') .'</span><span class="icon dashicons dashicons-update th-loader"></span></button>';
+                            echo '<p>'. esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ThemeHunk Customizer & One Click Demo Import', 'big-store') .'</p><button class="button button-primary" id="activate-themehunk-customizer" data-slug="' . esc_attr($plugin_companion_slug) . '"><span class="text">'. esc_html__('Activate', 'big-store') .'</span><span class="icon dashicons dashicons-update th-loader"></span></button>';
                         }
                     } else {
-                        echo '<p>'. esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ThemeHunk Customizer', 'big-store') .'</p><button class="button button-primary" id="install-themehunk-customizer" data-slug="' . esc_attr($plugin_companion_slug) . '"><span class="text">'. esc_html__('Install Now', 'big-store') .'</span><span class="icon dashicons dashicons-update th-loader"></span></button>';
+                        echo '<p>'. esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ThemeHunk Customizer & One Click Demo Import', 'big-store') .'</p><button class="button button-primary" id="install-themehunk-customizer" data-slug="' . esc_attr($plugin_companion_slug) . '"><span class="text">'. esc_html__('Install Now', 'big-store') .'</span><span class="icon dashicons dashicons-update th-loader"></span></button>';
                     }
 
                     // Go to Starter Sites button (always present, conditionally enabled/disabled)
