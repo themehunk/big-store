@@ -73,7 +73,7 @@ function big_store_display_admin_notice() {
     $plugin_data = $plugin_data[0];
 
     // Get the specific plugin data
-    $plugin_pro_slug = isset($plugin_data['th-shop-mania-pro']['slug']) ? $plugin_data['th-shop-mania-pro']['slug'] : 'big-store-pro';
+    $plugin_pro_slug = isset($plugin_data['big-store-pro']['slug']) ? $plugin_data['big-store-pro']['slug'] : 'big-store-pro';
     $plugin_pro_file = isset($plugin_data['th-shop-mania-pro']['init']) ? $plugin_data['th-shop-mania-pro']['init'] : 'big-store-pro/big-store-pro.php';
     $plugin_companion_slug = isset($plugin_data['themehunk-customizer']['slug']) ? $plugin_data['themehunk-customizer']['slug'] : 'themehunk-customizer';
     $plugin_companion_file = isset($plugin_data['themehunk-customizer']['active_filename']) ? $plugin_data['themehunk-customizer']['active_filename'] : 'themehunk-customizer/themehunk-customizer.php';
@@ -89,7 +89,7 @@ function big_store_display_admin_notice() {
     $one_click_demo_import_exists = file_exists(WP_PLUGIN_DIR . '/' . $one_click_demo_import_file);
     $one_click_demo_import_installed = is_plugin_active($one_click_demo_import_file);
 
- if ((isset($_GET['page']) && $_GET['page'] == 'thunk_started' ) || ((!$plugin_pro_exists && !$plugin_companion_exists) ||($plugin_pro_exists && !$plugin_pro_installed) || (!$plugin_pro_exists && $plugin_companion_exists && !$plugin_companion_installed)) ) {
+ if ((isset($_GET['page']) && $_GET['page'] == 'thunk_started' ) || ((!$plugin_pro_exists && !$plugin_companion_exists) ||($plugin_pro_exists && !$plugin_pro_installed) || (!$plugin_pro_exists && $plugin_companion_exists && !$plugin_companion_installed) || (!$one_click_demo_import_installed || !$plugin_companion_installed) ) ) {
 
     if ($plugin_pro_exists) {
         // 'th-shop-mania-pro' is installed
@@ -298,3 +298,4 @@ add_action('admin_enqueue_scripts', 'big_store_admin_script');
 // Hook the function to clear the cookie when the theme is switched to
 add_action('after_switch_theme', 'big_store_clear_notice_cookie');
 ?>
+
