@@ -283,8 +283,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= 2.0.5 =
-* Update: One click demo import added in required plugins.
+= 2.0.6 =
+* Update: Theme made compatible with WPML RTL.
 
 == Resources ==
  
