@@ -9583,6 +9583,17 @@ html[dir="rtl"] .woocommerce #content div.product div.summary .prev_next_buttons
   transform: translateX(-50%) rotateZ(180deg);
   left: 50%;
 }
+html[dir="rtl"] .thunk-single-product-summary-wrap .woocommerce-product-gallery {
+   position: sticky!important;
+    top: 45px;
+}
+html[dir="rtl"] .thunk-single-product-summary-wrap{
+   display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+overflow: initial;
+}
 /*** tooltip  */
 @media screen and (max-width: 360px) {
   /* th all in one woo cart */
