@@ -67,6 +67,9 @@ jQuery('#_customize-input-big_store_bottom_footer_col1_set option[value="none"],
              jQuery( '.customizer-repeater-logo-image-control' ).css('display','none' );     
             }
 
-    } );     
+    } ); 
+
+
+
 
 });

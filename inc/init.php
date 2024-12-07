@@ -13,7 +13,6 @@ get_template_part( 'inc/blog-function');
 include_once(ABSPATH.'wp-admin/includes/plugin.php');
 if ( !is_plugin_active('big-store-pro/big-store-pro.php') ) {
   get_template_part( 'lib/th-option/th-option');
-  get_template_part( 'lib/th-option/notify');
 }
 //breadcrumbs
 get_template_part( 'lib/breadcrumbs/breadcrumbs');
@@ -58,3 +57,9 @@ get_template_part('inc/woocommerce/woocommerce-ajax');
 /******************************/
 get_template_part('customizer/pro-button/class-customize');
 get_template_part( 'inc/footer');
+
+get_template_part('lib/notification/customizer-notification/thsm-custom-section');
+/******************************/
+// Plugin Activation
+/******************************/
+get_template_part( 'lib/notification/notify');

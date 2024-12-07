@@ -145,7 +145,7 @@ $big_store_shop_bottom_footer = new  Big_Store_WP_Customize_Section($wp_customiz
 $wp_customize->add_section( $big_store_shop_bottom_footer);
 // rtl
 $big_store_rtl = new Big_Store_WP_Customize_Section( $wp_customize, 'big-store-rtl', array(
-    'title' =>  __( 'RTL', 'big-store' ),
+    'title' =>  __( 'RTL (Pro)', 'big-store' ),
     'panel' => 'big-store-panel-layout',
     'priority' => 6,
 ));

@@ -45,6 +45,3 @@ if ( class_exists('Big_Store_Customize_Control_Scroll')){
   }
 }
 add_action('customize_register','big_store_customize_register');
-function big_store_is_json( $string ){
-    return is_string( $string ) && is_array( json_decode( $string, true ) ) ? true : false;
-}
