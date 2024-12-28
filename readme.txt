@@ -4,7 +4,7 @@ Tags: wide-blocks, block-patterns, block-styles, editor-style, e-commerce, blog,
 Requires at least: WordPress 5.0
 Requires PHP: 7.0
 Tested up to: 6.6
-Stable tag: 2.0.6
+Stable tag: 2.0.7
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -24,11 +24,16 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 == Changelog ==
 
+= 2.0.7 =
+* Update: Banner notification added.
+
 = 2.0.6 =
-* Update: Theme made compatible with WPML RTL.
+* Update: Notification style improved.
 
 = 2.0.5 =
 * Update: One click demo import added in required plugins.
+* Update: Theme made compatible with WPML RTL.
+* Update: the admin notice style issue resolved.
 
 = 2.0.4 =
 * Update: Theme limitation added.
@@ -283,8 +288,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= 2.0.6 =
-* Update: Theme made compatible with WPML RTL.
+= 2.0.7 =
+* Update: Banner notification added.
 
 == Resources ==
  
