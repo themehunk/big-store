@@ -26,11 +26,16 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 = 2.0.7 =
 * Fix: Security Issue Fixed.
 
+= 2.0.7 =
+* Update: Banner notification added.
+
 = 2.0.6 =
-* Update: Theme made compatible with WPML RTL.
+* Update: Notification style improved.
 
 = 2.0.5 =
 * Update: One click demo import added in required plugins.
+* Update: Theme made compatible with WPML RTL.
+* Update: the admin notice style issue resolved.
 
 = 2.0.4 =
 * Update: Theme limitation added.
@@ -285,8 +290,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= 2.0.6 =
-* Update: Theme made compatible with WPML RTL.
+= 2.0.7 =
+* Update: Banner notification added.
 
 == Resources ==
  
