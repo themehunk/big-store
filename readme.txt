@@ -23,6 +23,8 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
+= 2.0.7 =
+* Fix: Security Issue Fixed.
 
 = 2.0.8 =
 * Update: New Wishlist added.
