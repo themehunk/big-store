@@ -4,7 +4,7 @@ Tags: wide-blocks, block-patterns, block-styles, editor-style, e-commerce, blog,
 Requires at least: WordPress 5.0
 Requires PHP: 7.0
 Tested up to: 6.7
-Stable tag: 2.0.7
+Stable tag: 2.0.8
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -25,6 +25,9 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 == Changelog ==
 = 2.0.7 =
 * Fix: Security Issue Fixed.
+
+= 2.0.8 =
+* Update: New Wishlist added.
 
 = 2.0.7 =
 * Update: Banner notification added.
@@ -290,8 +293,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= 2.0.7 =
-* Update: Banner notification added.
+= 2.0.8 =
+* Update: New Wishlist added.
 
 == Resources ==
  
