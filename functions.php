@@ -11,7 +11,7 @@
  * Theme functions and definitions
  */
 if ( ! function_exists( 'big_store_setup' ) ) :
-define( 'BIG_STORE_THEME_VERSION','2.0.6');
+define( 'BIG_STORE_THEME_VERSION','2.0.8');
 define( 'BIG_STORE_THEME_DIR', get_template_directory() . '/' );
 define( 'BIG_STORE_THEME_URI', get_template_directory_uri() . '/' );
 define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
@@ -129,10 +129,10 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
                   'img' => 'icon-128x128.gif',
                  'active_filename' => 'th-product-compare/th-product-compare.php',
              ),
-            'unlimited-blocks' => array(
-				'name' => esc_html__( 'Unlimited blocks For Gutenberg', 'big-store' ),
+            'vayu-blocks' => array(
+				'name' => esc_html__( 'Vayu Blocks', 'big-store' ),
 				'img' => 'icon-128x128.png',
-				'active_filename' => 'unlimited-blocks/unlimited-blocks.php',
+				'active_filename' => 'vayu-blocks/vayu-blocks.php',
 				),
             'th-variation-swatches' => array(
                 'name' => esc_html__( 'TH Variation Swatches', 'big-store' ),
