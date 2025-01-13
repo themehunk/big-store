@@ -26,6 +26,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 = 2.0.8 =
 * Update: New Wishlist added.
 * New: Vayu Blocks added in recommended plugins.
+* New: big-store added in new imprter.
 
 = 2.0.7 =
 * Update: Banner notification added.
@@ -295,6 +296,7 @@ Initial release
 = 2.0.8 =
 * Update: New Wishlist added.
 * New: Vayu Blocks added in recommended plugins.
+* New: big-store added in new imprter.
 
 == Resources ==
  
