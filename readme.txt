@@ -29,6 +29,10 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Update: New Wishlist added.
 * New: Vayu Blocks added in recommended plugins.
 * New: big-store added in new imprter.
+* Update: Welcome tab style issue updated.
+* New: Twitter share button added. 
+* Update: Video tab removed.
+* Update: Theme tested with new importer.
 
 = 2.0.6 =
 * Update: Notification style improved.
@@ -297,6 +301,10 @@ Initial release
 * Update: New Wishlist added.
 * New: Vayu Blocks added in recommended plugins.
 * New: big-store added in new imprter.
+* Update: Welcome tab style issue updated.
+* New: Twitter share button added. 
+* Update: Video tab removed.
+* Update: Theme tested with new importer.
 
 == Resources ==
  
