@@ -65,8 +65,6 @@ function big_store_display_admin_notice() {
     $plugin_pro_installed = is_plugin_active($plugin_pro_file);
     $plugin_companion_exists = file_exists(WP_PLUGIN_DIR . '/' . $plugin_companion_file);
     $plugin_companion_installed = is_plugin_active($plugin_companion_file);
-    $one_click_demo_import_exists = file_exists(WP_PLUGIN_DIR . '/' . $one_click_demo_import_file);
-    $one_click_demo_import_installed = is_plugin_active($one_click_demo_import_file);
 
  if ((isset($_GET['page']) && $_GET['page'] == 'thunk_started' ) || ((!$plugin_pro_exists && !$plugin_companion_exists) ||($plugin_pro_exists && !$plugin_pro_installed) || (!$plugin_pro_exists && $plugin_companion_exists && !$plugin_companion_installed)) ) {
     if ($plugin_pro_exists) {
