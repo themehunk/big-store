@@ -26,6 +26,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 = 2.0.8 =
 * Update: Banner notification updated.
 * Update: Warning oneclick deo import undefine error removed.
+* Update Search Icon issue resolved.
 
 = 2.0.7 =
 * Update: Banner notification added.
@@ -301,6 +302,8 @@ Initial release
 == Upgrade Notice ==
 = 2.0.8 =
 * Update: Banner notification updated.
+* Update: Warning oneclick deo import undefine error removed.
+* Update Search Icon issue resolved
 
 == Resources ==
  
