@@ -161,8 +161,6 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
 
         ));
 
-
-
         // Useful plugins
         add_theme_support( 'useful-plugins', array(
              'themehunk-megamenu-plus' => array(
