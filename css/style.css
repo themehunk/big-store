@@ -3590,6 +3590,9 @@ a.opn-quick-view-text::before {
   font-size: 15px;
   font-family: "Roboto-Bold";
 }
+.thunk-cat-tab .tab-link li:last-child a{
+  padding-right: 0;
+}
 .thunk-cat-tab .tab-link li a.active,
 .thunk-cat-tab .tab-link li a:hover {
   color: #1c1d1e;
@@ -6419,6 +6422,7 @@ form p label {
 }
 .page-head .breadcrumb-trail.breadcrumbs {
   flex: 1;
+  padding-top: 9px;
 }
 .thunk-breadcrumb {
   padding-bottom: 0;
@@ -10701,7 +10705,9 @@ html[dir="rtl"] .woocommerce #content div.product div.summary .prev_next_buttons
    display: inline-flex;
     margin-bottom: 12px;
 }
-
+.mobile-nav-bar{
+  width: 89%!important;
+}
 }
 @media screen and (max-width: 550px) {
   .main-header-col3 {

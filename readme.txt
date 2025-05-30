@@ -3,7 +3,7 @@ Contributors: ThemeHunk
 Tags: wide-blocks, block-patterns, block-styles, editor-style, e-commerce, blog, block-patterns, grid-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, add_editor_style, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready.
 Requires PHP: 5.5
 Tested up to: 6.8
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -22,6 +22,9 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
+
+= 2.1.1 =
+* Update: Theme tested with WooCommerce 9.8.5. & style of breadcrumb and mobile menu updated.
 
 = 2.1.0 =
 * Update: _load_textdomain_just_in_time was called incorrectly issue resolved.
@@ -308,10 +311,9 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= 2.0.8 =
-* Update: Banner notification updated.
-* Update: Warning oneclick deo import undefine error removed.
-* Update Search Icon issue resolved
+
+= 2.1.1 =
+* Update: Theme tested with WooCommerce 9.8.5. & style of breadcrumb and mobile menu updated.
 
 == Resources ==
  
