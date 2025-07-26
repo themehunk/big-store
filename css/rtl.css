@@ -3009,6 +3009,9 @@ width:auto;
 .thunk-woo-product-list .thunk-product:hover .thunk-quickview a{
 opacity:1;
 }
+.theme-big-store .thunk-compare{
+    margin: 0;
+}
 .thunk-compare .compare-button a:before{
    content: "\e917";
   font-family: "th-icon"!important;
@@ -5153,7 +5156,6 @@ border-radius:3px 0px 0px 3px;
 .woocommerce-checkout #search-button{
     top: 15px;
 }
-.woocommerce-checkout .thunk-content-wrap{display:-webkit-flex;}
 .woocommerce #order_review table.shop_table thead th {
     font-size: 15px;
     letter-spacing: 1px;

@@ -25,6 +25,9 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 = 2.1.1 =
 * Update: Theme tested with WooCommerce 9.8.5. & style of breadcrumb and mobile menu updated.
+* Update: Woocommerce checkout page .woocommerce-checkout .thunk-content-wrap {
+    display: -webkit-flex;
+}
 
 = 2.1.0 =
 * Update: _load_textdomain_just_in_time was called incorrectly issue resolved.
