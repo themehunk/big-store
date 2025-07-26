@@ -9,7 +9,7 @@ License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 
 == Description ==
-Big Store is an eCommerce WordPress theme specially made for shopping websites. You can create any type of online store website using it. Theme is best suited for Fashion & Clothing store, furniture, grocery, clothing, electronic, gadget store and decorative gifts stores. Theme option panel is so easy to use and theme is also fully responsive to each & every device like Mobile, ipads etc. Some theme features are Tabbed product carousel, Woo Category layouts, Header & Footer combinations, quick view, translation ready, Ajax search, shop with category, Top slider layouts, Product Filter, Product styles, Color & Background options etc. Theme is deeply integrated with WooCommerce plugin to sell your products online.  See demo here: https://themehunk.com/big-store-ecommerce-wordpress-theme/
+Big Store is an eCommerce WordPress theme specially made for shopping websites. You can create any type of online store website using it. Theme is best suited for Fashion & Clothing store, furniture, grocery, clothing, electronic, gadget store and decorative gifts stores. Theme option panel is so easy to use and theme is also fully responsive to each & every device like Mobile, ipads etc. Some theme features are Tabbed product carousel, Woo Category layouts, Header & Footer combinations, quick view, translation ready, Ajax search, shop with category, Top slider layouts, Product Filter, Product styles, Color & Background options etc. Theme is deeply integrated with WooCommerce plugin to sell your products online.  See demo here: https://wpthemes.themehunk.com/big-store-electro
 
 For more information about Theme https://www.themehunk.com
 
