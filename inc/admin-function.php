@@ -564,7 +564,7 @@ $classes[] = 'woocommerce';
 endif;
 $big_store_color_scheme = get_theme_mod( 'big_store_color_scheme','opn-light' );
         
-          if( shortcode_exists( 'yith_wcwl_add_to_wishlist' ) ){
+         if( shortcode_exists( 'th_compare' ) || shortcode_exists( 'yith_wcwl_add_to_wishlist' ) ){
                  $classes[] = 'big-store-wishlist-activate';
          } 
 

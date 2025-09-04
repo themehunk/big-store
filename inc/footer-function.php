@@ -7,6 +7,35 @@
  * @copyright   Copyright (c) 2019, big store
  * @since       big store 1.0.0
  */
+if ( !function_exists('big_store_full_footer_markup') ) {
+function big_store_full_footer_markup() { ?>
+      <footer class="big-store-footer">
+         <?php 
+         
+          // top-footer 
+          do_action( 'big_store_top_footer' ); 
+
+          // widget-footer
+          do_action( 'big_store_widget_footer' );
+
+          // below-footer
+          if (function_exists( 'big_store_pro_load_plugin' ) ){
+
+            do_action( 'big_store_below_footer' );  
+
+          }else{
+
+            do_action('big_store_shop_default_bottom_footer'); 
+
+          }
+  
+        ?>
+     </footer> <!-- end footer -->
+    <?php }
+
+// Hook the custom footer function into 'zita_footer'
+add_action('big_store_footer', 'big_store_full_footer_markup');
+}
 /**************************************/
 //Top footer function
 /**************************************/

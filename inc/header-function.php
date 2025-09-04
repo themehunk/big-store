@@ -7,6 +7,75 @@
  * @copyright   Copyright (c) 2019, big store
  * @since       big store 1.0.0
  */
+if ( !function_exists('big_store_get_page_classes')) {
+function big_store_get_page_classes() {
+   $classes = '';
+if(is_page_template( 'page-contact.php' ) || is_page_template( 'page-faq.php' ) ||is_page_template( 'page-aboutus.php' )||is_page_template( 'frontpage.php' )){
+$classes = 'no-sidebar';
+}
+elseif(!is_404() && !is_search() && is_page()){ 
+  $page_post_meta_sidebar = get_post_meta(get_the_ID(), 'big_store_sidebar_dyn', true );
+    if ($page_post_meta_sidebar=='on'){
+      $classes = 'no-sidebar';
+    }
+}elseif(is_single() && (class_exists( 'WooCommerce' ) && !is_product())){
+      $page_post_meta_sidebar = get_post_meta(get_the_ID(), 'big_store_sidebar_dyn', true );
+      if(get_theme_mod('big_store_blog_single_sidebar_disable')==true){
+        $classes = 'no-sidebar';
+        }else{
+          if ($page_post_meta_sidebar=='on'){
+      $classes = 'no-sidebar';
+         }
+       }
+       
+}elseif(big_store_is_blog()){
+      $blog_page_id = get_option( 'page_for_posts' );
+        $page_post_meta_sidebar = get_post_meta( $blog_page_id, 'big_store_sidebar_dyn', true );
+    if ($page_post_meta_sidebar=='on'){
+      $classes = 'no-sidebar';
+    }
+}elseif(class_exists( 'WooCommerce' ) && is_shop()){
+      $shop_page_id = get_option( 'woocommerce_shop_page_id' );
+        $page_post_meta_sidebar = get_post_meta( $shop_page_id, 'big_store_sidebar_dyn', true );
+    if ($page_post_meta_sidebar=='on'){
+      $classes = 'no-sidebar';
+    }
+}elseif(class_exists( 'WooCommerce' ) && is_product()){
+      $page_post_meta_sidebar = get_post_meta(get_the_ID(), 'big_store_sidebar_dyn', true );
+      if(get_theme_mod('big_store_product_single_sidebar_disable')==true){
+        $classes = 'no-sidebar';
+        }else{
+     if ($page_post_meta_sidebar=='on'){
+      $classes = 'no-sidebar';
+     }
+  }
+}
+
+    return esc_attr($classes);
+}
+}
+if ( !function_exists('big_store_full_header_markup') ) {
+function big_store_full_header_markup() { ?>
+  <header class="big-store-header">
+    <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'big-store' ); ?></a>
+    <?php do_action( 'big_store_sticky_header' ); ?> 
+        <!-- sticky header -->
+    <?php if(get_theme_mod('big_store_above_mobile_disable')==true){
+      if (wp_is_mobile()!== true):
+             do_action( 'big_store_top_header' );  
+            endif;
+    }elseif(get_theme_mod('big_store_above_mobile_disable',false)==false){
+       do_action( 'big_store_top_header' );  
+    } ?> 
+    <!-- end top-header -->
+        <?php do_action( 'big_store_main_header' ); ?> 
+    <!-- end main-header -->
+    <?php do_action( 'big_store_below_header' );?> 
+    <!-- end below-header -->
+  </header> <!-- end header -->
+<?php }
+add_action('big_store_header', 'big_store_full_header_markup');
+}
 /**************************************/
 //Top Header function
 /**************************************/
@@ -596,11 +665,7 @@ function big_store_header_icon()
 
       <?php }
       big_store_account();
-      if(class_exists('WPCleverWoosw')){ ?>
-        <a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>">
-        <span class="th-icon th-icon-heartline"></span></a>
-      <?php }
-      if (class_exists('YITH_WCWL') && (!class_exists('WPCleverWoosw'))) { ?>
+      if ( class_exists( 'THWL_Wishlist' ) || defined( 'YITH_WCWL_SLUG' ) ) { ?>
         <a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>">
         <span class="th-icon th-icon-heartline"></span></a></a>
       <?php }
@@ -698,11 +763,7 @@ if (!function_exists('big_store_sticky_header_markup')) {
               
         }?></span></a>
                 <?php
-                if (class_exists('WPCleverWoosw')) {
-                ?>
-                  <a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>"><span class="th-icon th-icon-heartline"></span></a>
-                <?php }
-                if (class_exists('YITH_WCWL') && (!class_exists('WPCleverWoosw'))) {
+                if ( class_exists( 'THWL_Wishlist' ) || defined( 'YITH_WCWL_SLUG' ) ) {
                 ?>
                   <a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>"><span class="th-icon th-icon-heartline"></span></a>
                 <?php }
@@ -752,7 +813,7 @@ function bigstore_mobile_navbar()
         if (class_exists('WPCleverWoosw')) { ?>
           <li><a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>"><span class="th-icon th-icon-heartline"></span></a></li>
         <?php }
-        if (class_exists('YITH_WCWL') && (!class_exists('WPCleverWoosw'))) { ?>
+        if ( class_exists( 'THWL_Wishlist' ) || defined( 'YITH_WCWL_SLUG' ) ) { ?>
           <li><a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>"><span class="th-icon th-icon-heartline"></span></a></li>
         <?php } ?>
         <li>
