@@ -37,6 +37,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 10. Update: Footer implementation through hooks using do_action( 'big_store_footer' );
 11. Update: Absolute path in th-icon issue resolved.
 12. th-icon fonts included through to remove Absolute path error.
+13. get_template_parts removed from init.php
 
 = 2.1.1 =
 * Update: Theme tested with WooCommerce 9.8.5. & style of breadcrumb and mobile menu updated.
