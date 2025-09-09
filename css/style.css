@@ -9036,7 +9036,7 @@ display:inline-flex;
   }
 
   .woocommerce div.entry-summary form.cart button[type="submit"] {
-    width: 200px;
+    width: 151px;
     height: 35px;
   }
   .single-product div.product form.cart button.minus,
@@ -9153,7 +9153,7 @@ display:inline-flex;
 }
 @media screen and (min-width: 769px) and (max-width: 850px) {
   .woocommerce div.entry-summary form.cart button[type="submit"] {
-    width: 180px;
+    width: 125px;
   }
 }
 

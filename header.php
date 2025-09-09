@@ -26,7 +26,7 @@
 <body <?php body_class();?>>
 	<?php wp_body_open();?>	
 <?php do_action('big_store_site_preloader'); ?>
-<div id="page" class="bigstore-site <?php echo big_store_get_page_classes(); ?>">
+<div id="page" class="bigstore-site <?php echo function_exists( 'big_store_get_page_classes' ) ? big_store_get_page_classes() : ''; ?>">
 	<?php do_action( 'big_store_before_header' ); ?>
 	<?php do_action( 'big_store_header' ); ?>
 	<?php do_action( 'big_store_after_header' ); ?>
