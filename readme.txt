@@ -25,6 +25,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 = 2.1.4 =
 * Update: Header style updated.
+* Update: Header and mobile icon changed.
+* Update: cart icon and design issue fixed.
 
 = 2.1.3 =
 * Fix: TH TOP Child theme error removed.
