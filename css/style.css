@@ -8614,6 +8614,9 @@ html[dir="rtl"] .woocommerce-Price-bidi {
   align-items: center;
   justify-content: center;
 }
+.thunk-product .th-wishlist-icon-svg{
+  width: 18px;
+}
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .thunk-slide .owl-stage-outer {
     padding: 0;
