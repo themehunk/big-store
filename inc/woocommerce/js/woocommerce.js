@@ -5,10 +5,6 @@
   var wpmlRtl = $('html').attr('dir');
   var BigStoreWooLib = {
     init: function () {
-      BigStoreWooLib.bindEvents();
-    },
-    bindEvents: function () {
-      
       BigStoreWooLib.tooltip_option();
       BigStoreWooLib.listGridView();
       BigStoreWooLib.OffCanvas();
