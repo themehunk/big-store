@@ -5,25 +5,21 @@
   var wpmlRtl = $('html').attr('dir');
   var BigStoreWooLib = {
     init: function () {
-      this.bindEvents();
-    },
-    bindEvents: function () {
-      var $this = this;
-      $this.tooltip_option();
-      $this.listGridView();
-      $this.OffCanvas();
-      $this.cartDropdown();
-      $this.AddtoCartQuanty();
-      $this.AutoCompleteSearch();
-      $this.CategoryTabFilter();
-      $this.ProductSlide();
-      $this.ProductListSlide();
-      $this.CategorySlider();
-      $this.ProductImageTabFilter();
-      $this.cartopen();
-      $this.woccomerce_tab();
-      $this.product_descr_excerpt();
-      $this.tooltip();
+      BigStoreWooLib.tooltip_option();
+      BigStoreWooLib.listGridView();
+      BigStoreWooLib.OffCanvas();
+      BigStoreWooLib.cartDropdown();
+      BigStoreWooLib.AddtoCartQuanty();
+      BigStoreWooLib.AutoCompleteSearch();
+      BigStoreWooLib.CategoryTabFilter();
+      BigStoreWooLib.ProductSlide();
+      BigStoreWooLib.ProductListSlide();
+      BigStoreWooLib.CategorySlider();
+      BigStoreWooLib.ProductImageTabFilter();
+      BigStoreWooLib.cartopen();
+      BigStoreWooLib.woccomerce_tab();
+      BigStoreWooLib.product_descr_excerpt();
+      BigStoreWooLib.tooltip();
     },
 
     tooltip_option: function () {
