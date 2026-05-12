@@ -26,6 +26,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 = 2.1.6 =
 * Update: Unused code removed.
 * Update: Style updated.
+* Update: Store One added.
 
 = 2.1.5 =
 * Update: $this remove from custom.js & woocommerce.js
