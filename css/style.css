@@ -3594,7 +3594,7 @@ a.opn-quick-view-text::before {
   padding: 0px 15px;
   color: #8f9696;
   font-size: 15px;
-  font-family: "Roboto-Bold";
+  font-family: "Roboto-Bold", sans-serif;
 }
 .thunk-cat-tab .tab-link li:last-child a{
   padding-right: 0;
@@ -3602,7 +3602,7 @@ a.opn-quick-view-text::before {
 .thunk-cat-tab .tab-link li a.active,
 .thunk-cat-tab .tab-link li a:hover {
   color: #1c1d1e;
-  font-family: "Roboto-Bold";
+  font-family: "Roboto-Bold", sans-serif;
 }
 .thunk-cat-tab .tab-link li:first-child a {
   padding-left: 0;
@@ -4947,7 +4947,7 @@ body .woocommerce-tabs .tabs li:hover a {
   padding: 15px;
   position: relative;
   color: #1c1d1e;
-  font-family: "Roboto-Regular";
+  font-family: "Roboto-Regular", sans-serif;
   font-size: 15px;
 }
 .thunk-single-product-summary-wrap .product_meta span a,
@@ -4958,11 +4958,11 @@ body .woocommerce-tabs .tabs li:hover a {
 .thunk-single-product-summary-wrap .product_meta span {
   margin-bottom: 10px;
 }
-.product_meta > span {
+.thunk-single-product-summary-wrap .product_meta > span {
   display: block;
   line-height: 18px;
 }
-.product_meta > span.tagged_as {
+.thunk-single-product-summary-wrap .product_meta > span.tagged_as {
   border-right: none;
 }
 .woocommerce-Tabs-panel .woocommerce-Reviews {
@@ -8610,7 +8610,7 @@ header .taiowc-content .taiowc-total,
 header .taiowc-icon{
   color: inherit;
 }
-.woocommerce-review-link{
+.single-product .woocommerce-review-link{
   color: #7a7a7a;
 }
 .thunk-single-product-summary-wrap a:focus{
@@ -9434,7 +9434,7 @@ display:inline-flex;
     padding: 0px 15px;
     color: #8f9696 !important;
     font-size: 13px;
-    font-family: "Roboto-Bold";
+    font-family: "Roboto-Bold", sans-serif;
   }
   .thunk-vertical-cat-tab ul {
     display: inline-block;
@@ -9464,7 +9464,7 @@ display:inline-flex;
   .thunk-vertical-cat-tab .tab-link li a.active,
   .thunk-vertical-cat-tab .tab-link li a:hover {
     color: #1c1d1e !important;
-    font-family: "Roboto-Bold" !important;
+    font-family: "Roboto-Bold", sans-serif !important;
   }
   .thunk-vertical-cat-tab .tab-link li:first-child a {
     padding-left: 0;
