@@ -42,7 +42,7 @@ html.alm-quick-view-is-open .alm-below-header.alm-sticky-active {
   margin-left: 0;
 }
 .woocommerce .alm-woo-product div.entry-summary form.cart button[type=submit]{
-width: 230px;
+  max-width: 129px;
 }
 .alm-quick-view-bg {
   position: fixed;
@@ -322,8 +322,8 @@ body #alm-quick-view-modal div.product .flex-viewport {
     position: absolute;
     bottom: 0;
     background: #fff;
-    margin: 0 -30px;
-    padding: 20px 30px 30px;
+    margin: 0;
+    padding: 20px 0px 30px;
     width: 50%;
     width: -webkit-calc( 50% - 30px);
     width: calc( 50% - 30px);

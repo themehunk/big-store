@@ -251,6 +251,7 @@ if (!function_exists('big_store_below_header_markup')) {
                     </p>
                   </div>
                   <?php big_store_product_list_categories(); ?>
+                  <div class="category-flyout"></div>
                 </div><!-- menu-category-list -->
               </div>
             <?php } ?>
