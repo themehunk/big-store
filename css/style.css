@@ -1996,18 +1996,80 @@ a.slide-btn:after {
   top: 8px;
 }
 
-.thunk-product-cat-list {
-  list-style: none;
+/* Flyout panel */
+.menu-category-list .category-flyout{
+    position:absolute;
+    display:none;
+    min-width:220px;
+    background:#fff;
+    border:1px solid #e5e5e5;
+    z-index:999999;
+}
+
+.menu-category-list .category-flyout ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.menu-category-list .category-flyout li{
+    position:relative;
+}
+
+.menu-category-list .category-flyout a{
+    display:block;
+    padding: 9px 15px;
+    text-decoration:none;
+}
+
+/* Nested levels */
+.menu-category-list .category-flyout .children{
+    display:none;
+    position:absolute;
+    top:0;
+    left:100%;
+    min-width:220px;
+    background:#fff;
+    border:1px solid #e5e5e5;
+}
+
+.menu-category-list .category-flyout li:hover > .children{
+    display:block;
+}
+.menu-category-list .category-flyout .arrow{
+    position: absolute;
+    right: 10px;
+    width: 50px;
+    text-align: center;
+}
+
+.menu-category-list .category-flyout ul li > a > .arrow:before {
+    float: initial;
+    margin-right: 0px;
+    display: inline;
+    content: "\f105";
+    font-family: th-icon;
+    height: auto;
+    text-shadow: none;
+}
+.menu-category-list .product-cat-list {
+    max-height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+      list-style: none;
   margin: 0;
   padding: 0;
 }
-.thunk-product-cat-list li {
+
+.menu-category-list .thunk-product-cat-list li {
   list-style: none;
 }
-.thunk-product-cat-list li ul {
+.menu-category-list .thunk-product-cat-list li ul {
   display: none;
 }
-.thunk-product-cat-list li {
+.menu-category-list .thunk-product-cat-list li {
   display: block;
   margin: 0;
   padding: 0;
@@ -2015,7 +2077,7 @@ a.slide-btn:after {
   float: left;
 }
 
-.thunk-product-cat-list li a {
+.menu-category-list .thunk-product-cat-list li a {
   display: block;
   position: relative;
   margin: 0;
@@ -5138,6 +5200,11 @@ section.upsells.products > h2,
 }
 .woocommerce div.product p.stock {
   margin-bottom: 20px;
+  color: green;
+  text-transform: capitalize;
+}
+.woocommerce div.product p.out-of-stock {
+  color: #952a2a;
 }
 /*woocommerce meassage*/
 .woocommerce-error,
