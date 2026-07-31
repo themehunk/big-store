@@ -8683,6 +8683,23 @@ header .taiowc-icon{
 .thunk-single-product-summary-wrap a:focus{
   outline: 0;
 }
+.wp-theme-big-store .summary .thw-add-to-wishlist-button::after{
+    background-color: black;
+    border: 1px solid black;
+    padding: 9px 12px;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+    width: fit-content;
+    max-width: 182px;
+}
+ .wc-block-cart__submit-button{
+  display: none!important;
+ }
+ .thunk-product-cat-list{
+  list-style-type: none!important;
+  margin-left: 0!important;
+ }
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .thunk-slide .owl-stage-outer {
     padding: 0;
