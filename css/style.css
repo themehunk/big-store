@@ -5487,6 +5487,11 @@ section.upsells.products > h2,
     line-height: normal;
     height: 100%;
 }
+.woocommerce.wp-theme-big-store a.th-product-compare-btn.loading:before{
+  height: 20px;
+  left: 50%!important;
+  content: " "!important;
+}
 
 .woocommerce .entry-summary a.th-product-compare-btn.th-added-compare:before,
 .woocommerce .entry-summary a.th-product-compare-btn.th-added-compare {
@@ -8468,11 +8473,6 @@ text-decoration: underline !important;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
-.thunk-compare .compare-button a.loading:before{
-  -webkit-animation: spin 1s linear infinite;
-  animation: spin 1s linear infinite;
-}
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
@@ -8683,6 +8683,27 @@ header .taiowc-icon{
 .thunk-single-product-summary-wrap a:focus{
   outline: 0;
 }
+.wp-theme-big-store .summary .thw-add-to-wishlist-button::after{
+    background-color: black;
+    border: 1px solid black;
+    padding: 9px 12px;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+    width: fit-content;
+    max-width: 182px;
+}
+ .wc-block-cart__submit-button{
+  display: none!important;
+ }
+ .thunk-product-cat-list{
+  list-style-type: none!important;
+  margin-left: 0!important;
+ }
+.thunk-product-hover .thw-add-to-wishlist-button::after,
+.thunk-product-hover .thw-add-to-wishlist-button::before{
+  display: none!important;
+ }
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .thunk-slide .owl-stage-outer {
     padding: 0;
