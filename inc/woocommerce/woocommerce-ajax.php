@@ -13,8 +13,9 @@ function  big_store_product_remove()
 
   global $woocommerce;
   $cart = $woocommerce->cart;
+  $product_id = isset($_POST['product_id']) ? absint($_POST['product_id']) : 0;
   foreach ($woocommerce->cart->get_cart() as $cart_item_key => $cart_item) {
-    if ($cart_item['product_id'] == $_POST['product_id']) {
+    if ($product_id && (int) $cart_item['product_id'] === $product_id) {
       // Remove product in the cart using  cart_item_key.
       $cart->remove_cart_item($cart_item_key);
       woocommerce_mini_cart();
@@ -61,7 +62,7 @@ function big_store_search_site()
       $taxsrch = '';
     }
 
-    $match_ = sanitize_text_field($_POST['match']);
+    $match_ = sanitize_text_field(wp_unslash($_POST['match']));
     $results = new WP_Query(array(
       'post_type'     => 'product',
       'post_status'   => 'publish',
@@ -79,12 +80,11 @@ function big_store_search_site()
       foreach ($results->posts as $result) {
         $product = wc_get_product($result->ID);
         $items[] = array(
-          'label' => $result->post_title,
-          'link' => get_permalink($result->ID),
-          'imglink' => wp_get_attachment_url($product->get_image_id()),
+          'label' => esc_html($result->post_title),
+          'link' => esc_url(get_permalink($result->ID)),
+          'imglink' => esc_url(wp_get_attachment_url($product->get_image_id())),
           // 'imglink' => get_the_post_thumbnail($result->ID, 'thumbnail'),
-          'price' => $product->get_price_html(),
-          'urli' => $urli
+          'price' => wp_kses_post($product->get_price_html()),
         );
       }
     }

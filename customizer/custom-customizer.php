@@ -376,7 +376,7 @@ class Big_Store_Customize_Control_Checkbox_Multiple extends WP_Customize_Control
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
         <?php endif; ?>
         <?php if ( !empty( $this->description ) ) : ?>
-            <span class="description customize-control-description"><?php echo $this->description; ?></span>
+            <span class="description customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
         <?php endif; ?>
         <?php $multi_values = !is_array( $this->value() ) ? explode( ',', $this->value() ) : $this->value(); ?>
         <ul>
@@ -481,7 +481,7 @@ class Big_Store_Customize_Sort_List extends WP_Customize_Control {
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
         <?php endif; ?>
         <?php if ( !empty( $this->description ) ) : ?>
-            <span class="description customize-control-description"><?php echo $this->description; ?></span>
+            <span class="description customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
         <?php endif;
 
         $sort_arr = $this->value();
@@ -492,7 +492,7 @@ class Big_Store_Customize_Sort_List extends WP_Customize_Control {
         <ul id="sortable">
         <?php foreach ( $multi_values as $value => $label ) :
          ?>
-            <li class="ui-state-default" id='<?php echo $label; ?>' ><label><?php echo $this->choices[$label]; ?></label></li>
+            <li class="ui-state-default" id='<?php echo esc_attr( $label ); ?>' ><label><?php echo isset( $this->choices[$label] ) ? esc_html( $this->choices[$label] ) : ''; ?></label></li>
           <?php endforeach; ?>
         </ul>
                 <input type="hidden" <?php $this->link(); ?> value="" />

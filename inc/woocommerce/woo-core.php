@@ -553,7 +553,16 @@ if ( ! class_exists( 'Big_Store_Pro_Woocommerce_Ext' ) ) :
 		function big_store_pagination_infinite(){
          	check_ajax_referer( 'opn-shop-load-more-nonce', 'nonce' );
 			do_action( 'big_store_pagination_infinite' );
-			$query_vars                   = json_decode( stripslashes( $_POST['query_vars'] ), true );
+			$raw_vars   = isset( $_POST['query_vars'] ) ? json_decode( wp_unslash( $_POST['query_vars'] ), true ) : array();
+			$raw_vars   = is_array( $raw_vars ) ? $raw_vars : array();
+			// Only allow public query vars (same as visitor can pass in the URL) with scalar values.
+			$query_vars = array();
+			foreach ( $raw_vars as $key => $value ) {
+				if ( in_array( $key, $GLOBALS['wp']->public_query_vars, true ) && is_scalar( $value ) ) {
+					$query_vars[ $key ] = sanitize_text_field( $value );
+				}
+			}
+			$query_vars['post_type']      = 'product';
 			$query_vars['paged']          = isset( $_POST['page_no'] ) ? absint( $_POST['page_no'] ) : 1;
 			$query_vars['post_status']    = 'publish';
 			$query_vars['posts_per_page'] = wc_get_default_products_per_row() * wc_get_default_product_rows_per_page();

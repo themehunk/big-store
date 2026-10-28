@@ -12,126 +12,86 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
 ?>
 
 <div class="wrap-th about-wrap-th theme_info_wrapper">
-    <div class="header">
 
-        <!-- themehunkhemes-badge wp-badge-->
-<div class="th-option-area">
+    <div class="th-option-area">
         <div class="th-option-top-hdr">
-            <div class="col-1">
-                <div class="logo-img">
-                <a target="_blank" href="<?php echo $theme_header['theme_brand_url']; ?>/?wp=big-store" class=""> <span class="logo-image"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/lib/th-option/assets/images/icon.png"/><?php echo $theme_header['theme_brand']; ?></span></a>
-            </div>
-            </div>
-            <div class="col-2">
-                <div class="th-option-heading">
-                    <h2><?php  echo $theme_header['welcome']; ?></h2>
-                    <span><?php echo $theme_header['welcome_desc']; ?></span>
+            <a class="th-brand" target="_blank" href="<?php echo esc_url( $theme_header['theme_brand_url'] ); ?>/?wp=big-store">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/lib/th-option/assets/images/icon.png" alt="<?php echo esc_attr( $theme_header['theme_brand'] ); ?>"/>
+            </a>
+            <div class="th-option-heading">
+                <div class="th-badges">
+                    <span class="th-badge version"><?php echo esc_html( $theme_header['v'] ); ?></span>
+                    <span class="th-badge free"><?php esc_html_e('Free Theme','big-store'); ?></span>
                 </div>
-                <span class="version"><?php echo $theme_header['v']; ?></span>
-                <span><?php echo _e('FREE THEME','big-store'); ?></span>
+                <h2><?php echo esc_html( $theme_header['welcome'] ); ?></h2>
+                <p><?php echo esc_html( $theme_header['welcome_desc'] ); ?></p>
+            </div>
+            <div class="th-hdr-actions">
+                <a href="<?php echo esc_url( admin_url('customize.php') ); ?>" class="th-btn th-btn-light"><span class="dashicons dashicons-admin-customizer"></span><?php esc_html_e('Customize','big-store'); ?></a>
+                <a href="https://themehunk.com/product/big-store/" target="_blank" class="th-btn th-btn-pro"><span class="dashicons dashicons-star-filled"></span><?php esc_html_e('Upgrade to Pro','big-store'); ?></a>
             </div>
         </div>
-        <div class="th-option-bottom-hdr">
-            <a class="tablinks <?php echo esc_attr($tabActiveWl) ?>" onclick="openTab(event, 'Welcome')"><?php _e('Welcome','big-store');?></a>
-            <a class="tablinks <?php echo esc_attr($tabActiveRp) ?>" onclick="openTab(event, 'Recommended-Plugin')"><?php _e('Recommended Plugin','big-store');?> </a>
-            <a class="tablinks <?php echo esc_attr($tabActiveImportDc) ?>" onclick="openTab(event, 'Import-Demo-Content')"><?php _e('Demo Import','big-store');?> </a>
-            <a class="tablinks get-child <?php echo esc_attr($tabActiveGtChild) ?>" onclick="openTab(event, 'Get-Child-Theme')"><?php _e('Get Child Theme','big-store');?></a>
-            <a class="tablinks <?php echo esc_attr($tabActiveFreePRo) ?>" onclick="openTab(event, 'Free-Vs-Pro')"><?php _e('Free Vs Pro','big-store');?></a>
-            <a class="tablinks <?php echo esc_attr($tabActiveHelp) ?>" onclick="openTab(event, 'Help')"><?php _e('Help','big-store');?></a>
-
-        </div>
-
+        <nav class="th-option-bottom-hdr">
+            <a class="tablinks <?php echo esc_attr($tabActiveWl) ?>" onclick="openTab(event, 'Welcome')"><span class="dashicons dashicons-admin-home"></span><?php _e('Welcome','big-store');?></a>
+            <a class="tablinks <?php echo esc_attr($tabActiveRp) ?>" onclick="openTab(event, 'Recommended-Plugin')"><span class="dashicons dashicons-admin-plugins"></span><?php _e('Recommended Plugin','big-store');?></a>
+            <a class="tablinks <?php echo esc_attr($tabActiveImportDc) ?>" onclick="openTab(event, 'Import-Demo-Content')"><span class="dashicons dashicons-download"></span><?php _e('Demo Import','big-store');?></a>
+            <a class="tablinks get-child <?php echo esc_attr($tabActiveGtChild) ?>" onclick="openTab(event, 'Get-Child-Theme')"><span class="dashicons dashicons-admin-appearance"></span><?php _e('Get Child Theme','big-store');?></a>
+            <a class="tablinks <?php echo esc_attr($tabActiveFreePRo) ?>" onclick="openTab(event, 'Free-Vs-Pro')"><span class="dashicons dashicons-awards"></span><?php _e('Free Vs Pro','big-store');?></a>
+            <a class="tablinks <?php echo esc_attr($tabActiveHelp) ?>" onclick="openTab(event, 'Help')"><span class="dashicons dashicons-sos"></span><?php _e('Help','big-store');?></a>
+        </nav>
     </div>
 
-    </div> <!-- /header -->
+    <div class="content-wrap">
+        <div class="tab-left">
 
+            <div id="Welcome" class="tabcontent <?php echo esc_attr($tabActiveWl) ?>">
+                <div class="rp-two-column welcome-tabs">
+                    <?php include('welcome.php' ); ?>
+                </div>
+            </div>
 
-
-
-    </div>
-
-<div class="content-wrap">
-    <div class="main">
-
-<div class="tab-left" >
-
-        
-
-        <!-- Tab content -->
-        <div id="Welcome" class="tabcontent <?php echo esc_attr($tabActiveWl) ?>">
-            <div class="rp-two-column welcome-tabs">
-        <?php include('welcome.php' ); ?>
-
-            </div> <!-- close twocolumn -->
-        </div>
-
-
-          <div id="Import-Demo-Content" class="tabcontent <?php echo esc_attr($tabActiveImportDc) ?>">
-
-            <div class="rp-two-column">
-
-                <div class="rcp theme_link th-row import-demo">
+            <div id="Import-Demo-Content" class="tabcontent <?php echo esc_attr($tabActiveImportDc) ?>">
+                <div class="theme_link import-demo">
                     <div class="import-image">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/lib/th-option/assets/images/import.png">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/lib/th-option/assets/images/import.png" alt="">
                     </div>
-                <div class="title-plugin">
-                <h3><?php _e('Click Here To Import Demo Content','big-store'); ?></h3>
-				 
-				 <p> <?php _e('You need to Install required plugins like- Themehunk Customizer, WooCommerce and One click demo import plugin. After installing required plugins import button will activate.', 'big-store'); ?></p>
-              <a class="button disabled importdemo"><?php _e( 'Import Demo', 'big-store' ); ?></a>
-				 
-             </div>
-
-             </div>
-             
-                  
-                <?php $this->plugin_install('import-demo-content'); ?>
-            
+                    <div class="title-plugin">
+                        <h3><?php _e('Click Here To Import Demo Content','big-store'); ?></h3>
+                        <p><?php _e('You need to Install required plugins like- Themehunk Customizer, WooCommerce and One click demo import plugin. After installing required plugins import button will activate.', 'big-store'); ?></p>
+                        <a class="button disabled importdemo"><?php _e( 'Import Demo', 'big-store' ); ?></a>
+                    </div>
+                </div>
+                <h3 class="th-section-title"><?php esc_html_e('Required Plugins','big-store'); ?></h3>
+                <div class="th-plugin-grid">
+                    <?php $this->plugin_install('import-demo-content'); ?>
+                </div>
             </div>
 
-        
-        </div>
-
-        <div id="Recommended-Plugin" class="tabcontent <?php echo esc_attr($tabActiveRp) ?>">
-            <div class="rp-two-column">
-            <?php $this->plugin_install(); ?>
+            <div id="Recommended-Plugin" class="tabcontent <?php echo esc_attr($tabActiveRp) ?>">
+                <div class="th-plugin-grid">
+                    <?php $this->plugin_install(); ?>
+                </div>
             </div>
-        </div>
-
 
             <div id="Free-Vs-Pro" class="tabcontent <?php echo esc_attr($tabActiveFreePRo) ?>">
-                <div class="rp-two-column">
-                    <?php include('free-pro.php' ); ?>
-
-                </div>
+                <?php include('free-pro.php' ); ?>
             </div>
-
 
             <div id="Get-Child-Theme" class="tabcontent <?php echo esc_attr($tabActiveGtChild) ?>">
-                <div class="rp-two-column">
-                    <?php require BIG_STORE_THEME_DIR . 'lib/th-option/get-child-theme.php'; ?>
+                <?php require BIG_STORE_THEME_DIR . 'lib/th-option/get-child-theme.php'; ?>
+            </div>
 
+            <div id="Help" class="tabcontent <?php echo esc_attr($tabActiveHelp) ?>">
+                <div class="rp-two-column">
+                    <?php include('need-help.php' ); ?>
                 </div>
             </div>
 
-    <div id="Help" class="tabcontent  <?php echo esc_attr($tabActiveHelp) ?>">
-        <div class="rp-two-column">
-                    <?php include('need-help.php' ); ?>
-
         </div>
+
+        <aside class="sidebar-wrap">
+            <?php include('sidebar.php' ); ?>
+        </aside>
     </div>
 
-
-</div> <!-- tab div close -->
-
-
-
-<div class="sidebar-wrap">
-    <div class="sidebar">
-    <?php include('sidebar.php' ); ?>
-    </div>
-</div>
-
-
-</div>
 </div>

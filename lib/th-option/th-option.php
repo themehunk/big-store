@@ -6,8 +6,8 @@ add_action( 'admin_enqueue_scripts', array($this,'admin_scripts'));
 add_action('admin_menu', array($this,'menu_tab'));
 
     // AJAX.
-    add_action( 'wp_ajax_th_activeplugin',array($this,'th_activeplugin') );
-    add_action( 'wp_ajax_default_home',array($this, 'default_home') );
+    add_action( 'wp_ajax_big_store_activeplugin',array($this,'th_activeplugin') );
+    add_action( 'wp_ajax_big_store_default_home',array($this, 'default_home') );
 }
 function menu_tab() {
     $menu_title = esc_html__('Big Store Options', 'big-store');
@@ -21,8 +21,8 @@ function menu_tab() {
 */
 function admin_scripts( $hook ) {
 if ($hook === 'appearance_page_thunk_started'  ) {
-wp_enqueue_style( 'thunk-started-css', get_template_directory_uri() . '/lib/th-option/assets/css/started.css' );
-wp_enqueue_script('big-store-admin-load', get_template_directory_uri() . '/lib/th-option/assets/js/th-options.js',array( 'jquery', 'updates' ),'1', true);
+wp_enqueue_style( 'thunk-started-css', get_template_directory_uri() . '/lib/th-option/assets/css/started.css', array(), filemtime( get_template_directory() . '/lib/th-option/assets/css/started.css' ) );
+wp_enqueue_script('big-store-admin-load', get_template_directory_uri() . '/lib/th-option/assets/js/th-options.js',array( 'jquery', 'updates' ), filemtime( get_template_directory() . '/lib/th-option/assets/js/th-options.js' ), true);
 
 $data = apply_filters(
                     'th_option_localize_vars',
@@ -142,7 +142,7 @@ function _check_homepage_setup(){
             );
       }
 
-      $plugin_init = ( isset( $_POST['init'] ) ) ? esc_attr( $_POST['init'] ) : '';
+      $plugin_init = ( isset( $_POST['init'] ) ) ? sanitize_text_field( wp_unslash( $_POST['init'] ) ) : '';
 
       $activate = activate_plugin( $plugin_init);
 
@@ -168,16 +168,14 @@ function _check_homepage_setup(){
 
 function plugin_install_button($plugin){?>
 
-        <div class="rcp theme_link th-row">
-           <div class="th-column"><img src="<?php echo esc_url( $plugin['thumb'] );?>" /> </div>
-            <div class="th-column">
-
+        <div class="rcp th-plugin-card">
+            <img class="th-plugin-thumb" src="<?php echo esc_url( $plugin['thumb'] );?>" alt="" />
             <div class="title-plugin">
-            <h4><?php echo esc_html( $plugin['plugin_name'] );?> </h4><a class="plugin-detail thickbox open-plugin-details-modal" href="<?php echo esc_url( $plugin['detail_link'] );?>"><?php echo esc_html__( 'Details & Version', 'big-store' );?></a>
+                <h4><?php echo esc_html( $plugin['plugin_name'] );?></h4>
+                <a class="plugin-detail thickbox open-plugin-details-modal" href="<?php echo esc_url( $plugin['detail_link'] );?>"><?php echo esc_html__( 'Details & Version', 'big-store' );?></a>
             </div>
-            <button data-activated="Activated" data-msg="Activating" data-init="<?php echo esc_attr($plugin['plugin_init']);?>" data-slug="<?php echo esc_attr( $plugin['slug'] );?>" class="button <?php echo esc_attr( $plugin['button_class'] );?>"><?php echo esc_html($plugin['button_txt']);?>                
-            </button>
-            </div></div>
+            <button data-activated="Activated" data-msg="Activating" data-init="<?php echo esc_attr($plugin['plugin_init']);?>" data-slug="<?php echo esc_attr( $plugin['slug'] );?>" class="button <?php echo esc_attr( $plugin['button_class'] );?>"><?php echo esc_html($plugin['button_txt']);?></button>
+        </div>
 <?php 
            
 }

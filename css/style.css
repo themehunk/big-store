@@ -8494,6 +8494,14 @@ text-decoration: underline !important;
 .thunk-icon .taiowc-wrap {
     padding: 0.5rem 0.4rem 0.5rem 0.4rem;
 }
+.thunk-icon .taiowc-wrap:not(.taiowc-fixed-cart),
+.thunk-icon .taiowcp-wrap:not(.taiowcp-fixed-cart),
+.sticky-header-col3 .taiowc-wrap:not(.taiowc-fixed-cart),
+.sticky-header-col3 .taiowcp-wrap:not(.taiowcp-fixed-cart) {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
 .sticky-header .cart-icon a span:hover {
     color: #000;
 }
